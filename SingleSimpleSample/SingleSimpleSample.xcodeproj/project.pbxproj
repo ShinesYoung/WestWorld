@@ -46,9 +46,9 @@
 		BEACD2E72146AEAD003F0F76 = {
 			isa = PBXGroup;
 			children = (
-				BEACD2F22146AEAD003F0F76 /* SingleSimpleSample */,
-				BEACD2F12146AEAD003F0F76 /* Products */,
 				BEACD30E2146B245003F0F76 /* Frameworks */,
+				BEACD2F12146AEAD003F0F76 /* Products */,
+				BEACD2F22146AEAD003F0F76 /* SingleSimpleSample */,
 			);
 			sourceTree = "<group>";
 		};

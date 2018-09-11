@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:SingleSimpleSample/SingleSimpleSample.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WWArchitectures/WWArchitectures.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WWFoundation/WWFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WWSecurity/WWSecurity.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WWUI/WWUI.xcodeproj">
+   </FileRef>   
 </Workspace>
