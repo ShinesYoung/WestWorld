@@ -10,6 +10,12 @@
 		A8C129DF21493839006CE62F /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129DE21493839006CE62F /* SomeObject.m */; };
 		A8C129E521493DCD006CE62F /* LFXSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */; };
 		A8C129EC214A2C16006CE62F /* LFXSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129EA214A2C16006CE62F /* LFXSuperResult.m */; };
+		A8C12A01214A6ADB006CE62F /* LFXBaseModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129FB214A6ADA006CE62F /* LFXBaseModule.m */; };
+		A8C12A02214A6ADB006CE62F /* LFXModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129FC214A6ADA006CE62F /* LFXModuleManager.m */; };
+		A8C12A03214A6ADB006CE62F /* LFXSuperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A00214A6ADB006CE62F /* LFXSuperRouter.m */; };
+		A8C12A06214A6B07006CE62F /* ModuleONE.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A05214A6B07006CE62F /* ModuleONE.m */; };
+		A8C12A09214A6B1C006CE62F /* ModuleTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A08214A6B1C006CE62F /* ModuleTwo.m */; };
+		A8C12A0B214A6EC1006CE62F /* lfx_module_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C12A0A214A6EC1006CE62F /* lfx_module_config.plist */; };
 		BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F42146AEAD003F0F76 /* AppDelegate.m */; };
 		BEACD2F82146AEAD003F0F76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F72146AEAD003F0F76 /* ViewController.m */; };
 		BEACD2FD2146AEAF003F0F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEACD2FC2146AEAF003F0F76 /* Assets.xcassets */; };
@@ -27,6 +33,17 @@
 		A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperInvoker.m; sourceTree = "<group>"; };
 		A8C129EA214A2C16006CE62F /* LFXSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperResult.m; sourceTree = "<group>"; };
 		A8C129EB214A2C16006CE62F /* LFXSuperResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperResult.h; sourceTree = "<group>"; };
+		A8C129FB214A6ADA006CE62F /* LFXBaseModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXBaseModule.m; sourceTree = "<group>"; };
+		A8C129FC214A6ADA006CE62F /* LFXModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXModuleManager.m; sourceTree = "<group>"; };
+		A8C129FD214A6ADB006CE62F /* LFXBaseModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXBaseModule.h; sourceTree = "<group>"; };
+		A8C129FE214A6ADB006CE62F /* LFXModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXModuleManager.h; sourceTree = "<group>"; };
+		A8C129FF214A6ADB006CE62F /* LFXSuperRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperRouter.h; sourceTree = "<group>"; };
+		A8C12A00214A6ADB006CE62F /* LFXSuperRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperRouter.m; sourceTree = "<group>"; };
+		A8C12A04214A6B07006CE62F /* ModuleONE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleONE.h; sourceTree = "<group>"; };
+		A8C12A05214A6B07006CE62F /* ModuleONE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleONE.m; sourceTree = "<group>"; };
+		A8C12A07214A6B1C006CE62F /* ModuleTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleTwo.h; sourceTree = "<group>"; };
+		A8C12A08214A6B1C006CE62F /* ModuleTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleTwo.m; sourceTree = "<group>"; };
+		A8C12A0A214A6EC1006CE62F /* lfx_module_config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = lfx_module_config.plist; sourceTree = "<group>"; };
 		BEACD2F02146AEAD003F0F76 /* SingleSimpleSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleSimpleSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEACD2F32146AEAD003F0F76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BEACD2F42146AEAD003F0F76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,6 +81,7 @@
 		BEACD2E72146AEAD003F0F76 = {
 			isa = PBXGroup;
 			children = (
+				A8C12A0A214A6EC1006CE62F /* lfx_module_config.plist */,
 				A8C129E021493BBA006CE62F /* Libs */,
 				BEACD30E2146B245003F0F76 /* Frameworks */,
 				BEACD2F12146AEAD003F0F76 /* Products */,
@@ -87,11 +105,21 @@
 				BEACD2FC2146AEAF003F0F76 /* Assets.xcassets */,
 				BEACD3012146AEAF003F0F76 /* Info.plist */,
 				BEACD3092146AF85003F0F76 /* LaunchScreen.xib */,
+				A8C129FD214A6ADB006CE62F /* LFXBaseModule.h */,
+				A8C129FB214A6ADA006CE62F /* LFXBaseModule.m */,
+				A8C129FE214A6ADB006CE62F /* LFXModuleManager.h */,
+				A8C129FC214A6ADA006CE62F /* LFXModuleManager.m */,
 				A8C129E321493DCC006CE62F /* LFXSuperInvoker.h */,
 				A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */,
 				A8C129EB214A2C16006CE62F /* LFXSuperResult.h */,
 				A8C129EA214A2C16006CE62F /* LFXSuperResult.m */,
+				A8C129FF214A6ADB006CE62F /* LFXSuperRouter.h */,
+				A8C12A00214A6ADB006CE62F /* LFXSuperRouter.m */,
 				BEACD3022146AEAF003F0F76 /* main.m */,
+				A8C12A04214A6B07006CE62F /* ModuleONE.h */,
+				A8C12A05214A6B07006CE62F /* ModuleONE.m */,
+				A8C12A07214A6B1C006CE62F /* ModuleTwo.h */,
+				A8C12A08214A6B1C006CE62F /* ModuleTwo.m */,
 				BEACD30B2146B093003F0F76 /* RootVC.h */,
 				BEACD30C2146B093003F0F76 /* RootVC.m */,
 				A8C129DD21493839006CE62F /* SomeObject.h */,
@@ -171,6 +199,7 @@
 			files = (
 				BEACD30A2146AF85003F0F76 /* LaunchScreen.xib in Resources */,
 				BEACD2FD2146AEAF003F0F76 /* Assets.xcassets in Resources */,
+				A8C12A0B214A6EC1006CE62F /* lfx_module_config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,12 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C12A02214A6ADB006CE62F /* LFXModuleManager.m in Sources */,
 				BEACD30D2146B093003F0F76 /* RootVC.m in Sources */,
 				A8C129E521493DCD006CE62F /* LFXSuperInvoker.m in Sources */,
 				BEACD2F82146AEAD003F0F76 /* ViewController.m in Sources */,
+				A8C12A06214A6B07006CE62F /* ModuleONE.m in Sources */,
 				A8C129DF21493839006CE62F /* SomeObject.m in Sources */,
 				BEACD3032146AEAF003F0F76 /* main.m in Sources */,
+				A8C12A01214A6ADB006CE62F /* LFXBaseModule.m in Sources */,
+				A8C12A03214A6ADB006CE62F /* LFXSuperRouter.m in Sources */,
 				BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */,
+				A8C12A09214A6B1C006CE62F /* ModuleTwo.m in Sources */,
 				A8C129EC214A2C16006CE62F /* LFXSuperResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

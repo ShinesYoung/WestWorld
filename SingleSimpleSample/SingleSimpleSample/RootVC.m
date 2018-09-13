@@ -13,110 +13,166 @@
 #import "LFXSuperInvoker.h"
 #import "LFXSuperResult.h"
 
+#import "LFXBaseModule.h"
+#import "LFXSuperRouter.h"
+
 @interface RootVC ()
 
 @end
 
 @implementation RootVC
 
-- (void)viewDidLoad
+- (IBAction)onBtnClicked:(id)sender
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    SomeObject *someObj = [[SomeObject alloc] init];
-    
-    LFXSuperInvoker *invoker = [LFXSuperInvoker instance];
-    LFXSuperResult *result = nil;
-    
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodBool)
-//                                     arguments:nil];
-//    NSLog(@"methodBool return : %d", result.boolValue);
-//
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodChar)
-//                                     arguments:nil];
+    LFXSuperResult *result =
+    [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodBool" arguments:nil];
+    NSLog(@"methodBool return : %d", result.boolValue);
+
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodChar"
+//                                arguments:nil];
 //    NSLog(@"methodChar return : %c", result.charValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodUnsignedChar)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedChar"
 //                              arguments:nil];
 //    NSLog(@"methodUnsignedChar return : %c", result.unsignedCharValue);
 //
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodShort)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodShort"
 //                                     arguments:nil];
 //    NSLog(@"methodShort return : %d", result.shortValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodUnsignedShort)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedShort"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedShort return : %d", result.unsignedShortValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodInt)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodInt"
 //                                     arguments:nil];
 //    NSLog(@"methodInt return : %d", result.intValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodUnsignedInt)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInt"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedInt return : %u", result.unsignedIntValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodLong)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodLong"
 //                                     arguments:nil];
 //    NSLog(@"methodLong return : %ld", result.longValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodUnsignedLong)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLong"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedLong return : %lu", result.unsignedLongValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodLongLong)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodLongLong"
 //                                     arguments:nil];
 //    NSLog(@"methodLongLong return : %lld", result.longLongValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodUnsignedLongLong)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLongLong"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedLongLong return : %llu", result.unsignedLongLongValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodFloat)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodFloat"
 //                                     arguments:nil];
 //    NSLog(@"methodFloat return : %f", result.floatValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodDouble)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodDouble"
 //                                     arguments:nil];
 //    NSLog(@"methodDouble return : %e", result.doubleValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodInteger)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodInteger"
 //                                     arguments:nil];
 //    NSLog(@"methodInteger return : %ld", result.integerValue);
 //
-//    result = [invoker callInvocationOfInstance:someObj
-//                                        method:@selector(methodUnsignedInteger)
+//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInteger"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedInteger return : %lu", result.unsignedIntegerValue);
-    
+//
     NSArray *arguments
     = @[@"This is a String", @(999999.999999), @[@"str1", @"str2", @"str3"],
         @{@"k1":@"v1", @"k2":@"v2"}, @(YES), @('X'), @('W'), @(-555), @555,
         @(-1234567890), @(1234567890), @(-1234567890), @(1234567890),
         @(12345.6789f), @(123456789.0), [NSNull null] ];
-    
+
     SEL method = @selector(methodVoidWithString:number:array:dictionary:withBool:withChar:withUChar:withInt:withUInt:withLong:withULong:withInteger:withUInteger:withFloat:withDouble:withObject:);
-    
-    result = [invoker callInvocationOfInstance:someObj
-                                        method:method
+    NSString *serviceName = NSStringFromSelector(method);
+
+    result = [LFXSuperRouter invokeModule:@"SomeObject" service:serviceName
                                      arguments:arguments];
-    NSLog(@"methodUnsignedInteger return : %@", result);
+    NSLog(@"multiple argument method return : %@", result);
+    [result print];
+
+
+    NSLog(@"method1 return : %@", result.objectValue);
+    [result print];
+    
+    
+    result = [LFXSuperRouter invokeModule:@"SomeObject"
+                                  service:@"methodPoint"
+                                arguments:nil];
+    CGPoint aPoint = result.cgPointValue;
+    
+    result = [LFXSuperRouter invokeModule:@"SomeObject"
+                                  service:@"methodSize"
+                                arguments:nil];
+    CGSize aSize = result.cgSizeValue;
+    
+    result = [LFXSuperRouter invokeModule:@"SomeObject"
+                                  service:@"methodVector"
+                                arguments:nil];
+    CGVector aVector = result.cgVectorValue;
+    
+    result = [LFXSuperRouter invokeModule:@"SomeObject"
+                                  service:@"methodRect"
+                                arguments:nil];
+    CGRect aRect = result.cgRectValue;
+    
+    result = [LFXSuperRouter invokeModule:@"SomeObject"
+                                  service:@"methodRange"
+                                arguments:nil];
+    NSRange aRange = result.rangeValue;
+    
+    result = [LFXSuperRouter invokeModule:@"SomeObject"
+                                  service:@"methodOffset"
+                                arguments:nil];
+    UIOffset aOffset = result.offsetValue;
+    
+    
+    NSArray *argus = @[[NSValue valueWithCGSize:aSize],
+                       [NSValue valueWithCGPoint:aPoint],
+                       [NSValue valueWithCGVector:aVector],
+                       [NSValue valueWithCGRect:aRect],
+                       [NSValue valueWithRange:aRange],
+                       [NSValue valueWithUIOffset:aOffset]];
+    [LFXSuperRouter invokeModule:@"SomeObject"
+                         service:@"methodWithSize:point:vector:rect:range:offset:"
+                       arguments:argus];
+    
+}
+
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    UIButton *aBtn = [UIButton buttonWithType:(UIButtonTypeSystem)];
+    aBtn.frame = CGRectMake(100, 100, 100, 40);
+    [aBtn setTitle:@"Click" forState:(UIControlStateNormal)];
+    [aBtn setBackgroundColor:[UIColor blueColor]];
+    [aBtn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    [aBtn addTarget:self action:@selector(onBtnClicked:)
+   forControlEvents:(UIControlEventTouchUpInside)];
+    
+    [self.view addSubview:aBtn];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    LFXSuperResult *result =
+    [LFXSuperRouter invokeModule:@"ModuleONE" service:@"welcome" arguments:nil];
+    
+    NSLog(@"router return = %@", result);
 }
 
 - (void)didReceiveMemoryWarning {

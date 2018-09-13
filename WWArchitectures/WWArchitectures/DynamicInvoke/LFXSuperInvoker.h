@@ -10,6 +10,9 @@
 
 #import "LFXSuperResult.h"
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LFXSuperInvoker : NSObject
 
 /******************************************************************************/
@@ -19,7 +22,7 @@
 
 // invoke class method
 - (LFXSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                               arguments:(NSArray *)arguments;
+                               arguments:(NSArray *_Nullable)arguments;
 
 
 
@@ -30,7 +33,7 @@
 
 // invoke instance method
 - (LFXSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                  arguments:(NSArray *)arguments;
+                                  arguments:(NSArray *_Nullable)arguments;
 
 
 
@@ -43,9 +46,9 @@
 - (BOOL)checkMethodSignature:(NSMethodSignature *)signature
                    withClass:(Class)aClass
                 withSelector:(SEL)aAction
-               withArguments:(NSArray *)arguments;
+               withArguments:(NSArray * _Nullable)arguments;
 
-- (void)handleArguments:(NSArray *)arguments ofInvocation:(NSInvocation *)aInvocation;
+- (void)handleArguments:(NSArray *_Nullable)arguments ofInvocation:(NSInvocation *)aInvocation;
 
 - (LFXSuperResult *)checkAndReturnInvocationResult:(NSInvocation *)aInvocation;
 
@@ -61,3 +64,6 @@
 - (instancetype)init;
 
 @end
+
+
+NS_ASSUME_NONNULL_END

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "LFXModuleManager.h"
 #import "RootVC.h"
 
 @interface AppDelegate ()
@@ -19,11 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [LFXModuleManager defaultManager];
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.rootVC = [[RootVC alloc] init];
     self.window.rootViewController = self.rootVC;
+    [self.window addSubview:self.rootVC.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

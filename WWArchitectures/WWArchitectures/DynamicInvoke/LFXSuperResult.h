@@ -20,7 +20,9 @@
 
 @interface LFXSuperResult : NSObject
 
+@property (nonatomic, assign) BOOL               boolValue;
 @property (nonatomic, assign) char               charValue;
+
 @property (nonatomic, assign) unsigned char      unsignedCharValue;
 @property (nonatomic, assign) short              shortValue;
 @property (nonatomic, assign) unsigned short     unsignedShortValue;
@@ -30,12 +32,14 @@
 @property (nonatomic, assign) unsigned long      unsignedLongValue;
 @property (nonatomic, assign) long long          longLongValue;
 @property (nonatomic, assign) unsigned long long unsignedLongLongValue;
-@property (nonatomic, assign) float              floatValue;
-@property (nonatomic, assign) double             doubleValue;
-@property (nonatomic, assign) BOOL               boolValue;
 @property (nonatomic, assign) NSInteger          integerValue;
 @property (nonatomic, assign) NSUInteger         unsignedIntegerValue;
+
+@property (nonatomic, assign) float              floatValue;
+@property (nonatomic, assign) double             doubleValue;
+
 @property (nonatomic, strong) id                 objectValue;
 
+- (void)print;
 
 @end

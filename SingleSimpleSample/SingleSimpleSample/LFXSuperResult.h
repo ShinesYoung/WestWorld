@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
@@ -20,25 +21,24 @@
 
 @interface LFXSuperResult : NSObject
 
+@property (nonatomic, strong) id                 objectValue;
+
 @property (nonatomic, assign) BOOL               boolValue;
 @property (nonatomic, assign) char               charValue;
-
 @property (nonatomic, assign) unsigned char      unsignedCharValue;
-@property (nonatomic, assign) short              shortValue;
-@property (nonatomic, assign) unsigned short     unsignedShortValue;
-@property (nonatomic, assign) int                intValue;
-@property (nonatomic, assign) unsigned int       unsignedIntValue;
-@property (nonatomic, assign) long               longValue;
-@property (nonatomic, assign) unsigned long      unsignedLongValue;
-@property (nonatomic, assign) long long          longLongValue;
-@property (nonatomic, assign) unsigned long long unsignedLongLongValue;
-@property (nonatomic, assign) NSInteger          integerValue;
-@property (nonatomic, assign) NSUInteger         unsignedIntegerValue;
+
+@property (nonatomic, assign) long long          integerValue;
+@property (nonatomic, assign) unsigned long long unsignedIntegerValue;
 
 @property (nonatomic, assign) float              floatValue;
 @property (nonatomic, assign) double             doubleValue;
 
-@property (nonatomic, strong) id                 objectValue;
+@property (nonatomic, assign) CGPoint            cgPointValue;
+@property (nonatomic, assign) CGSize             cgSizeValue;
+@property (nonatomic, assign) CGVector           cgVectorValue;
+@property (nonatomic, assign) CGRect             cgRectValue;
+@property (nonatomic, assign) NSRange            rangeValue;
+@property (nonatomic, assign) UIOffset           offsetValue;
 
 - (void)print;
 

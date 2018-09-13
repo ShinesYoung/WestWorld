@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "LFXBaseModule.h"
 
-@interface SomeObject : NSObject
+
+@interface SomeObject : LFXBaseModule
+
 
 - (id)methodObject;
 
@@ -41,5 +45,21 @@
                  withInteger:(NSInteger)integerP withUInteger:(NSUInteger)uIntegerP
                    withFloat:(float)floatP withDouble:(double)doubleP
                   withObject:(id)objP;
+
+- (CGSize)methodSize;
+
+- (CGPoint)methodPoint;
+
+- (CGVector)methodVector;
+
+- (CGRect)methodRect;
+
+- (NSRange)methodRange;
+
+- (UIOffset)methodOffset;
+
+- (void)methodWithSize:(CGSize)size point:(CGPoint)point vector:(CGVector)vector
+                  rect:(CGRect)rect range:(NSRange)range offset:(UIOffset)offset;
+
 
 @end

@@ -137,7 +137,7 @@
         
         // 取出方法要求的参数类型，将传递进来的参数进行匹配
         const char *aSignArgType
-        = [aInvocation.methodSignature getArgumentTypeAtIndex:index];
+        = [aInvocation.methodSignature getArgumentTypeAtIndex:index+2];
         
         if ([aArgument isKindOfClass:[NSNull class]]) {
             aArgument = nil;
@@ -146,11 +146,35 @@
         else if ([aArgument isKindOfClass:[NSNumber class]])
         {
             NSNumber *numberArg = (NSNumber *)aArgument;
-
-            if      (strcmp(aSignArgType, @encode(BOOL) ) == 0) // bool
+            
+            if      (strcmp(aSignArgType, @encode(id) ) == 0)
+            {
+                [aInvocation setArgument:&aArgument atIndex:index+2];
+            }
+            else if (strcmp(aSignArgType, @encode(BOOL) ) == 0) // bool
             {
                 BOOL boolArg = [numberArg boolValue];
                 [aInvocation setArgument:&boolArg atIndex:index+2];
+            }
+            else if (strcmp(aSignArgType, @encode(NSInteger) ) == 0)
+            {
+                NSInteger integerArg = [numberArg integerValue];
+                [aInvocation setArgument:&integerArg atIndex:index+2];
+            }
+            else if (strcmp(aSignArgType, @encode(NSUInteger) ) == 0)
+            {
+                NSUInteger unsignedIntegerArg = [numberArg unsignedIntegerValue];
+                [aInvocation setArgument:&unsignedIntegerArg atIndex:index+2];
+            }
+            else if (strcmp(aSignArgType, @encode(float) ) == 0)
+            {
+                float floatArg = [numberArg floatValue];
+                [aInvocation setArgument:&floatArg atIndex:index+2];
+            }
+            else if (strcmp(aSignArgType, @encode(double) ) == 0)
+            {
+                double doubleArg = [numberArg doubleValue];
+                [aInvocation setArgument:&doubleArg atIndex:index+2];
             }
             else if (strcmp(aSignArgType, @encode(char) ) == 0)
             {
@@ -202,26 +226,11 @@
                 unsigned long long unsignedLongLongArg = [numberArg unsignedLongLongValue];
                 [aInvocation setArgument:&unsignedLongLongArg atIndex:index+2];
             }
-            else if (strcmp(aSignArgType, @encode(float) ) == 0)
+            else
             {
-                float floatArg = [numberArg longLongValue];
-                [aInvocation setArgument:&floatArg atIndex:index+2];
+                [aInvocation setArgument:&aArgument atIndex:index+2];
             }
-            else if (strcmp(aSignArgType, @encode(double) ) == 0)
-            {
-                double doubleArg = [numberArg doubleValue];
-                [aInvocation setArgument:&doubleArg atIndex:index+2];
-            }
-            else if (strcmp(aSignArgType, @encode(NSInteger) ) == 0)
-            {
-                NSInteger integerArg = [numberArg integerValue];
-                [aInvocation setArgument:&integerArg atIndex:index+2];
-            }
-            else if (strcmp(aSignArgType, @encode(NSUInteger) ) == 0)
-            {
-                NSUInteger unsignedIntegerArg = [numberArg unsignedIntegerValue];
-                [aInvocation setArgument:&unsignedIntegerArg atIndex:index+2];
-            }
+            
         }
         else
         {
@@ -248,51 +257,65 @@
     LFXSuperResult *aResult = [[LFXSuperResult alloc] init];
     const char *retTypeChar = aInvocation.methodSignature.methodReturnType;
     
-    if      (strcmp(retTypeChar, @encode(id)) == 0) {
+    if (strcmp(retTypeChar, @encode(id)) == 0) {
         aResult.objectValue = (__bridge id)result;
     }
-    else if (strcmp(retTypeChar, @encode(BOOL)) == 0) {
+    if (strcmp(retTypeChar, @encode(BOOL)) == 0) {
         aResult.boolValue = (BOOL)result;
     }
-    else if (strcmp(retTypeChar, @encode(char)) == 0) {
+    if (strcmp(retTypeChar, @encode(char)) == 0) {
         aResult.charValue = (char)result;
     }
-    else if (strcmp(retTypeChar, @encode(unsigned char)) ==0 ) {
+    if (strcmp(retTypeChar, @encode(unsigned char)) ==0 ) {
         aResult.unsignedCharValue = (unsigned char)result;
     }
-    else if (strcmp(retTypeChar, @encode(int)) == 0) {
+    if (strcmp(retTypeChar, @encode(short)) == 0) {
+        aResult.shortValue = (short)result;
+    }
+    if (strcmp(retTypeChar, @encode(unsigned short)) ==0 ) {
+        aResult.unsignedShortValue = (unsigned short)result;
+    }
+    if (strcmp(retTypeChar, @encode(int)) == 0) {
         aResult.intValue = (int)result;
     }
-    else if (strcmp(retTypeChar, @encode(unsigned int)) == 0) {
+    if (strcmp(retTypeChar, @encode(unsigned int)) == 0) {
         aResult.unsignedIntValue = (unsigned int)result;
     }
-    else if (strcmp(retTypeChar, @encode(long)) == 0) {
+    if (strcmp(retTypeChar, @encode(long)) == 0) {
         aResult.longValue = (long)result;
     }
-    else if (strcmp(retTypeChar, @encode(unsigned long)) == 0) {
+    if (strcmp(retTypeChar, @encode(unsigned long)) == 0) {
         aResult.unsignedLongValue = (unsigned long)result;
     }
-    else if (strcmp(retTypeChar, @encode(long long)) == 0) {
-        aResult.longLongValue = (long long)result;
+    if (strcmp(retTypeChar, @encode(long long)) == 0) {
+        long long longLongResult = 0;
+        [aInvocation getReturnValue:&longLongResult];
+        aResult.longLongValue = longLongResult;
     }
-    else if (strcmp(retTypeChar, @encode(unsigned long long)) == 0) {
-        aResult.unsignedLongLongValue = (unsigned long long)result;
+    if (strcmp(retTypeChar, @encode(unsigned long long)) == 0) {
+        unsigned long long unsignedLongLongResult = 0;
+        [aInvocation getReturnValue:&unsignedLongLongResult];
+        aResult.unsignedLongLongValue = unsignedLongLongResult;
     }
-    else if (strcmp(retTypeChar, @encode(float)) == 0) {
+    if (strcmp(retTypeChar, @encode(float)) == 0) {
         float floatResult = 0.0f;
         [aInvocation getReturnValue:&floatResult];
         aResult.floatValue = floatResult;
     }
-    else if (strcmp(retTypeChar, @encode(double)) == 0) {
+    if (strcmp(retTypeChar, @encode(double)) == 0) {
         double doubleResult = 0.0f;
         [aInvocation getReturnValue:&doubleResult];
         aResult.doubleValue = doubleResult;
     }
-    else if (strcmp(retTypeChar, @encode(NSInteger)) == 0) {
-        aResult.integerValue = (NSInteger)result;
+    if (strcmp(retTypeChar, @encode(NSInteger)) == 0) {
+        NSInteger integerResult = 0;
+        [aInvocation getReturnValue:&integerResult];
+        aResult.integerValue = integerResult;
     }
-    else if (strcmp(retTypeChar, @encode(NSUInteger)) == 0) {
-        aResult.unsignedIntegerValue = (NSUInteger)result;
+    if (strcmp(retTypeChar, @encode(NSUInteger)) == 0) {
+        NSUInteger unsignedIntegerResult = 0;
+        [aInvocation getReturnValue:&unsignedIntegerResult];
+        aResult.unsignedIntegerValue = unsignedIntegerResult;
     }
     
     return aResult;

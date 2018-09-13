@@ -11,6 +11,12 @@
 
 @implementation SomeObject
 
+- (NSString *)moduleName
+{
+    return @"SomeObject";
+}
+
+
 - (id)methodObject
 {
     return @"OK";
@@ -133,7 +139,47 @@
 
 }
 
+- (CGSize)methodSize
+{
+    return CGSizeMake(200, 30);
+}
+
+- (CGPoint)methodPoint
+{
+    return CGPointMake(50, 50);
+}
+
+- (CGVector)methodVector
+{
+    return CGVectorMake(150, 150);
+}
+
+- (CGRect)methodRect
+{
+    return CGRectMake(10, 10, 200, 200);
+}
+
+- (NSRange)methodRange
+{
+    return NSMakeRange(1, 10);
+}
+
+- (UIOffset)methodOffset
+{
+    return UIOffsetMake(1000, 1000);
+}
+
+- (void)methodWithSize:(CGSize)size point:(CGPoint)point vector:(CGVector)vector
+                  rect:(CGRect)rect range:(NSRange)range offset:(UIOffset)offset
+{
+    NSLog(@"get size:%@",   NSStringFromCGSize(size));
+    NSLog(@"get point:%@",  NSStringFromCGPoint(point));
+    NSLog(@"get vector:%@", NSStringFromCGVector(vector));
+    NSLog(@"get rect:%@",   NSStringFromCGRect(rect));
+    NSLog(@"get range:%@",  NSStringFromRange(range));
+    NSLog(@"get offset:%@", NSStringFromUIOffset(offset));
 
 
+}
 
 @end
