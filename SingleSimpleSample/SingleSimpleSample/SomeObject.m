@@ -100,10 +100,40 @@
     return 9.999999;
 }
 
-- (void)methodVoid
+- (void)methodVoidWithString:(NSString *)string
+                      number:(NSNumber *)number
+                       array:(NSArray *)array
+                  dictionary:(NSDictionary *)dictP
+                    withBool:(BOOL)boolP
+                    withChar:(char)charP withUChar:(unsigned char)uCharP
+                     withInt:(int)intP withUInt:(unsigned int)uIntP
+                    withLong:(long)longP withULong:(unsigned long)uLongP
+                 withInteger:(NSInteger)integerP withUInteger:(NSUInteger)uIntegerP
+                   withFloat:(float)floatP withDouble:(double)doubleP
+                  withObject:(id)objP
 {
-    NSLog(@"method Void called");
+    NSLog(@"method Void called !!!");
+    NSLog(@"arguments: \n");
+    NSLog(@"string: %@", string);
+    NSLog(@"number: %@", number);
+    NSLog(@"array: %@", array);
+    NSLog(@"dictionary: %@", dictP);
+    NSLog(@"bool: %d", boolP);
+    NSLog(@"char: %c", charP);
+    NSLog(@"uChar: %c", uCharP);
+    NSLog(@"int: %d", intP);
+    NSLog(@"uInt: %d", uIntP);
+    NSLog(@"long: %ld", longP);
+    NSLog(@"uLong: %lu", uLongP);
+    NSLog(@"integer: %ld", integerP);
+    NSLog(@"uInteger: %lu", uIntegerP);
+    NSLog(@"float: %f", floatP);
+    NSLog(@"double: %e", doubleP);
+    NSLog(@"object: %@", objP);
+
 }
+
+
 
 
 @end

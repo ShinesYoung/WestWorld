@@ -30,6 +30,16 @@
 
 
 
-- (void)methodVoid;
+- (void)methodVoidWithString:(NSString *)string
+                      number:(NSNumber *)number
+                       array:(NSArray *)array
+                  dictionary:(NSDictionary *)dictP
+                    withBool:(BOOL)boolP
+                    withChar:(char)charP withUChar:(unsigned char)uCharP
+                     withInt:(int)intP withUInt:(unsigned int)uIntP
+                    withLong:(long)longP withULong:(unsigned long)uLongP
+                 withInteger:(NSInteger)integerP withUInteger:(NSUInteger)uIntegerP
+                   withFloat:(float)floatP withDouble:(double)doubleP
+                  withObject:(id)objP;
 
 @end

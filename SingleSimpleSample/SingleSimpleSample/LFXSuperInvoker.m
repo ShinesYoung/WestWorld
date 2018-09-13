@@ -137,7 +137,7 @@
         
         // 取出方法要求的参数类型，将传递进来的参数进行匹配
         const char *aSignArgType
-        = [aInvocation.methodSignature getArgumentTypeAtIndex:index];
+        = [aInvocation.methodSignature getArgumentTypeAtIndex:index+2];
         
         if ([aArgument isKindOfClass:[NSNull class]]) {
             aArgument = nil;
@@ -146,8 +146,12 @@
         else if ([aArgument isKindOfClass:[NSNumber class]])
         {
             NSNumber *numberArg = (NSNumber *)aArgument;
-
-            if      (strcmp(aSignArgType, @encode(BOOL) ) == 0) // bool
+            
+            if      (strcmp(aSignArgType, @encode(id) ) == 0)
+            {
+                [aInvocation setArgument:&aArgument atIndex:index+2];
+            }
+            else if (strcmp(aSignArgType, @encode(BOOL) ) == 0) // bool
             {
                 BOOL boolArg = [numberArg boolValue];
                 [aInvocation setArgument:&boolArg atIndex:index+2];
@@ -164,7 +168,7 @@
             }
             else if (strcmp(aSignArgType, @encode(float) ) == 0)
             {
-                float floatArg = [numberArg longLongValue];
+                float floatArg = [numberArg floatValue];
                 [aInvocation setArgument:&floatArg atIndex:index+2];
             }
             else if (strcmp(aSignArgType, @encode(double) ) == 0)
@@ -222,7 +226,10 @@
                 unsigned long long unsignedLongLongArg = [numberArg unsignedLongLongValue];
                 [aInvocation setArgument:&unsignedLongLongArg atIndex:index+2];
             }
-            
+            else
+            {
+                [aInvocation setArgument:&aArgument atIndex:index+2];
+            }
             
         }
         else
