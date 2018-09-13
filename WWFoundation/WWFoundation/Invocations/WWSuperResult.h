@@ -1,9 +1,9 @@
 //
-//  LFXSuperResult.h
-//  LeGaoCommon
+//  WWSuperResult.h
+//  WWFoundation
 //
-//  Created by 杨善嗣 on 2018/9/13.
-//  Copyright © 2018年 王卫. All rights reserved.
+//  Created by Shines Young on 2018/9/13.
+//  Copyright © 2018年 net.shines. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,15 +11,15 @@
 
 
 /**
- * LFXSuperResult - a wrapper of method's return type.
+ * WWSuperResult - a wrapper of method's return type.
  *  if a method‘s returnType is 'void', then return is nil.
- *  if a method‘s returnType is not 'void', the return is LFXSuperResult instance,
- *  and the particular return value will save in the LFXSuperResult instance.
- *  You can use LFXSuperResult's xxxValue properties method
+ *  if a method‘s returnType is not 'void', the return is WWSuperResult instance,
+ *  and the particular return value will save in the WWSuperResult instance.
+ *  You can use WWSuperResult's xxxValue properties method
  *  to access the particular return value.
  */
 
-@interface LFXSuperResult : NSObject
+@interface WWSuperResult : NSObject
 
 @property (nonatomic, strong) id                 objectValue;
 

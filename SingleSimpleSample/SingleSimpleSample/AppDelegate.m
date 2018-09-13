@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "LFXModuleManager.h"
+#import "WWModuleManager.h"
 #import "RootVC.h"
 
 @interface AppDelegate ()
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [LFXModuleManager defaultManager];
+    [WWModuleManager defaultManager];
     
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

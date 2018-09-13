@@ -1,25 +1,25 @@
 //
-//  LFXModuleManager.m
-//  LeGaoCommon
+//  WWModuleManager.m
+//  WWArchitectures
 //
-//  Created by 杨善嗣 on 2018/9/13.
-//  Copyright © 2018年 王卫. All rights reserved.
+//  Created by Shines Young on 2018/9/13.
+//  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "LFXModuleManager.h"
+#import "WWModuleManager.h"
 
-@interface LFXModuleManager ()
+@interface WWModuleManager ()
 
 // 该字典用于保存APP中已经注册的Module名称和其对应Class。
-@property (nonatomic, strong) NSMutableDictionary *moduleRegisterDict;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, Class> *moduleRegisterDict;
 
 // 该字典用于保存APP中已经被实例化的Module对象。
-@property (nonatomic, strong) NSMutableDictionary *moduleCacheDict;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, id<WWModule>> *moduleCacheDict;
 
 @end
 
 
-@implementation LFXModuleManager
+@implementation WWModuleManager
 
 
 /******************************************************************************/
@@ -41,10 +41,10 @@
     }
 }
 
-- (LFXBaseModule *)moduleForName:(NSString *)moduleName
+- (id<WWModule>)moduleForName:(NSString *)moduleName
 {
     // 1. find Module instance from cache.
-    LFXBaseModule *aModule = nil;
+    id<WWModule> aModule = nil;
     if (self.moduleCacheDict) {
         aModule = [self.moduleCacheDict objectForKey:moduleName];
     }
@@ -79,7 +79,7 @@
 /******************************************************************************/
 #pragma mark - Service - Module Cache
 
-- (void)addModuleToCache:(LFXBaseModule *)aModule
+- (void)addModuleToCache:(id<WWModule>)aModule
 {
     if (self.moduleCacheDict) {
         [self.moduleCacheDict setObject:aModule forKey:aModule.moduleName];
@@ -132,10 +132,10 @@
 
 + (instancetype)defaultManager
 {
-    static LFXModuleManager *theInstance = nil;
+    static WWModuleManager *theInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        theInstance = [[LFXModuleManager alloc] init];
+        theInstance = [[WWModuleManager alloc] init];
     });
     return theInstance;
 }

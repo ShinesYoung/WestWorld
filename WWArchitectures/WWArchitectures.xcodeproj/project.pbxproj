@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A8C129D9214937B1006CE62F /* LFXSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129D6214937B1006CE62F /* LFXSuperInvoker.m */; };
-		A8C129DA214937B1006CE62F /* LFXSuperInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C129D7214937B1006CE62F /* LFXSuperInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A8C129EF214A2CEE006CE62F /* LFXSuperResult.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C129ED214A2CEE006CE62F /* LFXSuperResult.h */; };
-		A8C129F0214A2CEE006CE62F /* LFXSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129EE214A2CEE006CE62F /* LFXSuperResult.m */; };
+		BE3AACB7214AAF950083ABC7 /* WWWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACB5214AAF950083ABC7 /* WWWindow.h */; };
+		BE3AACB8214AAF950083ABC7 /* WWWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACB6214AAF950083ABC7 /* WWWindow.m */; };
+		BE3AACBB214AAFD30083ABC7 /* WWAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACB9214AAFD30083ABC7 /* WWAppDelegate.h */; };
+		BE3AACBC214AAFD30083ABC7 /* WWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACBA214AAFD30083ABC7 /* WWAppDelegate.m */; };
+		BE3AACC9214AB1280083ABC7 /* WWModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACC8214AB1280083ABC7 /* WWModuleManager.m */; };
+		BE3AACCD214AB1320083ABC7 /* WWModuleManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACCA214AB1320083ABC7 /* WWModuleManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACCE214AB1320083ABC7 /* WWBaseModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACCB214AB1320083ABC7 /* WWBaseModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACCF214AB1320083ABC7 /* WWBaseModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACCC214AB1320083ABC7 /* WWBaseModule.m */; };
+		BE3AACD1214AB1D90083ABC7 /* WWModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACD0214AB1D90083ABC7 /* WWModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACDA214AB4700083ABC7 /* WWSuperRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACD8214AB4700083ABC7 /* WWSuperRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACDB214AB4700083ABC7 /* WWSuperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACD9214AB4700083ABC7 /* WWSuperRouter.m */; };
+		BE3AACE2214ABB650083ABC7 /* WWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACE1214ABB650083ABC7 /* WWFoundation.framework */; };
 		BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B173214810D3000CD7AB /* WWArchitectures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A8C129D6214937B1006CE62F /* LFXSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperInvoker.m; sourceTree = "<group>"; };
-		A8C129D7214937B1006CE62F /* LFXSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperInvoker.h; sourceTree = "<group>"; };
-		A8C129ED214A2CEE006CE62F /* LFXSuperResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperResult.h; sourceTree = "<group>"; };
-		A8C129EE214A2CEE006CE62F /* LFXSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperResult.m; sourceTree = "<group>"; };
+		BE3AACB5214AAF950083ABC7 /* WWWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWWindow.h; sourceTree = "<group>"; };
+		BE3AACB6214AAF950083ABC7 /* WWWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWWindow.m; sourceTree = "<group>"; };
+		BE3AACB9214AAFD30083ABC7 /* WWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWAppDelegate.h; sourceTree = "<group>"; };
+		BE3AACBA214AAFD30083ABC7 /* WWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWAppDelegate.m; sourceTree = "<group>"; };
+		BE3AACC8214AB1280083ABC7 /* WWModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWModuleManager.m; sourceTree = "<group>"; };
+		BE3AACCA214AB1320083ABC7 /* WWModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWModuleManager.h; sourceTree = "<group>"; };
+		BE3AACCB214AB1320083ABC7 /* WWBaseModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWBaseModule.h; sourceTree = "<group>"; };
+		BE3AACCC214AB1320083ABC7 /* WWBaseModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWBaseModule.m; sourceTree = "<group>"; };
+		BE3AACD0214AB1D90083ABC7 /* WWModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWModule.h; sourceTree = "<group>"; };
+		BE3AACD8214AB4700083ABC7 /* WWSuperRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSuperRouter.h; sourceTree = "<group>"; };
+		BE3AACD9214AB4700083ABC7 /* WWSuperRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSuperRouter.m; sourceTree = "<group>"; };
+		BE3AACE1214ABB650083ABC7 /* WWFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B170214810D3000CD7AB /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B173214810D3000CD7AB /* WWArchitectures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWArchitectures.h; sourceTree = "<group>"; };
 		BE45B174214810D3000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3AACE2214ABB650083ABC7 /* WWFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,22 +59,44 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		A8C129D5214937B1006CE62F /* DynamicInvoke */ = {
-			isa = PBXGroup;
-			children = (
-				A8C129D7214937B1006CE62F /* LFXSuperInvoker.h */,
-				A8C129D6214937B1006CE62F /* LFXSuperInvoker.m */,
-				A8C129ED214A2CEE006CE62F /* LFXSuperResult.h */,
-				A8C129EE214A2CEE006CE62F /* LFXSuperResult.m */,
-			);
-			path = DynamicInvoke;
-			sourceTree = "<group>";
-		};
 		A8C129D8214937B1006CE62F /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				BE3AACB9214AAFD30083ABC7 /* WWAppDelegate.h */,
+				BE3AACBA214AAFD30083ABC7 /* WWAppDelegate.m */,
+				BE3AACB5214AAF950083ABC7 /* WWWindow.h */,
+				BE3AACB6214AAF950083ABC7 /* WWWindow.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BE3AACBD214AB07B0083ABC7 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACCB214AB1320083ABC7 /* WWBaseModule.h */,
+				BE3AACCC214AB1320083ABC7 /* WWBaseModule.m */,
+				BE3AACD0214AB1D90083ABC7 /* WWModule.h */,
+				BE3AACCA214AB1320083ABC7 /* WWModuleManager.h */,
+				BE3AACC8214AB1280083ABC7 /* WWModuleManager.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		BE3AACD7214AB4700083ABC7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACD8214AB4700083ABC7 /* WWSuperRouter.h */,
+				BE3AACD9214AB4700083ABC7 /* WWSuperRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BE3AACE0214ABB650083ABC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACE1214ABB650083ABC7 /* WWFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BE45B166214810D3000CD7AB = {
@@ -65,6 +104,7 @@
 			children = (
 				BE45B171214810D3000CD7AB /* Products */,
 				BE45B172214810D3000CD7AB /* WWArchitectures */,
+				BE3AACE0214ABB650083ABC7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,9 +121,10 @@
 			children = (
 				A8C129D8214937B1006CE62F /* AppDelegate */,
 				A8C129D4214937B1006CE62F /* Components */,
-				A8C129D5214937B1006CE62F /* DynamicInvoke */,
-				BE45B173214810D3000CD7AB /* WWArchitectures.h */,
 				BE45B174214810D3000CD7AB /* Info.plist */,
+				BE3AACBD214AB07B0083ABC7 /* Module */,
+				BE3AACD7214AB4700083ABC7 /* Router */,
+				BE45B173214810D3000CD7AB /* WWArchitectures.h */,
 			);
 			path = WWArchitectures;
 			sourceTree = "<group>";
@@ -95,9 +136,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8C129DA214937B1006CE62F /* LFXSuperInvoker.h in Headers */,
-				A8C129EF214A2CEE006CE62F /* LFXSuperResult.h in Headers */,
+				BE3AACCE214AB1320083ABC7 /* WWBaseModule.h in Headers */,
+				BE3AACB7214AAF950083ABC7 /* WWWindow.h in Headers */,
+				BE3AACD1214AB1D90083ABC7 /* WWModule.h in Headers */,
+				BE3AACCD214AB1320083ABC7 /* WWModuleManager.h in Headers */,
+				BE3AACDA214AB4700083ABC7 /* WWSuperRouter.h in Headers */,
 				BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */,
+				BE3AACBB214AAFD30083ABC7 /* WWAppDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8C129D9214937B1006CE62F /* LFXSuperInvoker.m in Sources */,
-				A8C129F0214A2CEE006CE62F /* LFXSuperResult.m in Sources */,
+				BE3AACCF214AB1320083ABC7 /* WWBaseModule.m in Sources */,
+				BE3AACC9214AB1280083ABC7 /* WWModuleManager.m in Sources */,
+				BE3AACBC214AAFD30083ABC7 /* WWAppDelegate.m in Sources */,
+				BE3AACDB214AB4700083ABC7 /* WWSuperRouter.m in Sources */,
+				BE3AACB8214AAF950083ABC7 /* WWWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +283,7 @@
 				SDKROOT = iphoneos;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WWFoundation_Home = "${SRCROOT}/../WWFoundation/WWFoundation/";
 			};
 			name = Debug;
 		};
@@ -290,6 +339,7 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WWFoundation_Home = "${SRCROOT}/../WWFoundation/WWFoundation/";
 			};
 			name = Release;
 		};
@@ -303,6 +353,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "${WWFoundation_Home}/**";
 				INFOPLIST_FILE = WWArchitectures/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -323,6 +374,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "${WWFoundation_Home}/**";
 				INFOPLIST_FILE = WWArchitectures/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

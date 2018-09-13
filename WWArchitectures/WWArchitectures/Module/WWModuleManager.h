@@ -1,19 +1,19 @@
 //
-//  LFXModuleManager.h
-//  LeGaoCommon
+//  WWModuleManager.h
+//  WWArchitectures
 //
-//  Created by 杨善嗣 on 2018/9/13.
-//  Copyright © 2018年 王卫. All rights reserved.
+//  Created by Shines Young on 2018/9/13.
+//  Copyright © 2018年 net.shines. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#import "LFXBaseModule.h"
-
+#import "WWBaseModule.h"
+#import "WWModule.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LFXModuleManager : NSObject
+@interface WWModuleManager : NSObject
 
 /******************************************************************************/
 /**** Service - Register / Unregister / Find Module                        ****/
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)unregisterModuleByName:(NSString *)moduleName;
 
-- (LFXBaseModule *)moduleForName:(NSString *)moduleName;
+- (id<WWModule>)moduleForName:(NSString *)moduleName;
 
 
 
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 /******************************************************************************/
 #pragma mark - Service - Module Cache
 
-- (void)addModuleToCache:(LFXBaseModule *)aModule;
+- (void)addModuleToCache:(id<WWModule>)aModule;
 
 - (void)clearModuleCache;
 

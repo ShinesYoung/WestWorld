@@ -6,8 +6,8 @@
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "LFXBaseModule.h"
+#import "WWBaseModule.h"
 
-@interface ModuleTwo : LFXBaseModule
+@interface ModuleTwo : WWBaseModule
 
 @end

@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A8C129DF21493839006CE62F /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129DE21493839006CE62F /* SomeObject.m */; };
-		A8C129E521493DCD006CE62F /* LFXSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */; };
-		A8C129EC214A2C16006CE62F /* LFXSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129EA214A2C16006CE62F /* LFXSuperResult.m */; };
-		A8C12A01214A6ADB006CE62F /* LFXBaseModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129FB214A6ADA006CE62F /* LFXBaseModule.m */; };
-		A8C12A02214A6ADB006CE62F /* LFXModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129FC214A6ADA006CE62F /* LFXModuleManager.m */; };
-		A8C12A03214A6ADB006CE62F /* LFXSuperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A00214A6ADB006CE62F /* LFXSuperRouter.m */; };
 		A8C12A06214A6B07006CE62F /* ModuleONE.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A05214A6B07006CE62F /* ModuleONE.m */; };
 		A8C12A09214A6B1C006CE62F /* ModuleTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A08214A6B1C006CE62F /* ModuleTwo.m */; };
 		A8C12A0B214A6EC1006CE62F /* lfx_module_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C12A0A214A6EC1006CE62F /* lfx_module_config.plist */; };
+		BE3AACDD214ABA170083ABC7 /* WWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACDC214ABA170083ABC7 /* WWFoundation.framework */; };
+		BE3AACDF214ABA1C0083ABC7 /* WWArchitectures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACDE214ABA1C0083ABC7 /* WWArchitectures.framework */; };
 		BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F42146AEAD003F0F76 /* AppDelegate.m */; };
 		BEACD2F82146AEAD003F0F76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F72146AEAD003F0F76 /* ViewController.m */; };
 		BEACD2FD2146AEAF003F0F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEACD2FC2146AEAF003F0F76 /* Assets.xcassets */; };
@@ -29,21 +26,13 @@
 		A8C129DC2149381D006CE62F /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C129DD21493839006CE62F /* SomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeObject.h; sourceTree = "<group>"; };
 		A8C129DE21493839006CE62F /* SomeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
-		A8C129E321493DCC006CE62F /* LFXSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperInvoker.h; sourceTree = "<group>"; };
-		A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperInvoker.m; sourceTree = "<group>"; };
-		A8C129EA214A2C16006CE62F /* LFXSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperResult.m; sourceTree = "<group>"; };
-		A8C129EB214A2C16006CE62F /* LFXSuperResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperResult.h; sourceTree = "<group>"; };
-		A8C129FB214A6ADA006CE62F /* LFXBaseModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXBaseModule.m; sourceTree = "<group>"; };
-		A8C129FC214A6ADA006CE62F /* LFXModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXModuleManager.m; sourceTree = "<group>"; };
-		A8C129FD214A6ADB006CE62F /* LFXBaseModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXBaseModule.h; sourceTree = "<group>"; };
-		A8C129FE214A6ADB006CE62F /* LFXModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXModuleManager.h; sourceTree = "<group>"; };
-		A8C129FF214A6ADB006CE62F /* LFXSuperRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperRouter.h; sourceTree = "<group>"; };
-		A8C12A00214A6ADB006CE62F /* LFXSuperRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperRouter.m; sourceTree = "<group>"; };
 		A8C12A04214A6B07006CE62F /* ModuleONE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleONE.h; sourceTree = "<group>"; };
 		A8C12A05214A6B07006CE62F /* ModuleONE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleONE.m; sourceTree = "<group>"; };
 		A8C12A07214A6B1C006CE62F /* ModuleTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModuleTwo.h; sourceTree = "<group>"; };
 		A8C12A08214A6B1C006CE62F /* ModuleTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModuleTwo.m; sourceTree = "<group>"; };
 		A8C12A0A214A6EC1006CE62F /* lfx_module_config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = lfx_module_config.plist; sourceTree = "<group>"; };
+		BE3AACDC214ABA170083ABC7 /* WWFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3AACDE214ABA1C0083ABC7 /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEACD2F02146AEAD003F0F76 /* SingleSimpleSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleSimpleSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEACD2F32146AEAD003F0F76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BEACD2F42146AEAD003F0F76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3AACDF214ABA1C0083ABC7 /* WWArchitectures.framework in Frameworks */,
+				BE3AACDD214ABA170083ABC7 /* WWFoundation.framework in Frameworks */,
 				BEACD3102146B246003F0F76 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,16 +96,6 @@
 				BEACD2FC2146AEAF003F0F76 /* Assets.xcassets */,
 				BEACD3012146AEAF003F0F76 /* Info.plist */,
 				BEACD3092146AF85003F0F76 /* LaunchScreen.xib */,
-				A8C129FD214A6ADB006CE62F /* LFXBaseModule.h */,
-				A8C129FB214A6ADA006CE62F /* LFXBaseModule.m */,
-				A8C129FE214A6ADB006CE62F /* LFXModuleManager.h */,
-				A8C129FC214A6ADA006CE62F /* LFXModuleManager.m */,
-				A8C129E321493DCC006CE62F /* LFXSuperInvoker.h */,
-				A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */,
-				A8C129EB214A2C16006CE62F /* LFXSuperResult.h */,
-				A8C129EA214A2C16006CE62F /* LFXSuperResult.m */,
-				A8C129FF214A6ADB006CE62F /* LFXSuperRouter.h */,
-				A8C12A00214A6ADB006CE62F /* LFXSuperRouter.m */,
 				BEACD3022146AEAF003F0F76 /* main.m */,
 				A8C12A04214A6B07006CE62F /* ModuleONE.h */,
 				A8C12A05214A6B07006CE62F /* ModuleONE.m */,
@@ -133,6 +114,8 @@
 		BEACD30E2146B245003F0F76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE3AACDE214ABA1C0083ABC7 /* WWArchitectures.framework */,
+				BE3AACDC214ABA170083ABC7 /* WWFoundation.framework */,
 				A8C129DC2149381D006CE62F /* WWArchitectures.framework */,
 				BEACD30F2146B245003F0F76 /* JavaScriptCore.framework */,
 			);
@@ -210,18 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8C12A02214A6ADB006CE62F /* LFXModuleManager.m in Sources */,
 				BEACD30D2146B093003F0F76 /* RootVC.m in Sources */,
-				A8C129E521493DCD006CE62F /* LFXSuperInvoker.m in Sources */,
 				BEACD2F82146AEAD003F0F76 /* ViewController.m in Sources */,
 				A8C12A06214A6B07006CE62F /* ModuleONE.m in Sources */,
 				A8C129DF21493839006CE62F /* SomeObject.m in Sources */,
 				BEACD3032146AEAF003F0F76 /* main.m in Sources */,
-				A8C12A01214A6ADB006CE62F /* LFXBaseModule.m in Sources */,
-				A8C12A03214A6ADB006CE62F /* LFXSuperRouter.m in Sources */,
 				BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */,
 				A8C12A09214A6B1C006CE62F /* ModuleTwo.m in Sources */,
-				A8C129EC214A2C16006CE62F /* LFXSuperResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +261,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
+				WWFoundation_Home = /Users/WiLL/WestWorld/WWFoundation;
 			};
 			name = Debug;
 		};
@@ -335,6 +315,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
+				WWFoundation_Home = /Users/WiLL/WestWorld/WWFoundation;
 			};
 			name = Release;
 		};
@@ -348,12 +330,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SingleSimpleSample/Libs",
 				);
+				HEADER_SEARCH_PATHS = (
+					"${WWFoundation_Home}/**",
+					"${WWArchitectures_Home}/**",
+				);
 				INFOPLIST_FILE = SingleSimpleSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.SingleSimpleSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
 			};
 			name = Debug;
 		};
@@ -367,12 +354,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SingleSimpleSample/Libs",
 				);
+				HEADER_SEARCH_PATHS = (
+					"${WWFoundation_Home}/**",
+					"${WWArchitectures_Home}/**",
+				);
 				INFOPLIST_FILE = SingleSimpleSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.SingleSimpleSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
+				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
 			};
 			name = Release;
 		};

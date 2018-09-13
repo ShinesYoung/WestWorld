@@ -10,11 +10,10 @@
 
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "SomeObject.h"
-#import "LFXSuperInvoker.h"
-#import "LFXSuperResult.h"
+#import "WWSuperInvoker.h"
 
-#import "LFXBaseModule.h"
-#import "LFXSuperRouter.h"
+#import "WWBaseModule.h"
+#import "WWSuperRouter.h"
 
 @interface RootVC ()
 
@@ -25,64 +24,64 @@
 - (IBAction)onBtnClicked:(id)sender
 {
     
-    LFXSuperResult *result =
-    [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodBool" arguments:nil];
+    WWSuperResult *result =
+    [WWSuperRouter invokeModule:@"SomeObject" service:@"methodBool" arguments:nil];
     NSLog(@"methodBool return : %d", result.boolValue);
 
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodChar"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodChar"
 //                                arguments:nil];
 //    NSLog(@"methodChar return : %c", result.charValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedChar"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedChar"
 //                              arguments:nil];
 //    NSLog(@"methodUnsignedChar return : %c", result.unsignedCharValue);
 //
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodShort"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodShort"
 //                                     arguments:nil];
 //    NSLog(@"methodShort return : %d", result.shortValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedShort"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedShort"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedShort return : %d", result.unsignedShortValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodInt"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodInt"
 //                                     arguments:nil];
 //    NSLog(@"methodInt return : %d", result.intValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInt"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInt"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedInt return : %u", result.unsignedIntValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodLong"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodLong"
 //                                     arguments:nil];
 //    NSLog(@"methodLong return : %ld", result.longValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLong"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLong"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedLong return : %lu", result.unsignedLongValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodLongLong"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodLongLong"
 //                                     arguments:nil];
 //    NSLog(@"methodLongLong return : %lld", result.longLongValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLongLong"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLongLong"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedLongLong return : %llu", result.unsignedLongLongValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodFloat"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodFloat"
 //                                     arguments:nil];
 //    NSLog(@"methodFloat return : %f", result.floatValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodDouble"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodDouble"
 //                                     arguments:nil];
 //    NSLog(@"methodDouble return : %e", result.doubleValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodInteger"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodInteger"
 //                                     arguments:nil];
 //    NSLog(@"methodInteger return : %ld", result.integerValue);
 //
-//    result = [LFXSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInteger"
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInteger"
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedInteger return : %lu", result.unsignedIntegerValue);
 //
@@ -95,7 +94,7 @@
     SEL method = @selector(methodVoidWithString:number:array:dictionary:withBool:withChar:withUChar:withInt:withUInt:withLong:withULong:withInteger:withUInteger:withFloat:withDouble:withObject:);
     NSString *serviceName = NSStringFromSelector(method);
 
-    result = [LFXSuperRouter invokeModule:@"SomeObject" service:serviceName
+    result = [WWSuperRouter invokeModule:@"SomeObject" service:serviceName
                                      arguments:arguments];
     NSLog(@"multiple argument method return : %@", result);
     [result print];
@@ -105,32 +104,32 @@
     [result print];
     
     
-    result = [LFXSuperRouter invokeModule:@"SomeObject"
+    result = [WWSuperRouter invokeModule:@"SomeObject"
                                   service:@"methodPoint"
                                 arguments:nil];
     CGPoint aPoint = result.cgPointValue;
     
-    result = [LFXSuperRouter invokeModule:@"SomeObject"
+    result = [WWSuperRouter invokeModule:@"SomeObject"
                                   service:@"methodSize"
                                 arguments:nil];
     CGSize aSize = result.cgSizeValue;
     
-    result = [LFXSuperRouter invokeModule:@"SomeObject"
+    result = [WWSuperRouter invokeModule:@"SomeObject"
                                   service:@"methodVector"
                                 arguments:nil];
     CGVector aVector = result.cgVectorValue;
     
-    result = [LFXSuperRouter invokeModule:@"SomeObject"
+    result = [WWSuperRouter invokeModule:@"SomeObject"
                                   service:@"methodRect"
                                 arguments:nil];
     CGRect aRect = result.cgRectValue;
     
-    result = [LFXSuperRouter invokeModule:@"SomeObject"
+    result = [WWSuperRouter invokeModule:@"SomeObject"
                                   service:@"methodRange"
                                 arguments:nil];
     NSRange aRange = result.rangeValue;
     
-    result = [LFXSuperRouter invokeModule:@"SomeObject"
+    result = [WWSuperRouter invokeModule:@"SomeObject"
                                   service:@"methodOffset"
                                 arguments:nil];
     UIOffset aOffset = result.offsetValue;
@@ -142,7 +141,7 @@
                        [NSValue valueWithCGRect:aRect],
                        [NSValue valueWithRange:aRange],
                        [NSValue valueWithUIOffset:aOffset]];
-    [LFXSuperRouter invokeModule:@"SomeObject"
+    [WWSuperRouter invokeModule:@"SomeObject"
                          service:@"methodWithSize:point:vector:rect:range:offset:"
                        arguments:argus];
     
@@ -169,8 +168,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    LFXSuperResult *result =
-    [LFXSuperRouter invokeModule:@"ModuleONE" service:@"welcome" arguments:nil];
+    WWSuperResult *result =
+    [WWSuperRouter invokeModule:@"ModuleONE" service:@"welcome" arguments:nil];
     
     NSLog(@"router return = %@", result);
 }

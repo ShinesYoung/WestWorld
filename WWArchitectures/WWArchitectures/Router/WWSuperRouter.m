@@ -1,31 +1,30 @@
 //
-//  LFXSuperRouter.m
-//  LeGaoCommon
+//  WWSuperRouter.h
+//  WWArchitectures
 //
-//  Created by 杨善嗣 on 2018/9/11.
-//  Copyright © 2018年 王卫. All rights reserved.
+//  Created by Shines Young on 2018/9/13.
+//  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "LFXSuperRouter.h"
+#import "WWSuperRouter.h"
 
-#import "LFXModuleManager.h"
-#import "LFXSuperInvoker.h"
+#import "WWModuleManager.h"
+#import "WWSuperInvoker.h"
 
 
-@implementation LFXSuperRouter
+@implementation WWSuperRouter
 
-+ (LFXSuperResult *)invokeModule:(NSString *)moduleName
++ (WWSuperResult *)invokeModule:(NSString *)moduleName
                          service:(NSString *)serviceName
                        arguments:(NSArray *)arguments
 {
-    LFXModuleManager *moduleMgr = [LFXModuleManager defaultManager];
+    WWModuleManager *moduleMgr = [WWModuleManager defaultManager];
     
-    LFXBaseModule *aModule = [moduleMgr moduleForName:moduleName];
+    id<WWModule> aModule = [moduleMgr moduleForName:moduleName];
     if (aModule == nil)
     {
         NSString *reason
-        = [NSString stringWithFormat:@"Module Not Found : '%@'",
-           NSStringFromClass([aModule class])];
+        = [NSString stringWithFormat:@"Module Not Found : '%@'", moduleName];
         [self showAlertWithError:reason];
         return nil;
     }
@@ -42,8 +41,8 @@
         return nil;
     }
     
-    LFXSuperInvoker *invoker = [LFXSuperInvoker instance];
-    LFXSuperResult *result = [invoker callInvocationOfInstance:aModule
+    WWSuperInvoker *invoker = [WWSuperInvoker instance];
+    WWSuperResult *result = [invoker callInvocationOfInstance:aModule
                                                         method:aAction
                                                      arguments:arguments];
     

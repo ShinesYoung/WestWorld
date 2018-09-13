@@ -1,21 +1,21 @@
 //
-//  LFXBaseModule.m
-//  LeGaoCommon
+//  WWBaseModule.m
+//  WWArchitectures
 //
-//  Created by 杨善嗣 on 2018/9/13.
-//  Copyright © 2018年 王卫. All rights reserved.
+//  Created by Shines Young on 2018/9/13.
+//  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "LFXBaseModule.h"
+#import "WWBaseModule.h"
 
-@implementation LFXBaseModule
+@implementation WWBaseModule
 
 - (NSString *)moduleName
 {
     NSString *reaseon = [NSString stringWithFormat:@"Sub class unimplemented "
                          "the class method -[%@ moduleName].",
                          NSStringFromClass([self class])];
-    @throw [NSException exceptionWithName:@"LFX Module Implement Error"
+    @throw [NSException exceptionWithName:@"WW Module Implement Error"
                                    reason:reaseon
                                  userInfo:nil];
     return @"LFXBaseModule";

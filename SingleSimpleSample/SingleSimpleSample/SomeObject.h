@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "LFXBaseModule.h"
+#import "WWBaseModule.h"
 
 
-@interface SomeObject : LFXBaseModule
+@interface SomeObject : WWBaseModule
 
 
 - (id)methodObject;

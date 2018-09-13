@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "LFXBaseModule.h"
+#import "WWBaseModule.h"
 
-@interface ModuleONE : LFXBaseModule
+@interface ModuleONE : WWBaseModule
 
 - (NSString *)method1WithCGSize:(CGSize)size
                      withOption:(NSStringDrawingOptions)option

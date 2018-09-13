@@ -3,14 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3AACAC214AAC500083ABC7 /* WWSuperInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACAD214AAC500083ABC7 /* WWSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */; };
+		BE3AACAE214AAC500083ABC7 /* WWSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */; };
+		BE3AACAF214AAC500083ABC7 /* WWSuperResult.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACAB214AAC500083ABC7 /* WWSuperResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACB3214AACB80083ABC7 /* NSString+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACB1214AACB80083ABC7 /* NSString+Utils.h */; };
+		BE3AACB4214AACB80083ABC7 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACB2214AACB80083ABC7 /* NSString+Utils.m */; };
+		BE3AACC2214AB0EA0083ABC7 /* NSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACC0214AB0EA0083ABC7 /* NSArray+Utils.h */; };
+		BE3AACC3214AB0EA0083ABC7 /* NSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACC1214AB0EA0083ABC7 /* NSArray+Utils.m */; };
+		BE3AACC6214AB0FF0083ABC7 /* NSDictionary+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACC4214AB0FF0083ABC7 /* NSDictionary+Utils.h */; };
+		BE3AACC7214AB0FF0083ABC7 /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACC5214AB0FF0083ABC7 /* NSDictionary+Utils.m */; };
 		BE45B14B21480F0A000CD7AB /* WWFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B14921480F0A000CD7AB /* WWFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSuperInvoker.h; sourceTree = "<group>"; };
+		BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSuperResult.m; sourceTree = "<group>"; };
+		BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSuperInvoker.m; sourceTree = "<group>"; };
+		BE3AACAB214AAC500083ABC7 /* WWSuperResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSuperResult.h; sourceTree = "<group>"; };
+		BE3AACB1214AACB80083ABC7 /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		BE3AACB2214AACB80083ABC7 /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		BE3AACC0214AB0EA0083ABC7 /* NSArray+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Utils.h"; sourceTree = "<group>"; };
+		BE3AACC1214AB0EA0083ABC7 /* NSArray+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Utils.m"; sourceTree = "<group>"; };
+		BE3AACC4214AB0FF0083ABC7 /* NSDictionary+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
+		BE3AACC5214AB0FF0083ABC7 /* NSDictionary+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utils.m"; sourceTree = "<group>"; };
 		BE45B14621480F0A000CD7AB /* WWFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B14921480F0A000CD7AB /* WWFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWFoundation.h; sourceTree = "<group>"; };
 		BE45B14A21480F0A000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +47,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE3AACA6214AAC500083ABC7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACBF214AB0D80083ABC7 /* NSArray */,
+				BE3AACBE214AB0D80083ABC7 /* NSDictionary */,
+				BE3AACB0214AAC770083ABC7 /* NSString */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		BE3AACA7214AAC500083ABC7 /* Invocations */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */,
+				BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */,
+				BE3AACAB214AAC500083ABC7 /* WWSuperResult.h */,
+				BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */,
+			);
+			path = Invocations;
+			sourceTree = "<group>";
+		};
+		BE3AACB0214AAC770083ABC7 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACB1214AACB80083ABC7 /* NSString+Utils.h */,
+				BE3AACB2214AACB80083ABC7 /* NSString+Utils.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		BE3AACBE214AB0D80083ABC7 /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACC4214AB0FF0083ABC7 /* NSDictionary+Utils.h */,
+				BE3AACC5214AB0FF0083ABC7 /* NSDictionary+Utils.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		BE3AACBF214AB0D80083ABC7 /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				BE3AACC0214AB0EA0083ABC7 /* NSArray+Utils.h */,
+				BE3AACC1214AB0EA0083ABC7 /* NSArray+Utils.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
 		BE45B13C21480F0A000CD7AB = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +114,8 @@
 		BE45B14821480F0A000CD7AB /* WWFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				BE3AACA6214AAC500083ABC7 /* Categories */,
+				BE3AACA7214AAC500083ABC7 /* Invocations */,
 				BE45B14921480F0A000CD7AB /* WWFoundation.h */,
 				BE45B14A21480F0A000CD7AB /* Info.plist */,
 			);
@@ -60,6 +130,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE45B14B21480F0A000CD7AB /* WWFoundation.h in Headers */,
+				BE3AACAF214AAC500083ABC7 /* WWSuperResult.h in Headers */,
+				BE3AACAC214AAC500083ABC7 /* WWSuperInvoker.h in Headers */,
+				BE3AACB3214AACB80083ABC7 /* NSString+Utils.h in Headers */,
+				BE3AACC6214AB0FF0083ABC7 /* NSDictionary+Utils.h in Headers */,
+				BE3AACC2214AB0EA0083ABC7 /* NSArray+Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3AACC7214AB0FF0083ABC7 /* NSDictionary+Utils.m in Sources */,
+				BE3AACAE214AAC500083ABC7 /* WWSuperInvoker.m in Sources */,
+				BE3AACB4214AACB80083ABC7 /* NSString+Utils.m in Sources */,
+				BE3AACC3214AB0EA0083ABC7 /* NSArray+Utils.m in Sources */,
+				BE3AACAD214AAC500083ABC7 /* WWSuperResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
