@@ -9,6 +9,9 @@
 #import "RootVC.h"
 
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "SomeObject.h"
+#import "LFXSuperInvoker.h"
+#import "LFXSuperResult.h"
 
 @interface RootVC ()
 
@@ -16,14 +19,93 @@
 
 @implementation RootVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    JSContext *jsContext = [[JSContext alloc] init];
-    JSValue *jsValue = [JSValue valueWithNewObjectInContext:jsContext];
+    SomeObject *someObj = [[SomeObject alloc] init];
     
-//    [jsContext evaluateScript:<#(NSString *)#>];
+    LFXSuperInvoker *invoker = [LFXSuperInvoker instance];
+    LFXSuperResult *result = nil;
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodBool)
+                                     arguments:nil];
+    NSLog(@"methodBool return : %d", result.boolValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodChar)
+                                     arguments:nil];
+    NSLog(@"methodChar return : %c", result.charValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodUnsignedChar)
+                              arguments:nil];
+    NSLog(@"methodUnsignedChar return : %c", result.unsignedCharValue);
+
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodShort)
+                                     arguments:nil];
+    NSLog(@"methodShort return : %d", result.shortValue);
+
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodUnsignedShort)
+                                     arguments:nil];
+    NSLog(@"methodUnsignedShort return : %d", result.unsignedShortValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodInt)
+                                     arguments:nil];
+    NSLog(@"methodInt return : %d", result.intValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodUnsignedInt)
+                                     arguments:nil];
+    NSLog(@"methodUnsignedInt return : %u", result.unsignedIntValue);
+
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodLong)
+                                     arguments:nil];
+    NSLog(@"methodLong return : %ld", result.longValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodUnsignedLong)
+                                     arguments:nil];
+    NSLog(@"methodUnsignedLong return : %lu", result.unsignedLongValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodLongLong)
+                                     arguments:nil];
+    NSLog(@"methodLongLong return : %lld", result.longLongValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodUnsignedLongLong)
+                                     arguments:nil];
+    NSLog(@"methodUnsignedLongLong return : %llu", result.unsignedLongLongValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodFloat)
+                                     arguments:nil];
+    NSLog(@"methodFloat return : %f", result.floatValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodDouble)
+                                     arguments:nil];
+    NSLog(@"methodDouble return : %e", result.doubleValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodInteger)
+                                     arguments:nil];
+    NSLog(@"methodInteger return : %ld", result.integerValue);
+    
+    result = [invoker callInvocationOfInstance:someObj
+                                        method:@selector(methodUnsignedInteger)
+                                     arguments:nil];
+    NSLog(@"methodUnsignedInteger return : %lu", result.unsignedIntegerValue);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

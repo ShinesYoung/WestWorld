@@ -3,14 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8C129D9214937B1006CE62F /* LFXSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129D6214937B1006CE62F /* LFXSuperInvoker.m */; };
+		A8C129DA214937B1006CE62F /* LFXSuperInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C129D7214937B1006CE62F /* LFXSuperInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8C129EF214A2CEE006CE62F /* LFXSuperResult.h in Headers */ = {isa = PBXBuildFile; fileRef = A8C129ED214A2CEE006CE62F /* LFXSuperResult.h */; };
+		A8C129F0214A2CEE006CE62F /* LFXSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129EE214A2CEE006CE62F /* LFXSuperResult.m */; };
 		BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B173214810D3000CD7AB /* WWArchitectures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8C129D6214937B1006CE62F /* LFXSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperInvoker.m; sourceTree = "<group>"; };
+		A8C129D7214937B1006CE62F /* LFXSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperInvoker.h; sourceTree = "<group>"; };
+		A8C129ED214A2CEE006CE62F /* LFXSuperResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperResult.h; sourceTree = "<group>"; };
+		A8C129EE214A2CEE006CE62F /* LFXSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperResult.m; sourceTree = "<group>"; };
 		BE45B170214810D3000CD7AB /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B173214810D3000CD7AB /* WWArchitectures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWArchitectures.h; sourceTree = "<group>"; };
 		BE45B174214810D3000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +35,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8C129D4214937B1006CE62F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A8C129D5214937B1006CE62F /* DynamicInvoke */ = {
+			isa = PBXGroup;
+			children = (
+				A8C129D7214937B1006CE62F /* LFXSuperInvoker.h */,
+				A8C129D6214937B1006CE62F /* LFXSuperInvoker.m */,
+				A8C129ED214A2CEE006CE62F /* LFXSuperResult.h */,
+				A8C129EE214A2CEE006CE62F /* LFXSuperResult.m */,
+			);
+			path = DynamicInvoke;
+			sourceTree = "<group>";
+		};
+		A8C129D8214937B1006CE62F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		BE45B166214810D3000CD7AB = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +79,9 @@
 		BE45B172214810D3000CD7AB /* WWArchitectures */ = {
 			isa = PBXGroup;
 			children = (
+				A8C129D8214937B1006CE62F /* AppDelegate */,
+				A8C129D4214937B1006CE62F /* Components */,
+				A8C129D5214937B1006CE62F /* DynamicInvoke */,
 				BE45B173214810D3000CD7AB /* WWArchitectures.h */,
 				BE45B174214810D3000CD7AB /* Info.plist */,
 			);
@@ -59,6 +95,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C129DA214937B1006CE62F /* LFXSuperInvoker.h in Headers */,
+				A8C129EF214A2CEE006CE62F /* LFXSuperResult.h in Headers */,
 				BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,11 +133,12 @@
 				TargetAttributes = {
 					BE45B16F214810D3000CD7AB = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = BE45B16A214810D3000CD7AB /* Build configuration list for PBXProject "WWArchitectures" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -130,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C129D9214937B1006CE62F /* LFXSuperInvoker.m in Sources */,
+				A8C129F0214A2CEE006CE62F /* LFXSuperResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,11 +305,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWArchitectures/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.WWArchitectures;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -288,11 +325,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWArchitectures/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.WWArchitectures;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

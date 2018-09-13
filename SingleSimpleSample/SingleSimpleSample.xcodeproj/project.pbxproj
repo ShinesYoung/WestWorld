@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8C129DF21493839006CE62F /* SomeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129DE21493839006CE62F /* SomeObject.m */; };
+		A8C129E521493DCD006CE62F /* LFXSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */; };
+		A8C129EC214A2C16006CE62F /* LFXSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C129EA214A2C16006CE62F /* LFXSuperResult.m */; };
 		BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F42146AEAD003F0F76 /* AppDelegate.m */; };
 		BEACD2F82146AEAD003F0F76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F72146AEAD003F0F76 /* ViewController.m */; };
 		BEACD2FD2146AEAF003F0F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEACD2FC2146AEAF003F0F76 /* Assets.xcassets */; };
@@ -17,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8C129DC2149381D006CE62F /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C129DD21493839006CE62F /* SomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeObject.h; sourceTree = "<group>"; };
+		A8C129DE21493839006CE62F /* SomeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeObject.m; sourceTree = "<group>"; };
+		A8C129E321493DCC006CE62F /* LFXSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperInvoker.h; sourceTree = "<group>"; };
+		A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperInvoker.m; sourceTree = "<group>"; };
+		A8C129EA214A2C16006CE62F /* LFXSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFXSuperResult.m; sourceTree = "<group>"; };
+		A8C129EB214A2C16006CE62F /* LFXSuperResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFXSuperResult.h; sourceTree = "<group>"; };
 		BEACD2F02146AEAD003F0F76 /* SingleSimpleSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingleSimpleSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEACD2F32146AEAD003F0F76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BEACD2F42146AEAD003F0F76 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,9 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8C129E021493BBA006CE62F /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libs;
+			path = SingleSimpleSample/Libs;
+			sourceTree = "<group>";
+		};
 		BEACD2E72146AEAD003F0F76 = {
 			isa = PBXGroup;
 			children = (
+				A8C129E021493BBA006CE62F /* Libs */,
 				BEACD30E2146B245003F0F76 /* Frameworks */,
 				BEACD2F12146AEAD003F0F76 /* Products */,
 				BEACD2F22146AEAD003F0F76 /* SingleSimpleSample */,
@@ -65,14 +84,20 @@
 			children = (
 				BEACD2F32146AEAD003F0F76 /* AppDelegate.h */,
 				BEACD2F42146AEAD003F0F76 /* AppDelegate.m */,
-				BEACD2F62146AEAD003F0F76 /* ViewController.h */,
-				BEACD2F72146AEAD003F0F76 /* ViewController.m */,
 				BEACD2FC2146AEAF003F0F76 /* Assets.xcassets */,
 				BEACD3012146AEAF003F0F76 /* Info.plist */,
-				BEACD3022146AEAF003F0F76 /* main.m */,
 				BEACD3092146AF85003F0F76 /* LaunchScreen.xib */,
+				A8C129E321493DCC006CE62F /* LFXSuperInvoker.h */,
+				A8C129E421493DCD006CE62F /* LFXSuperInvoker.m */,
+				A8C129EB214A2C16006CE62F /* LFXSuperResult.h */,
+				A8C129EA214A2C16006CE62F /* LFXSuperResult.m */,
+				BEACD3022146AEAF003F0F76 /* main.m */,
 				BEACD30B2146B093003F0F76 /* RootVC.h */,
 				BEACD30C2146B093003F0F76 /* RootVC.m */,
+				A8C129DD21493839006CE62F /* SomeObject.h */,
+				A8C129DE21493839006CE62F /* SomeObject.m */,
+				BEACD2F62146AEAD003F0F76 /* ViewController.h */,
+				BEACD2F72146AEAD003F0F76 /* ViewController.m */,
 			);
 			path = SingleSimpleSample;
 			sourceTree = "<group>";
@@ -80,6 +105,7 @@
 		BEACD30E2146B245003F0F76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8C129DC2149381D006CE62F /* WWArchitectures.framework */,
 				BEACD30F2146B245003F0F76 /* JavaScriptCore.framework */,
 			);
 			name = Frameworks;
@@ -116,11 +142,12 @@
 				TargetAttributes = {
 					BEACD2EF2146AEAD003F0F76 = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = BEACD2EB2146AEAD003F0F76 /* Build configuration list for PBXProject "SingleSimpleSample" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -155,9 +182,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEACD30D2146B093003F0F76 /* RootVC.m in Sources */,
+				A8C129E521493DCD006CE62F /* LFXSuperInvoker.m in Sources */,
 				BEACD2F82146AEAD003F0F76 /* ViewController.m in Sources */,
+				A8C129DF21493839006CE62F /* SomeObject.m in Sources */,
 				BEACD3032146AEAF003F0F76 /* main.m in Sources */,
 				BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */,
+				A8C129EC214A2C16006CE62F /* LFXSuperResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,12 +310,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3J97UM237A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SingleSimpleSample/Libs",
+				);
 				INFOPLIST_FILE = SingleSimpleSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.SingleSimpleSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -298,12 +329,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3J97UM237A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SingleSimpleSample/Libs",
+				);
 				INFOPLIST_FILE = SingleSimpleSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.SingleSimpleSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
