@@ -14,6 +14,7 @@
 
 typedef void(^handleBlock) (BOOL result, NSInteger returnCode, NSString *message);
 typedef BOOL(^handleBlock2)(BOOL result, NSInteger returnCode, NSString *message);
+typedef NSString *(^handleBlock3)(BOOL result, NSInteger returnCode, NSString *message);
 
 @interface SomeObject : WWBaseModule
 

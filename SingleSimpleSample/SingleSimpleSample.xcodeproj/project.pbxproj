@@ -11,6 +11,10 @@
 		A8C12A06214A6B07006CE62F /* ModuleONE.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A05214A6B07006CE62F /* ModuleONE.m */; };
 		A8C12A09214A6B1C006CE62F /* ModuleTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = A8C12A08214A6B1C006CE62F /* ModuleTwo.m */; };
 		A8C12A0B214A6EC1006CE62F /* lfx_module_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8C12A0A214A6EC1006CE62F /* lfx_module_config.plist */; };
+		A8E29A0A214B7FE8007059EA /* WWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACDC214ABA170083ABC7 /* WWFoundation.framework */; };
+		A8E29A0B214B7FE8007059EA /* WWFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACDC214ABA170083ABC7 /* WWFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A8E29A0D214B7FEE007059EA /* WWArchitectures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C129DC2149381D006CE62F /* WWArchitectures.framework */; };
+		A8E29A0E214B7FEE007059EA /* WWArchitectures.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8C129DC2149381D006CE62F /* WWArchitectures.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE3AACDD214ABA170083ABC7 /* WWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACDC214ABA170083ABC7 /* WWFoundation.framework */; };
 		BE3AACDF214ABA1C0083ABC7 /* WWArchitectures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACDE214ABA1C0083ABC7 /* WWArchitectures.framework */; };
 		BEACD2F52146AEAD003F0F76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD2F42146AEAD003F0F76 /* AppDelegate.m */; };
@@ -21,6 +25,30 @@
 		BEACD30D2146B093003F0F76 /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BEACD30C2146B093003F0F76 /* RootVC.m */; };
 		BEACD3102146B246003F0F76 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEACD30F2146B245003F0F76 /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A8E29A07214B7B47007059EA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E29A0C214B7FE8007059EA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A8E29A0B214B7FE8007059EA /* WWFoundation.framework in Embed Frameworks */,
+				A8E29A0E214B7FEE007059EA /* WWArchitectures.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A8C129DC2149381D006CE62F /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,9 +80,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE3AACDF214ABA1C0083ABC7 /* WWArchitectures.framework in Frameworks */,
-				BE3AACDD214ABA170083ABC7 /* WWFoundation.framework in Frameworks */,
 				BEACD3102146B246003F0F76 /* JavaScriptCore.framework in Frameworks */,
+				BE3AACDD214ABA170083ABC7 /* WWFoundation.framework in Frameworks */,
+				BE3AACDF214ABA1C0083ABC7 /* WWArchitectures.framework in Frameworks */,
+				A8E29A0A214B7FE8007059EA /* WWFoundation.framework in Frameworks */,
+				A8E29A0D214B7FEE007059EA /* WWArchitectures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +162,8 @@
 				BEACD2EC2146AEAD003F0F76 /* Sources */,
 				BEACD2ED2146AEAD003F0F76 /* Frameworks */,
 				BEACD2EE2146AEAD003F0F76 /* Resources */,
+				A8E29A07214B7B47007059EA /* CopyFiles */,
+				A8E29A0C214B7FE8007059EA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
