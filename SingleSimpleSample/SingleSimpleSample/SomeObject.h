@@ -11,6 +11,10 @@
 #import "WWBaseModule.h"
 
 
+
+typedef void(^handleBlock) (BOOL result, NSInteger returnCode, NSString *message);
+typedef BOOL(^handleBlock2)(BOOL result, NSInteger returnCode, NSString *message);
+
 @interface SomeObject : WWBaseModule
 
 
@@ -61,5 +65,6 @@
 - (void)methodWithSize:(CGSize)size point:(CGPoint)point vector:(CGVector)vector
                   rect:(CGRect)rect range:(NSRange)range offset:(UIOffset)offset;
 
+- (handleBlock)methodBlock:(handleBlock2)blockArgument;
 
 @end

@@ -278,7 +278,9 @@
     NSUInteger resultLength = aInvocation.methodSignature.methodReturnLength;
     const char *retTypeChar = aInvocation.methodSignature.methodReturnType;
     
-    if (strcmp(retTypeChar, @encode(id)) == 0) {
+    if (strcmp(retTypeChar, @encode(id)) == 0 ||
+        strcmp(retTypeChar, "@?") == 0)
+    {
         void *result = (void *)malloc(resultLength);
         [aInvocation getReturnValue:&result];
         aResult.objectValue = (__bridge id)result;

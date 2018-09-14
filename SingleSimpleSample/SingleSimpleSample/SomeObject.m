@@ -9,6 +9,9 @@
 #import "SomeObject.h"
 #import <CoreGraphics/CoreGraphics.h>
 
+
+
+
 @implementation SomeObject
 
 - (NSString *)moduleName
@@ -180,6 +183,22 @@
     NSLog(@"get offset:%@", NSStringFromUIOffset(offset));
 
 
+}
+
+
+- (handleBlock)methodBlock:(handleBlock2)blockArgument
+{
+    BOOL resultOfBlock = blockArgument(NO,9999,@"Some error.");
+    NSLog(@"handleBlock2 result = %d", resultOfBlock);
+    
+    handleBlock aBlock = ^(BOOL result,
+                           NSInteger returnCode,
+                           NSString *message)
+    {
+        NSLog(@"handle block is calling, %d-%ld-%@",
+              result, returnCode, message);
+    };
+    return aBlock;
 }
 
 @end

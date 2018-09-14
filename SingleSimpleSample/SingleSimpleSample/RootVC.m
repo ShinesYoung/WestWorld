@@ -24,9 +24,9 @@
 - (IBAction)onBtnClicked:(id)sender
 {
     
-    WWSuperResult *result =
-    [WWSuperRouter invokeModule:@"SomeObject" service:@"methodBool" arguments:nil];
-    NSLog(@"methodBool return : %d", result.boolValue);
+    WWSuperResult *result = nil;
+//    [WWSuperRouter invokeModule:@"SomeObject" service:@"methodBool" arguments:nil];
+//    NSLog(@"methodBool return : %d", result.boolValue);
 
 //    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodChar"
 //                                arguments:nil];
@@ -85,66 +85,83 @@
 //                                     arguments:nil];
 //    NSLog(@"methodUnsignedInteger return : %lu", result.unsignedIntegerValue);
 //
-    NSArray *arguments
-    = @[@"This is a String", @(999999.999999), @[@"str1", @"str2", @"str3"],
-        @{@"k1":@"v1", @"k2":@"v2"}, @(YES), @('X'), @('W'), @(-555), @555,
-        @(-1234567890), @(1234567890), @(-1234567890), @(1234567890),
-        @(12345.6789f), @(123456789.0), [NSNull null] ];
-
-    SEL method = @selector(methodVoidWithString:number:array:dictionary:withBool:withChar:withUChar:withInt:withUInt:withLong:withULong:withInteger:withUInteger:withFloat:withDouble:withObject:);
-    NSString *serviceName = NSStringFromSelector(method);
-
-    result = [WWSuperRouter invokeModule:@"SomeObject" service:serviceName
-                                     arguments:arguments];
-    NSLog(@"multiple argument method return : %@", result);
-    [result print];
-
-
-    NSLog(@"method1 return : %@", result.objectValue);
-    [result print];
+//    NSArray *arguments
+//    = @[@"This is a String", @(999999.999999), @[@"str1", @"str2", @"str3"],
+//        @{@"k1":@"v1", @"k2":@"v2"}, @(YES), @('X'), @('W'), @(-555), @555,
+//        @(-1234567890), @(1234567890), @(-1234567890), @(1234567890),
+//        @(12345.6789f), @(123456789.0), [NSNull null] ];
+//
+//    SEL method = @selector(methodVoidWithString:number:array:dictionary:withBool:withChar:withUChar:withInt:withUInt:withLong:withULong:withInteger:withUInteger:withFloat:withDouble:withObject:);
+//    NSString *serviceName = NSStringFromSelector(method);
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject" service:serviceName
+//                                     arguments:arguments];
+//    NSLog(@"multiple argument method return : %@", result);
+//    [result print];
+//
+//
+//    NSLog(@"method1 return : %@", result.objectValue);
+//    [result print];
+//
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject"
+//                                  service:@"methodPoint"
+//                                arguments:nil];
+//    CGPoint aPoint = result.cgPointValue;
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject"
+//                                  service:@"methodSize"
+//                                arguments:nil];
+//    CGSize aSize = result.cgSizeValue;
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject"
+//                                  service:@"methodVector"
+//                                arguments:nil];
+//    CGVector aVector = result.cgVectorValue;
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject"
+//                                  service:@"methodRect"
+//                                arguments:nil];
+//    CGRect aRect = result.cgRectValue;
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject"
+//                                  service:@"methodRange"
+//                                arguments:nil];
+//    NSRange aRange = result.rangeValue;
+//
+//    result = [WWSuperRouter invokeModule:@"SomeObject"
+//                                  service:@"methodOffset"
+//                                arguments:nil];
+//    UIOffset aOffset = result.offsetValue;
+//
+//
+//    NSArray *argus = @[[NSValue valueWithCGSize:aSize],
+//                       [NSValue valueWithCGPoint:aPoint],
+//                       [NSValue valueWithCGVector:aVector],
+//                       [NSValue valueWithCGRect:aRect],
+//                       [NSValue valueWithRange:aRange],
+//                       [NSValue valueWithUIOffset:aOffset]];
+//    [WWSuperRouter invokeModule:@"SomeObject"
+//                         service:@"methodWithSize:point:vector:rect:range:offset:"
+//                       arguments:argus];
     
+    handleBlock2 blockArg = ^BOOL(BOOL result,
+                                      NSInteger returnCode,
+                                      NSString *message)
+    {
+        NSLog(@"handleBlock2 called %d-%ld-%@", result, returnCode, message);
+        return YES;
+    };
     
-    result = [WWSuperRouter invokeModule:@"SomeObject"
-                                  service:@"methodPoint"
-                                arguments:nil];
-    CGPoint aPoint = result.cgPointValue;
+    NSArray *arguments = @[blockArg];
     
-    result = [WWSuperRouter invokeModule:@"SomeObject"
-                                  service:@"methodSize"
-                                arguments:nil];
-    CGSize aSize = result.cgSizeValue;
+    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodBlock:"
+                               arguments:arguments];
     
-    result = [WWSuperRouter invokeModule:@"SomeObject"
-                                  service:@"methodVector"
-                                arguments:nil];
-    CGVector aVector = result.cgVectorValue;
-    
-    result = [WWSuperRouter invokeModule:@"SomeObject"
-                                  service:@"methodRect"
-                                arguments:nil];
-    CGRect aRect = result.cgRectValue;
-    
-    result = [WWSuperRouter invokeModule:@"SomeObject"
-                                  service:@"methodRange"
-                                arguments:nil];
-    NSRange aRange = result.rangeValue;
-    
-    result = [WWSuperRouter invokeModule:@"SomeObject"
-                                  service:@"methodOffset"
-                                arguments:nil];
-    UIOffset aOffset = result.offsetValue;
-    
-    
-    NSArray *argus = @[[NSValue valueWithCGSize:aSize],
-                       [NSValue valueWithCGPoint:aPoint],
-                       [NSValue valueWithCGVector:aVector],
-                       [NSValue valueWithCGRect:aRect],
-                       [NSValue valueWithRange:aRange],
-                       [NSValue valueWithUIOffset:aOffset]];
-    [WWSuperRouter invokeModule:@"SomeObject"
-                         service:@"methodWithSize:point:vector:rect:range:offset:"
-                       arguments:argus];
-    
+    handleBlock aBlock = (handleBlock) result.objectValue;
+    if (aBlock) {
+        aBlock (YES,0,@"OK");
+    }
 }
 
 
@@ -168,10 +185,10 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    WWSuperResult *result =
-    [WWSuperRouter invokeModule:@"ModuleONE" service:@"welcome" arguments:nil];
-    
-    NSLog(@"router return = %@", result);
+//    WWSuperResult *result =
+//    [WWSuperRouter invokeModule:@"ModuleONE" service:@"welcome" arguments:nil];
+//    
+//    NSLog(@"router return = %@", result);
 }
 
 - (void)didReceiveMemoryWarning {

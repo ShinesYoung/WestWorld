@@ -261,8 +261,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
-				WWFoundation_Home = /Users/WiLL/WestWorld/WWFoundation;
+				WWArchitectures_Home = "${SRCROOT}/../WWArchitectures/WWArchitectures/";
+				WWFoundation_Home = "${SRCROOT}/../WWFoundation/WWFoundation/";
 			};
 			name = Debug;
 		};
@@ -315,8 +315,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
-				WWFoundation_Home = /Users/WiLL/WestWorld/WWFoundation;
+				WWArchitectures_Home = "${SRCROOT}/../WWArchitectures/WWArchitectures/";
+				WWFoundation_Home = "${SRCROOT}/../WWFoundation/WWFoundation/";
 			};
 			name = Release;
 		};
@@ -340,7 +340,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.SingleSimpleSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
 			};
 			name = Debug;
 		};
@@ -364,7 +363,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.SingleSimpleSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
-				WWArchitectures_Home = /Users/WiLL/WestWorld/WWArchitectures;
 			};
 			name = Release;
 		};

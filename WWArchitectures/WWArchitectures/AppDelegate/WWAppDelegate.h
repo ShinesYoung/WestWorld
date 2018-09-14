@@ -11,7 +11,7 @@
 
 @interface WWAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (nonatomic, strong) UIWindow;
+@property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UIViewController *rootVC;
 
 @end
