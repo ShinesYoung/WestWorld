@@ -3,17 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		BE45B16021481069000CD7AB /* WWSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B15E21481069000CD7AB /* WWSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6444D3214C0A6E004264CE /* AsymmetricUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444C5214C0A6D004264CE /* AsymmetricUtils.m */; };
+		BE6444D4214C0A6E004264CE /* SymmetricUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444C6214C0A6D004264CE /* SymmetricUtils.m */; };
+		BE6444D5214C0A6E004264CE /* SymmetricUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444C7214C0A6D004264CE /* SymmetricUtils.h */; };
+		BE6444D6214C0A6E004264CE /* AsymmetricUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444C8214C0A6D004264CE /* AsymmetricUtils.h */; };
+		BE6444D7214C0A6E004264CE /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CA214C0A6D004264CE /* GTMBase64.h */; };
+		BE6444D8214C0A6E004264CE /* EncodeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CB214C0A6D004264CE /* EncodeUtils.h */; };
+		BE6444D9214C0A6E004264CE /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CC214C0A6D004264CE /* GTMDefines.h */; };
+		BE6444DA214C0A6E004264CE /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444CD214C0A6D004264CE /* GTMBase64.m */; };
+		BE6444DB214C0A6E004264CE /* EncodeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444CE214C0A6D004264CE /* EncodeUtils.m */; };
+		BE6444DC214C0A6E004264CE /* DigestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444D1214C0A6D004264CE /* DigestUtils.m */; };
+		BE6444DD214C0A6E004264CE /* DigestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444D2214C0A6D004264CE /* DigestUtils.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE45B15B21481069000CD7AB /* WWSecurity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWSecurity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B15E21481069000CD7AB /* WWSecurity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWSecurity.h; sourceTree = "<group>"; };
 		BE45B15F21481069000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6444C5214C0A6D004264CE /* AsymmetricUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsymmetricUtils.m; sourceTree = "<group>"; };
+		BE6444C6214C0A6D004264CE /* SymmetricUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymmetricUtils.m; sourceTree = "<group>"; };
+		BE6444C7214C0A6D004264CE /* SymmetricUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymmetricUtils.h; sourceTree = "<group>"; };
+		BE6444C8214C0A6D004264CE /* AsymmetricUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsymmetricUtils.h; sourceTree = "<group>"; };
+		BE6444CA214C0A6D004264CE /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		BE6444CB214C0A6D004264CE /* EncodeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodeUtils.h; sourceTree = "<group>"; };
+		BE6444CC214C0A6D004264CE /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		BE6444CD214C0A6D004264CE /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		BE6444CE214C0A6D004264CE /* EncodeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodeUtils.m; sourceTree = "<group>"; };
+		BE6444D1214C0A6D004264CE /* DigestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigestUtils.m; sourceTree = "<group>"; };
+		BE6444D2214C0A6D004264CE /* DigestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigestUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +68,53 @@
 		BE45B15D21481069000CD7AB /* WWSecurity */ = {
 			isa = PBXGroup;
 			children = (
-				BE45B15E21481069000CD7AB /* WWSecurity.h */,
+				BE6444C9214C0A6D004264CE /* Encoding */,
+				BE6444C4214C0A6D004264CE /* Encryption */,
+				BE6444D0214C0A6D004264CE /* Hashing */,
 				BE45B15F21481069000CD7AB /* Info.plist */,
+				BE6444CF214C0A6D004264CE /* Randomizer */,
+				BE45B15E21481069000CD7AB /* WWSecurity.h */,
 			);
 			path = WWSecurity;
+			sourceTree = "<group>";
+		};
+		BE6444C4214C0A6D004264CE /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				BE6444C8214C0A6D004264CE /* AsymmetricUtils.h */,
+				BE6444C5214C0A6D004264CE /* AsymmetricUtils.m */,
+				BE6444C7214C0A6D004264CE /* SymmetricUtils.h */,
+				BE6444C6214C0A6D004264CE /* SymmetricUtils.m */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
+		BE6444C9214C0A6D004264CE /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				BE6444CB214C0A6D004264CE /* EncodeUtils.h */,
+				BE6444CE214C0A6D004264CE /* EncodeUtils.m */,
+				BE6444CA214C0A6D004264CE /* GTMBase64.h */,
+				BE6444CD214C0A6D004264CE /* GTMBase64.m */,
+				BE6444CC214C0A6D004264CE /* GTMDefines.h */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		BE6444CF214C0A6D004264CE /* Randomizer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Randomizer;
+			sourceTree = "<group>";
+		};
+		BE6444D0214C0A6D004264CE /* Hashing */ = {
+			isa = PBXGroup;
+			children = (
+				BE6444D1214C0A6D004264CE /* DigestUtils.m */,
+				BE6444D2214C0A6D004264CE /* DigestUtils.h */,
+			);
+			path = Hashing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +124,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6444D5214C0A6E004264CE /* SymmetricUtils.h in Headers */,
+				BE6444DD214C0A6E004264CE /* DigestUtils.h in Headers */,
+				BE6444D8214C0A6E004264CE /* EncodeUtils.h in Headers */,
 				BE45B16021481069000CD7AB /* WWSecurity.h in Headers */,
+				BE6444D7214C0A6E004264CE /* GTMBase64.h in Headers */,
+				BE6444D9214C0A6E004264CE /* GTMDefines.h in Headers */,
+				BE6444D6214C0A6E004264CE /* AsymmetricUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +201,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6444D3214C0A6E004264CE /* AsymmetricUtils.m in Sources */,
+				BE6444DC214C0A6E004264CE /* DigestUtils.m in Sources */,
+				BE6444DA214C0A6E004264CE /* GTMBase64.m in Sources */,
+				BE6444D4214C0A6E004264CE /* SymmetricUtils.m in Sources */,
+				BE6444DB214C0A6E004264CE /* EncodeUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
