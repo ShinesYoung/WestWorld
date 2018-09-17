@@ -10,15 +10,15 @@
 		BE45B16021481069000CD7AB /* WWSecurity.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B15E21481069000CD7AB /* WWSecurity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE6444D3214C0A6E004264CE /* AsymmetricUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444C5214C0A6D004264CE /* AsymmetricUtils.m */; };
 		BE6444D4214C0A6E004264CE /* SymmetricUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444C6214C0A6D004264CE /* SymmetricUtils.m */; };
-		BE6444D5214C0A6E004264CE /* SymmetricUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444C7214C0A6D004264CE /* SymmetricUtils.h */; };
-		BE6444D6214C0A6E004264CE /* AsymmetricUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444C8214C0A6D004264CE /* AsymmetricUtils.h */; };
-		BE6444D7214C0A6E004264CE /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CA214C0A6D004264CE /* GTMBase64.h */; };
-		BE6444D8214C0A6E004264CE /* EncodeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CB214C0A6D004264CE /* EncodeUtils.h */; };
-		BE6444D9214C0A6E004264CE /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CC214C0A6D004264CE /* GTMDefines.h */; };
+		BE6444D5214C0A6E004264CE /* SymmetricUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444C7214C0A6D004264CE /* SymmetricUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6444D6214C0A6E004264CE /* AsymmetricUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444C8214C0A6D004264CE /* AsymmetricUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6444D7214C0A6E004264CE /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CA214C0A6D004264CE /* GTMBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6444D8214C0A6E004264CE /* EncodeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CB214C0A6D004264CE /* EncodeUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE6444D9214C0A6E004264CE /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444CC214C0A6D004264CE /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE6444DA214C0A6E004264CE /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444CD214C0A6D004264CE /* GTMBase64.m */; };
 		BE6444DB214C0A6E004264CE /* EncodeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444CE214C0A6D004264CE /* EncodeUtils.m */; };
 		BE6444DC214C0A6E004264CE /* DigestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6444D1214C0A6D004264CE /* DigestUtils.m */; };
-		BE6444DD214C0A6E004264CE /* DigestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444D2214C0A6D004264CE /* DigestUtils.h */; };
+		BE6444DD214C0A6E004264CE /* DigestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BE6444D2214C0A6D004264CE /* DigestUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

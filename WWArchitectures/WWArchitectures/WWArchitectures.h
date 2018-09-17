@@ -16,4 +16,9 @@ FOUNDATION_EXPORT const unsigned char WWArchitecturesVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <WWArchitectures/PublicHeader.h>
 
+#import <WWArchitectures/WWSuperRouter.h>
+#import <WWArchitectures/WWBaseModule.h>
+#import <WWArchitectures/WWModule.h>
+#import <WWArchitectures/WWModuleManager.h>
+
 
