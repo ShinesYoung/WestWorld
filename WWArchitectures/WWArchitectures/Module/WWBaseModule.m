@@ -10,6 +10,11 @@
 
 @implementation WWBaseModule
 
+- (void)welcome
+{
+    NSLog(@"Welcome, This is Module-%@", NSStringFromClass([self class]));
+}
+
 - (NSString *)moduleName
 {
     NSString *reaseon = [NSString stringWithFormat:@"Sub class unimplemented "

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@protocol WWModule <NSObject>
+@protocol WWModule <NSObject, UIApplicationDelegate>
 
+- (void)welcome;    // for access testing
 - (NSString *)moduleName;
 
 @end
