@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8E29A1A214F97F0007059EA /* WWCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E29A17214F97F0007059EA /* WWCarouselView.m */; };
+		A8E29A1B214F97F0007059EA /* WWCarouselProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E29A18214F97F0007059EA /* WWCarouselProtocol.h */; };
+		A8E29A1C214F97F0007059EA /* WWCarouselView.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E29A19214F97F0007059EA /* WWCarouselView.h */; };
+		A8E29A20214FAB21007059EA /* WWColor.h in Headers */ = {isa = PBXBuildFile; fileRef = A8E29A1E214FAB21007059EA /* WWColor.h */; };
+		A8E29A21214FAB21007059EA /* WWColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E29A1F214FAB21007059EA /* WWColor.m */; };
 		BE45B18A21481200000CD7AB /* WWUI.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B18821481200000CD7AB /* WWUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8E29A17214F97F0007059EA /* WWCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWCarouselView.m; sourceTree = "<group>"; };
+		A8E29A18214F97F0007059EA /* WWCarouselProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWCarouselProtocol.h; sourceTree = "<group>"; };
+		A8E29A19214F97F0007059EA /* WWCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWCarouselView.h; sourceTree = "<group>"; };
+		A8E29A1E214FAB21007059EA /* WWColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWColor.h; sourceTree = "<group>"; };
+		A8E29A1F214FAB21007059EA /* WWColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWColor.m; sourceTree = "<group>"; };
 		BE45B18521481200000CD7AB /* WWUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B18821481200000CD7AB /* WWUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWUI.h; sourceTree = "<group>"; };
 		BE45B18921481200000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +37,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8E29A15214F97F0007059EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8E29A16214F97F0007059EA /* Carousel */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A8E29A16214F97F0007059EA /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				A8E29A18214F97F0007059EA /* WWCarouselProtocol.h */,
+				A8E29A19214F97F0007059EA /* WWCarouselView.h */,
+				A8E29A17214F97F0007059EA /* WWCarouselView.m */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		A8E29A1D214FAB21007059EA /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				A8E29A1E214FAB21007059EA /* WWColor.h */,
+				A8E29A1F214FAB21007059EA /* WWColor.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		BE45B17B21481200000CD7AB = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +83,8 @@
 		BE45B18721481200000CD7AB /* WWUI */ = {
 			isa = PBXGroup;
 			children = (
+				A8E29A1D214FAB21007059EA /* Color */,
+				A8E29A15214F97F0007059EA /* Views */,
 				BE45B18821481200000CD7AB /* WWUI.h */,
 				BE45B18921481200000CD7AB /* Info.plist */,
 			);
@@ -59,7 +98,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E29A20214FAB21007059EA /* WWColor.h in Headers */,
+				A8E29A1B214F97F0007059EA /* WWCarouselProtocol.h in Headers */,
 				BE45B18A21481200000CD7AB /* WWUI.h in Headers */,
+				A8E29A1C214F97F0007059EA /* WWCarouselView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +137,12 @@
 				TargetAttributes = {
 					BE45B18421481200000CD7AB = {
 						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = BE45B17F21481200000CD7AB /* Build configuration list for PBXProject "WWUI" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -130,6 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E29A1A214F97F0007059EA /* WWCarouselView.m in Sources */,
+				A8E29A21214FAB21007059EA /* WWColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,11 +309,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.WWUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -288,11 +329,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WWUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.shines.WWUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
