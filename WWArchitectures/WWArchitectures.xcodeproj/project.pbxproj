@@ -22,6 +22,7 @@
 		BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B173214810D3000CD7AB /* WWArchitectures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BECC9B1D215008D40097BC1E /* WWBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = BECC9B1B215008D40097BC1E /* WWBaseVC.h */; };
 		BECC9B1E215008D40097BC1E /* WWBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC9B1C215008D40097BC1E /* WWBaseVC.m */; };
+		BED05B2D2153F95F0025D214 /* WWApplicationLifecycleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BED05B2C2153F95F0025D214 /* WWApplicationLifecycleListener.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		BE45B174214810D3000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECC9B1B215008D40097BC1E /* WWBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWBaseVC.h; sourceTree = "<group>"; };
 		BECC9B1C215008D40097BC1E /* WWBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWBaseVC.m; sourceTree = "<group>"; };
+		BED05B2C2153F95F0025D214 /* WWApplicationLifecycleListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWApplicationLifecycleListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				BE3AACD0214AB1D90083ABC7 /* WWModule.h */,
 				BE3AACCA214AB1320083ABC7 /* WWModuleManager.h */,
 				BE3AACC8214AB1280083ABC7 /* WWModuleManager.m */,
+				BED05B2C2153F95F0025D214 /* WWApplicationLifecycleListener.h */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3AACCE214AB1320083ABC7 /* WWBaseModule.h in Headers */,
+				BED05B2D2153F95F0025D214 /* WWApplicationLifecycleListener.h in Headers */,
 				BE3AACB7214AAF950083ABC7 /* WWWindow.h in Headers */,
 				BECC9B1D215008D40097BC1E /* WWBaseVC.h in Headers */,
 				BE3AACD1214AB1D90083ABC7 /* WWModule.h in Headers */,
