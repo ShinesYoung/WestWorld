@@ -8,8 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface WWConcurrentManager : NSObject
 
-+ (instancetype)instance;
+/******************************************************************************/
+/**** Service - Concurrent Service                                         ****/
+/******************************************************************************/
+#pragma mark - Service - Concurrent Service
+
+- (void)async:(dispatch_block_t)aTask;
+- (void)sync:(dispatch_block_t)aTask;
+
+
+/******************************************************************************/
+/**** Private - Helper Function                                            ****/
+/******************************************************************************/
+#pragma mark - Private - Helper Function
+
+- (dispatch_queue_t)nextCandidate;
+
+
+
+/******************************************************************************/
+/**** System - Lifecycle & Constructor                                     ****/
+/******************************************************************************/
+#pragma mark - System - Lifecycle & Constructor
+
++ (instancetype)defaultManager;
+
+
 
 @end
