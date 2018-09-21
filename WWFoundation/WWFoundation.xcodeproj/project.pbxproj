@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A85F39302154BA41002B35CF /* WWConcurrentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A85F392E2154BA41002B35CF /* WWConcurrentManager.h */; };
+		A85F39312154BA41002B35CF /* WWConcurrentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F392F2154BA41002B35CF /* WWConcurrentManager.m */; };
 		BE3AACAC214AAC500083ABC7 /* WWSuperInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE3AACAD214AAC500083ABC7 /* WWSuperResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */; };
 		BE3AACAE214AAC500083ABC7 /* WWSuperInvoker.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A85F392E2154BA41002B35CF /* WWConcurrentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWConcurrentManager.h; sourceTree = "<group>"; };
+		A85F392F2154BA41002B35CF /* WWConcurrentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWConcurrentManager.m; sourceTree = "<group>"; };
 		BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSuperInvoker.h; sourceTree = "<group>"; };
 		BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSuperResult.m; sourceTree = "<group>"; };
 		BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSuperInvoker.m; sourceTree = "<group>"; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A85F392D2154BA1E002B35CF /* Concurrent */ = {
+			isa = PBXGroup;
+			children = (
+				A85F392E2154BA41002B35CF /* WWConcurrentManager.h */,
+				A85F392F2154BA41002B35CF /* WWConcurrentManager.m */,
+			);
+			path = Concurrent;
+			sourceTree = "<group>";
+		};
 		BE3AACA6214AAC500083ABC7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BE3AACA6214AAC500083ABC7 /* Categories */,
-				BED05B2E2153FC800025D214 /* Concurrent */,
+				A85F392D2154BA1E002B35CF /* Concurrent */,
 				BE45B14A21480F0A000CD7AB /* Info.plist */,
 				BE3AACA7214AAC500083ABC7 /* Invocations */,
 				BECC9B16215006530097BC1E /* MethodSwizzle */,
@@ -137,13 +150,6 @@
 			path = MethodSwizzle;
 			sourceTree = "<group>";
 		};
-		BED05B2E2153FC800025D214 /* Concurrent */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Concurrent;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -158,6 +164,7 @@
 				BE3AACB3214AACB80083ABC7 /* NSString+Utils.h in Headers */,
 				BE3AACC6214AB0FF0083ABC7 /* NSDictionary+Utils.h in Headers */,
 				BE3AACC2214AB0EA0083ABC7 /* NSArray+Utils.h in Headers */,
+				A85F39302154BA41002B35CF /* WWConcurrentManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +240,7 @@
 				BE3AACB4214AACB80083ABC7 /* NSString+Utils.m in Sources */,
 				BECC9B1A2150067F0097BC1E /* WWMethodSwizzle.m in Sources */,
 				BE3AACC3214AB0EA0083ABC7 /* NSArray+Utils.m in Sources */,
+				A85F39312154BA41002B35CF /* WWConcurrentManager.m in Sources */,
 				BE3AACAD214AAC500083ABC7 /* WWSuperResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
