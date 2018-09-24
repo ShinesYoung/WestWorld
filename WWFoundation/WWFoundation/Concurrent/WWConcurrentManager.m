@@ -10,8 +10,12 @@
 
 @interface WWConcurrentManager ()
 
+@property (nonatomic, strong) dispatch_queue_t highQueue;
+@property (nonatomic, strong) dispatch_queue_t defaultQueue;
+@property (nonatomic, strong) dispatch_queue_t lowQueue;
+@property (nonatomic, strong) dispatch_queue_t backgroundQueue;
+
 @property (nonatomic, strong) dispatch_queue_t concurrentQueue;
-@property (nonatomic, strong) dispatch_queue_t serialQueue;
 @property (nonatomic, strong) NSMutableArray *threadPool;
 @property (nonatomic, assign) NSUInteger currentIndex;
 @property (nonatomic, assign) NSUInteger sizeOfThreadPool;
@@ -31,13 +35,18 @@
 - (void)async:(dispatch_block_t)aTask
 {
     dispatch_queue_t aCandidate = [self nextCandidate];
-    dispatch_sync(aCandidate, aTask);
+    dispatch_async(aCandidate, aTask);
 }
 
 - (void)sync:(dispatch_block_t)aTask
 {
+//    dispatch_queue_t mainQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_sync(mainQueue, aTask);
+    
     dispatch_queue_t mainQueue = dispatch_get_main_queue();
-    dispatch_sync(mainQueue, aTask);
+    dispatch_async(mainQueue, ^{
+        NSLog(@"What wrong with main queue?");
+    });
 }
 
 
@@ -53,6 +62,7 @@
     dispatch_semaphore_t sem = dispatch_semaphore_create(1);
     dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
     
+    // 轮寻策略
     NSUInteger nextIndex = (self.currentIndex +1)%self.sizeOfThreadPool;
     dispatch_queue_t aSerialQueue = self.threadPool[nextIndex];
     self.currentIndex = nextIndex;
@@ -85,8 +95,14 @@
     self = [super init];
     if (self)
     {
+        self.highQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        self.defaultQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        self.lowQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+        self.backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+
+        self.concurrentQueue = dispatch_queue_create("WW_CONCURRENT_QUEUE", DISPATCH_QUEUE_CONCURRENT);
         self.threadPool = [NSMutableArray array];
-        self.sizeOfThreadPool = 10;
+        self.sizeOfThreadPool = 3;
         self.currentIndex = 0;
         
         for (NSUInteger index=0; index<self.sizeOfThreadPool; index ++)

@@ -8,13 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
+#import "WWTaskQueue.h"
 
 @interface WWConcurrentManager : NSObject
+
+/******************************************************************************/
+/**** Service - Main Queue Service                                         ****/
+/******************************************************************************/
+#pragma mark - Service - Main Queue Service
+
++ (WWTaskQueue *)mainQueue;
++ (WWTaskQueue *)highGlobalQueue;
++ (WWTaskQueue *)defaultGlobalQueue;
++ (WWTaskQueue *)lowGlobalQueue;
++ (WWTaskQueue *)backgroundGlobalQueue;
+
 
 /******************************************************************************/
 /**** Service - Concurrent Service                                         ****/
 /******************************************************************************/
 #pragma mark - Service - Concurrent Service
+
+
+
 
 - (void)async:(dispatch_block_t)aTask;
 - (void)sync:(dispatch_block_t)aTask;
