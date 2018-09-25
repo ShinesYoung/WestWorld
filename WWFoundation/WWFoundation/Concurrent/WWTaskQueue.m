@@ -15,7 +15,7 @@
 @property (nonatomic, assign) NSUInteger numberOfConcurrent;
 @property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @property (nonatomic, strong) dispatch_queue_t workQueue;
-@property (nonatomic, strong) dispatch_queue_t serialQueue;
+@property (nonatomic, strong) dispatch_queue_t waitingQueue;
 
 
 @end
@@ -33,7 +33,7 @@
     
     if (!aTaskBlock) { return; }
     
-    dispatch_sync(self.serialQueue,^{
+    dispatch_sync(self.waitingQueue,^{
         dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);  //semaphore - 1
         dispatch_sync(self.workQueue,^{
             if (aTaskBlock) {
@@ -49,7 +49,7 @@
     
     if (!aTaskBlock) { return; }
     
-    dispatch_async(self.serialQueue,^{
+    dispatch_async(self.waitingQueue,^{
         dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);  //semaphore - 1
         dispatch_async(self.workQueue,^{
             if (aTaskBlock) {
@@ -62,7 +62,7 @@
 
 - (void)barrier:(dispatch_block_t)aTaskBlock
 {
-    dispatch_async(self.serialQueue,^{
+    dispatch_async(self.waitingQueue,^{
         dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);  //semaphore - 1
         dispatch_barrier_async(self.workQueue,^{
             if (aTaskBlock) {
@@ -101,8 +101,8 @@
         self.workQueue = targetQueue;
         self.numberOfConcurrent = numberOfConcurrent;
         self.semaphore = dispatch_semaphore_create(numberOfConcurrent);
-        self.serialQueue = dispatch_queue_create("net.shines.westword.serialQ",
-                                                 DISPATCH_QUEUE_SERIAL);
+        self.waitingQueue = dispatch_queue_create("net.shines.westword.waitingQ",
+                                                  DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }

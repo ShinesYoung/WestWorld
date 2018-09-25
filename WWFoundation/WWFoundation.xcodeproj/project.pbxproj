@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A8314F32215A0335007A74DD /* WWDispatchQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = A8314F31215A0335007A74DD /* WWDispatchQueue.h */; };
-		A8314F35215A04AA007A74DD /* WWDispatchQueueImp.h in Headers */ = {isa = PBXBuildFile; fileRef = A8314F33215A04AA007A74DD /* WWDispatchQueueImp.h */; };
-		A8314F36215A04AA007A74DD /* WWDispatchQueueImp.m in Sources */ = {isa = PBXBuildFile; fileRef = A8314F34215A04AA007A74DD /* WWDispatchQueueImp.m */; };
 		A85F39302154BA41002B35CF /* WWConcurrentManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A85F392E2154BA41002B35CF /* WWConcurrentManager.h */; };
 		A85F39312154BA41002B35CF /* WWConcurrentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A85F392F2154BA41002B35CF /* WWConcurrentManager.m */; };
 		BE3AACAC214AAC500083ABC7 /* WWSuperInvoker.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,8 +29,6 @@
 
 /* Begin PBXFileReference section */
 		A8314F31215A0335007A74DD /* WWDispatchQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWDispatchQueue.h; sourceTree = "<group>"; };
-		A8314F33215A04AA007A74DD /* WWDispatchQueueImp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWDispatchQueueImp.h; sourceTree = "<group>"; };
-		A8314F34215A04AA007A74DD /* WWDispatchQueueImp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWDispatchQueueImp.m; sourceTree = "<group>"; };
 		A85F392E2154BA41002B35CF /* WWConcurrentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWConcurrentManager.h; sourceTree = "<group>"; };
 		A85F392F2154BA41002B35CF /* WWConcurrentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWConcurrentManager.m; sourceTree = "<group>"; };
 		BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSuperInvoker.h; sourceTree = "<group>"; };
@@ -71,8 +67,6 @@
 				A85F392E2154BA41002B35CF /* WWConcurrentManager.h */,
 				A85F392F2154BA41002B35CF /* WWConcurrentManager.m */,
 				A8314F31215A0335007A74DD /* WWDispatchQueue.h */,
-				A8314F33215A04AA007A74DD /* WWDispatchQueueImp.h */,
-				A8314F34215A04AA007A74DD /* WWDispatchQueueImp.m */,
 				BEA6BA9021592E0D00667614 /* WWTaskQueue.h */,
 				BEA6BA9121592E0D00667614 /* WWTaskQueue.m */,
 			);
@@ -173,7 +167,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE45B14B21480F0A000CD7AB /* WWFoundation.h in Headers */,
-				A8314F35215A04AA007A74DD /* WWDispatchQueueImp.h in Headers */,
 				BE3AACAF214AAC500083ABC7 /* WWSuperResult.h in Headers */,
 				BE3AACAC214AAC500083ABC7 /* WWSuperInvoker.h in Headers */,
 				BECC9B192150067F0097BC1E /* WWMethodSwizzle.h in Headers */,
@@ -255,7 +248,6 @@
 			files = (
 				BE3AACC7214AB0FF0083ABC7 /* NSDictionary+Utils.m in Sources */,
 				BE3AACAE214AAC500083ABC7 /* WWSuperInvoker.m in Sources */,
-				A8314F36215A04AA007A74DD /* WWDispatchQueueImp.m in Sources */,
 				BE3AACB4214AACB80083ABC7 /* NSString+Utils.m in Sources */,
 				BECC9B1A2150067F0097BC1E /* WWMethodSwizzle.m in Sources */,
 				BE3AACC3214AB0EA0083ABC7 /* NSArray+Utils.m in Sources */,

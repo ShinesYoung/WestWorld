@@ -6,16 +6,16 @@
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "WWSuperRouter.h"
+#import "WWStringRouter.h"
 
 #import "WWModuleManager.h"
 #import "WWSuperInvoker.h"
 
 
-@implementation WWSuperRouter
+@implementation WWStringRouter
 
 + (WWSuperResult *)invokeModule:(NSString *)moduleName
-                         service:(NSString *)serviceName
+                        service:(NSString *)serviceName
                        arguments:(NSArray *)arguments
 {
     WWModuleManager *moduleMgr = [WWModuleManager defaultManager];
