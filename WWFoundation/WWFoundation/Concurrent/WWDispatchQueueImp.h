@@ -1,8 +1,8 @@
 //
-//  WWTaskQueue.h
+//  WWDispatchQueueImp.h
 //  WWFoundation
 //
-//  Created by Shines Young on 2018/9/24.
+//  Created by 杨善嗣 on 2018/9/25.
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
@@ -10,12 +10,13 @@
 
 #import "WWDispatchQueue.h"
 
+
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WWTaskQueue : NSObject <WWDispatchQueue>
+@interface WWDispatchQueueImp : NSObject <WWDispatchQueue>
 
 @property (nonatomic, copy) NSString *queueName;
-
 
 /******************************************************************************/
 /**** Service - Dispatch Function                                          ****/
@@ -26,8 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)sync:(dispatch_block_t)aTaskBlock;
 - (void)async:(dispatch_block_t)aTaskBlock;
 - (void)barrier:(dispatch_block_t)aTaskBlock;
-
-
 
 /******************************************************************************/
 /**** System - Constructor & Lifecycle                                     ****/
@@ -44,3 +43,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+

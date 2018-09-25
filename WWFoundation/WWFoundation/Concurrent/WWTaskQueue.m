@@ -8,14 +8,13 @@
 
 #import "WWTaskQueue.h"
 
-static NSUInteger const kDefaultNumberOfConcurrent = 4;
+
 
 @interface WWTaskQueue()
 
 @property (nonatomic, assign) NSUInteger numberOfConcurrent;
 @property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @property (nonatomic, strong) dispatch_queue_t workQueue;
-
 @property (nonatomic, strong) dispatch_queue_t serialQueue;
 
 
@@ -71,7 +70,7 @@ static NSUInteger const kDefaultNumberOfConcurrent = 4;
             }
             dispatch_semaphore_signal(self.semaphore);  //semaphore + 1
         });
-    }
+    });
 }
 
 
@@ -86,12 +85,12 @@ static NSUInteger const kDefaultNumberOfConcurrent = 4;
 {
     dispatch_queue_t queue
     = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    [self initWithQueue:queue numberOfConcurrnt:kDefaultNumberOfConcurrent];
+    return [self initWithQueue:queue numberOfConcurrent:kDefaultNumberOfConcurrent];
 }
 
 - (instancetype)initWithQueue:(dispatch_queue_t)targetQueue
 {
-    [self initWithQueue:targetQueue numberOfConcurrnt:kDefaultNumberOfConcurrent];
+    return [self initWithQueue:targetQueue numberOfConcurrent:kDefaultNumberOfConcurrent];
 }
 
 - (instancetype)initWithQueue:(dispatch_queue_t)targetQueue
@@ -99,6 +98,8 @@ static NSUInteger const kDefaultNumberOfConcurrent = 4;
 {
     self = [super init];
     if (self) {
+        self.workQueue = targetQueue;
+        self.numberOfConcurrent = numberOfConcurrent;
         self.semaphore = dispatch_semaphore_create(numberOfConcurrent);
         self.serialQueue = dispatch_queue_create("net.shines.westword.serialQ",
                                                  DISPATCH_QUEUE_SERIAL);

@@ -164,16 +164,16 @@
 //        aBlock (YES,0,@"OK");
 //    }
     
-    WWConcurrentManager *concurrent = [WWConcurrentManager defaultManager];
+    
+    id<WWDispatchQueue> aQueue = WWConcurrentManager.defaultGlobalQueue;
     
     for (NSUInteger index = 0; index<100; index++)
     {
-        [concurrent async:^{
-            NSLog(@"Current Thread %@ IN", dispatch_get_current_queue());
-            for (NSUInteger i=0 ; i<99999999; i++) {
-                
-            }
-            NSLog(@"Current thread %@ OUT", dispatch_get_current_queue());
+        [aQueue async:^{
+            
+            NSLog(@"Current Thread %@ IN", aQueue.queueName);
+            for (NSUInteger i=0 ; i<99999999; i++) {}
+            NSLog(@"Current thread %@ OUT",  aQueue.queueName);
 
         }];
 
