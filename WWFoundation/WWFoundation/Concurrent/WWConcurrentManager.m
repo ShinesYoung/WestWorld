@@ -9,7 +9,6 @@
 #import "WWConcurrentManager.h"
 
 #import "WWTaskQueue.h"
-#import "WWDispatchQueueImp.h"
 
 @interface WWConcurrentManager ()
 
@@ -65,7 +64,7 @@
         dispatch_queue_t queue
         = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         instanceOfDefaultGlobalQueue
-        = [[WWDispatchQueueImp alloc] initWithQueue:queue numberOfConcurrent:4];
+        = [[WWTaskQueue alloc] initWithQueue:queue numberOfConcurrent:4];
         instanceOfDefaultGlobalQueue.queueName = @"default_global_queue";
     });
     return instanceOfDefaultGlobalQueue;
