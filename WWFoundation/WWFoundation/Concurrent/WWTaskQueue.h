@@ -8,10 +8,36 @@
 
 #import <Foundation/Foundation.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface WWTaskQueue : NSObject
 
 
+/******************************************************************************/
+/**** Service - Dispatch Function                                          ****/
+/******************************************************************************/
+#pragma mark - Service - Dispatch Function
+
+
+- (void)sync:(dispatch_block_t)aTaskBlock;
+- (void)async:(dispatch_block_t)aTaskBlock;
+- (void)barrier:(dispatch_block_t)aTaskBlock
+
+
+
+/******************************************************************************/
+/**** System - Constructor & Lifecycle                                     ****/
+/******************************************************************************/
+#pragma mark - System - Constructor & Lifecycle
+
+- (instancetype)init;
+
+- (instancetype)initWithQueue:(dispatch_queue_t)targetQueue;
+
 - (instancetype)initWithQueue:(dispatch_queue_t)targetQueue
-            numberOfConcurrnt:(NSUInteger)numberOfConcurrent;
+           numberOfConcurrent:(NSUInteger)numberOfConcurrent;
 
 @end
+
+NS_ASSUME_NONNULL_END
