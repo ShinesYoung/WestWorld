@@ -20,10 +20,10 @@
 		BE3AACDB214AB4700083ABC7 /* WWStringRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACD9214AB4700083ABC7 /* WWStringRouter.m */; };
 		BE3AACE2214ABB650083ABC7 /* WWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACE1214ABB650083ABC7 /* WWFoundation.framework */; };
 		BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B173214810D3000CD7AB /* WWArchitectures.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BEA6BA95215A6D4B00667614 /* WWAppOpenUrlListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA6BA94215A6D4B00667614 /* WWAppOpenUrlListener.h */; };
+		BEA6BA95215A6D4B00667614 /* WWAppOpenUrlListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA6BA94215A6D4B00667614 /* WWAppOpenUrlListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BECC9B1D215008D40097BC1E /* WWBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = BECC9B1B215008D40097BC1E /* WWBaseVC.h */; };
 		BECC9B1E215008D40097BC1E /* WWBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC9B1C215008D40097BC1E /* WWBaseVC.m */; };
-		BED05B2D2153F95F0025D214 /* WWAppLifecycleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BED05B2C2153F95F0025D214 /* WWAppLifecycleListener.h */; };
+		BED05B2D2153F95F0025D214 /* WWAppLifecycleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BED05B2C2153F95F0025D214 /* WWAppLifecycleListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,10 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3AACCE214AB1320083ABC7 /* WWBaseModule.h in Headers */,
-				BED05B2D2153F95F0025D214 /* WWAppLifecycleListener.h in Headers */,
-				BEA6BA95215A6D4B00667614 /* WWAppOpenUrlListener.h in Headers */,
 				BE3AACB7214AAF950083ABC7 /* WWWindow.h in Headers */,
+				BED05B2D2153F95F0025D214 /* WWAppLifecycleListener.h in Headers */,
 				BECC9B1D215008D40097BC1E /* WWBaseVC.h in Headers */,
+				BEA6BA95215A6D4B00667614 /* WWAppOpenUrlListener.h in Headers */,
 				BE3AACD1214AB1D90083ABC7 /* WWModule.h in Headers */,
 				BE3AACCD214AB1320083ABC7 /* WWModuleManager.h in Headers */,
 				BE3AACDA214AB4700083ABC7 /* WWStringRouter.h in Headers */,

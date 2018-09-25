@@ -13,7 +13,7 @@
 #import "WWSuperInvoker.h"
 
 #import "WWBaseModule.h"
-#import "WWSRouter.h"
+#import "WWStringRouter.h"
 #import "WWConcurrentManager.h"
 
 @interface RootVC ()
