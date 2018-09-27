@@ -8,7 +8,7 @@
 
 #import "WWConcurrentManager.h"
 
-#import "WWTaskQueue.h"
+#import "WWSemaphoreQueue.h"
 
 @interface WWConcurrentManager ()
 
@@ -29,7 +29,7 @@
     dispatch_once(&mainThreadOnceToken, ^{
         dispatch_queue_t queue = dispatch_get_main_queue();
         instanceOfMainThreadQueue
-        = [[WWTaskQueue alloc] initWithQueue:queue numberOfConcurrent:4];
+        = [[WWSemaphoreQueue alloc] initWithQueue:queue numberOfConcurrent:4];
     });
     return instanceOfMainThreadQueue;
 }
@@ -50,7 +50,7 @@
         dispatch_queue_t queue
         = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
         instanceOfHighGlobalQueue
-        = [[WWTaskQueue alloc] initWithQueue:queue numberOfConcurrent:2];
+        = [[WWSemaphoreQueue alloc] initWithQueue:queue numberOfConcurrent:2];
         instanceOfHighGlobalQueue.queueName = @"high_global_queue";
     });
     return instanceOfHighGlobalQueue;
@@ -64,7 +64,7 @@
         dispatch_queue_t queue
         = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         instanceOfDefaultGlobalQueue
-        = [[WWTaskQueue alloc] initWithQueue:queue numberOfConcurrent:4];
+        = [[WWSemaphoreQueue alloc] initWithQueue:queue numberOfConcurrent:4];
         instanceOfDefaultGlobalQueue.queueName = @"default_global_queue";
     });
     return instanceOfDefaultGlobalQueue;
@@ -78,7 +78,7 @@
         dispatch_queue_t queue
         = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
         instanceOfLowGlobalQueue
-        = [[WWTaskQueue alloc] initWithQueue:queue numberOfConcurrent:8];
+        = [[WWSemaphoreQueue alloc] initWithQueue:queue numberOfConcurrent:8];
         instanceOfLowGlobalQueue.queueName = @"low_global_queue";
     });
     return instanceOfLowGlobalQueue;
@@ -92,7 +92,7 @@
         dispatch_queue_t queue
         = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
         instanceOfBgGlobalQueue
-        = [[WWTaskQueue alloc] initWithQueue:queue numberOfConcurrent:4];
+        = [[WWSemaphoreQueue alloc] initWithQueue:queue numberOfConcurrent:4];
         instanceOfBgGlobalQueue.queueName = @"background_global_queue";
     });
     return instanceOfBgGlobalQueue;

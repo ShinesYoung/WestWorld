@@ -6,7 +6,7 @@
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UIKit/UIViewController.h>
 
 @interface ViewController : UIViewController
 

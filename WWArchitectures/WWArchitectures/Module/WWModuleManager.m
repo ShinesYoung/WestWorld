@@ -59,19 +59,27 @@
     
     // 2. find Module Class from registerList;
     Class moduleClass = [self.moduleRegisterDict objectForKey:moduleName];
-    if (moduleClass == nil) { // unfound
+    if (moduleClass == nil || [moduleName isKindOfClass:[NSNull class]]) { // unfound
         return nil;
     }
     
      // found and instanced the Module Object, and add the Module to cache.
-    SEL instanceSel = NSSelectorFromString(@"instance");
-    if (moduleClass && [moduleClass respondsToSelector:instanceSel])
+    SEL instanceSEL = NSSelectorFromString(@"instance");
+    SEL sharedSEL = NSSelectorFromString(@"sharedInstance");
+    if ([moduleClass respondsToSelector:instanceSEL])
     {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        aModule = [moduleClass performSelector:instanceSel];
+        aModule = [moduleClass performSelector:instanceSEL];
 #pragma clang diagnostic pop
-    } else {
+    }
+    else if ([moduleClass respondsToSelector:sharedSEL]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        aModule = [moduleClass performSelector:sharedSEL];
+#pragma clang diagnostic pop
+    }
+    else {
         aModule = [[moduleClass alloc] init];
     }
     [self addModuleToCache:aModule];

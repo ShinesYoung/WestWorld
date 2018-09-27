@@ -12,22 +12,9 @@
 
 
 #pragma mark - color
-#define COLOR_WITH_HEX(_HEX_)       [WWColor colorWithHex:_HEX_]
-#define COLOR(r, g, b)              [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
-#define TRANSPARENT_COLOR           [UIColor clearColor]
-#define TITLE_COLOR                 COLOR(0, 0, 0)
-#define SUB_TITLE_COLOR             COLOR(157, 157, 157)
+#define COLOR_WITH_HEX(_HEX_) [WWColor colorWithHex:_HEX_]
+#define COLOR(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 
-#define ORANGE_COLOR                COLOR(255, 103, 44)
-#define HIGHLIGHT_ORANGE_COLOR      COLOR_WITH_HEX(@"e6501f")
-#define BLUE_COLOR                  COLOR_WITH_HEX(@"4aa3ee")
-#define HIGHLIGHT_BLUE_COLOR        COLOR_WITH_HEX(@"2889db")
-#define PURPLE_COLOR                COLOR(76, 66, 150)
-#define HIGHLIGHT_PURPLE_COLOR      COLOR(66, 58, 128)
-#define DISABLED_BTN_COLOR          COLOR(206, 206, 206)
-#define ORANGE_TEXT_COLOR           [WWColor colorWithHex:@"ff6633"]
-#define GRAY_TEXT_COLOR             [WWColor colorWithHex:@"999999"]
-#define GRAY_BACKGROUND_COLOR       [WWColor colorWithHex:@"e6e6e6"]
 
 
 

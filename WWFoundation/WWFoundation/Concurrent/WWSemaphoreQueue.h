@@ -1,5 +1,5 @@
 //
-//  WWTaskQueue.h
+//  WWSemaphoreQueue.h
 //  WWFoundation
 //
 //  Created by Shines Young on 2018/9/24.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WWTaskQueue : NSObject <WWDispatchQueue>
+@interface WWSemaphoreQueue : NSObject <WWDispatchQueue>
 
 @property (nonatomic, copy) NSString *queueName;
 

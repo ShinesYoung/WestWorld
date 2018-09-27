@@ -142,9 +142,9 @@ userInfo:[NSDictionary dictionaryWithObject:errStr forKey:NSLocalizedDescription
     return [GetClass((id)self) ww_swizzleMethod:origSel_ withMethod:altSel_ error:error_];
 }
 
-+ (NSInvocation*)lfx_jr_swizzleMethod:(SEL)origSel withBlock:(id)block error:(NSError**)error {
++ (NSInvocation*)ww_swizzleMethod:(SEL)origSel withBlock:(id)block error:(NSError**)error {
     IMP blockIMP = imp_implementationWithBlock(block);
-    NSString *blockSelectorString = [NSString stringWithFormat:@"_jr_block_%@_%p", NSStringFromSelector(origSel), block];
+    NSString *blockSelectorString = [NSString stringWithFormat:@"_ww_block_%@_%p", NSStringFromSelector(origSel), block];
     SEL blockSel = sel_registerName([blockSelectorString cStringUsingEncoding:NSUTF8StringEncoding]);
     Method origSelMethod = class_getInstanceMethod(self, origSel);
     const char* origSelMethodArgs = method_getTypeEncoding(origSelMethod);
@@ -160,7 +160,7 @@ userInfo:[NSDictionary dictionaryWithObject:errStr forKey:NSLocalizedDescription
 }
 
 + (NSInvocation*)ww_swizzleClassMethod:(SEL)origSel withBlock:(id)block error:(NSError**)error {
-    NSInvocation *invocation = [GetClass((id)self) lfx_jr_swizzleMethod:origSel withBlock:block error:error];
+    NSInvocation *invocation = [GetClass((id)self) ww_swizzleMethod:origSel withBlock:block error:error];
     invocation.target = self;
     
     return invocation;

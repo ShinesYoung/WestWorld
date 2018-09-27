@@ -14,9 +14,23 @@
 
 @implementation ViewController
 
+- (BOOL)myBoolMethod:(NSString *)string
+{
+    if (string.length > 0) {
+        return YES;
+    }
+    return NO;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    SEL sel = @selector(myBoolMethod:);
+    IMP imp = [self methodForSelector:sel];
+    
+    NSLog(@"IMP = %@", imp);
         
 }
 

@@ -8,6 +8,8 @@
 
 #import "WWAppDelegate.h"
 #import "WWModuleManager.h"
+#import "WWUrlRouter.h"
+
 
 @implementation WWAppDelegate
 
@@ -35,7 +37,7 @@
     self.window.rootViewController = self.rootVC;
     [self.window addSubview:self.rootVC.view];
     [self.window makeKeyAndVisible];
-    return YES;
+    
     
     NSArray<id<WWAppLifecycleListener>> *appLifecycleListeners
     = [[WWModuleManager defaultManager] modulesForAppLifecycle];
@@ -46,6 +48,8 @@
             [aListener application:application didFinishLaunchingWithOptions:launchOptions];
         }
     }
+    
+    return YES;
 }
 
 
@@ -120,6 +124,23 @@
     }
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(nullable NSString *)sourceApplication
+         annotation:(nonnull id)annotation
+{
+    NSArray<id<WWAppOpenUrlListener>> *appOpenUrlListeners
+    = [[WWModuleManager defaultManager] modulesForAppOpenUrl];
+    
+    for (id<WWAppOpenUrlListener> aListener in appOpenUrlListeners)
+    {
+        if ([aListener respondsToSelector:@selector(application:openURL:sourceApplication:annotation:)]) {
+            [aListener application:app openURL:url
+                 sourceApplication:sourceApplication annotation:annotation];
+        }
+    }
+    
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {

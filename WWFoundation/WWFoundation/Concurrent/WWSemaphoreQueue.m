@@ -1,16 +1,16 @@
 //
-//  WWTaskQueue.m
+//  WWSemaphoreQueue.m
 //  WWFoundation
 //
 //  Created by Shines Young on 2018/9/24.
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "WWTaskQueue.h"
+#import "WWSemaphoreQueue.h"
 
 
 
-@interface WWTaskQueue()
+@interface WWSemaphoreQueue()
 
 @property (nonatomic, assign) NSUInteger numberOfConcurrent;
 @property (nonatomic, strong) dispatch_semaphore_t semaphore;
@@ -21,7 +21,7 @@
 @end
 
 
-@implementation WWTaskQueue
+@implementation WWSemaphoreQueue
 
 /******************************************************************************/
 /**** Service - Dispatch Function                                          ****/
