@@ -23,14 +23,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (WWSuperResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
                            argDict:(NSDictionary *)argDict
-                          argOrder:(NSArray *)argOrder;
+                          argOrder:(NSArray<NSString *> *)argOrder;
 
 - (WWSuperResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName;
 
 - (WWSuperResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
-                         arguments:(NSArray *)arguments;
+                         arguments:(NSArray *_Nullable)arguments;
 
 
 /******************************************************************************/

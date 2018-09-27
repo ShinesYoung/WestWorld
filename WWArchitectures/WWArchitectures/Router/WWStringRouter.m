@@ -19,10 +19,10 @@
 /******************************************************************************/
 #pragma mark - Helper - Show Alert Tips
 
-+ (void)showAlertWithError:(NSString *)reason
+- (void)showAlertWithError:(NSString *)reason
 {
     UIAlertController *alert
-    = [UIAlertController alertControllerWithTitle:@"Router Error"
+    = [UIAlertController alertControllerWithTitle:@"Routing Error"
                                           message:reason
                                    preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *confirm
@@ -37,9 +37,57 @@
 }
 
 
-+ (WWSuperResult *)invokeModule:(NSString *)moduleName
-                         action:(NSString *)actionName
-                      arguments:(NSArray *)arguments
+
+/******************************************************************************/
+/**** Service - Routing Service Method                                     ****/
+/******************************************************************************/
+#pragma mark - Service - Routing Service Method
+
+- (WWSuperResult *)routingToModule:(NSString *)moduleName
+                            action:(NSString *)actionName
+                           argDict:(NSDictionary *)argDict
+                          argOrder:(NSArray<NSString *> *)argOrder;
+{
+    if (argOrder == nil || argOrder.count == 0)
+    {
+        [self showAlertWithError:@"arguments order is empty."];
+        return nil;
+    }
+    if (argDict == nil || argDict.count == 0) {
+        [self showAlertWithError:@"arguments dictionary is empty."];
+        return nil;
+    }
+    if (argOrder.count != argDict.count) {
+        [self showAlertWithError:@"number of arguments is equale to argOrder."];
+        return nil;
+    }
+    
+    __block NSMutableArray *arguments = [NSMutableArray array];
+    
+    for (NSString *aArgName in argOrder)
+    {
+        id aArgObj = [argDict objectForKey:aArgName];
+        if (aArgObj == nil) {
+            NSString *reason
+            = [NSString stringWithFormat:@"Argu '%@' is missing.", aArgName];
+            [self showAlertWithError:reason];
+            return nil;
+        }
+        [arguments addObject:aArgObj];
+    }
+    
+    return [self routingToModule:moduleName action:actionName arguments:arguments];
+}
+
+- (WWSuperResult *)routingToModule:(NSString *)moduleName
+                            action:(NSString *)actionName
+{
+    return [self routingToModule:moduleName action:actionName arguments:@[]];
+}
+
+- (WWSuperResult *)routingToModule:(NSString *)moduleName
+                            action:(NSString *)actionName
+                         arguments:(NSArray *)arguments
 {
     WWModuleManager *moduleMgr = [WWModuleManager defaultManager];
     
@@ -52,9 +100,7 @@
         return nil;
     }
     
-    
     SEL aAction = NSSelectorFromString(actionName);
-    
     if ([aModule respondsToSelector:aAction] == NO)
     {
         NSString *reason
@@ -71,6 +117,7 @@
     
     return result;
 }
+
 
 
 

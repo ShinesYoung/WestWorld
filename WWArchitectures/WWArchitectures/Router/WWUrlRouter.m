@@ -41,7 +41,36 @@
     return NO;
 }
 
+- (void)openURL:(NSURL *)aURL
+{
+    [self openURL:aURL userInfo:nil];
+}
 
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *)userInfo
+{
+    [self openURL:aURL userInfo:userInfo completion:nil];
+}
+
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *)userInfo completion:(void (^)(void))completion
+{
+    
+}
+
+- (void)openUrlString:(NSString *)aUrlString
+{
+    
+}
+
+- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
+{
+    
+}
+
+- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
+           completion:(void (^)(void))completion
+{
+    
+}
 
 
 /******************************************************************************/

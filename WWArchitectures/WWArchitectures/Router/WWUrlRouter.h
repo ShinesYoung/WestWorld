@@ -38,14 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)canOpenUrlString:(NSString *)aUrlString;
 
 - (void)openURL:(NSURL *)aURL;
-- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *)userInfo;
-- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *)userInfo
-     completion:(void(^)(void))completion;
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *_Nullable)userInfo;
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *_Nullable)userInfo
+     completion:(nullable void(^)(void))completion;
 
 - (void)openUrlString:(NSString *)aUrlString;
-- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo;
-- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
-           completion:(void(^)(void))completion;
+- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *_Nullable)userInfo;
+- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *_Nullable)userInfo
+           completion:(nullable void(^)(void))completion;
 
 
 
