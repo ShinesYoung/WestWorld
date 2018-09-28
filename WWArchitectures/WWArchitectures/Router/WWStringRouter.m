@@ -15,9 +15,9 @@
 @implementation WWStringRouter
 
 /******************************************************************************/
-/**** Helper - Show Alert Tips                                             ****/
+/**** Private Utility -  Show Alert Tips                                   ****/
 /******************************************************************************/
-#pragma mark - Helper - Show Alert Tips
+#pragma mark - Private Utility - Show Alert Tips
 
 - (void)showAlertWithError:(NSString *)reason
 {
@@ -45,28 +45,28 @@
 
 - (WWSuperResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
-                           argDict:(NSDictionary *)argDict
-                          argOrder:(NSArray<NSString *> *)argOrder;
+                           argInfo:(NSDictionary *)argInfo
+                       argKeyOrder:(NSArray<NSString *> *)argKeyOrder
 {
-    if (argOrder == nil || argOrder.count == 0)
+    if (argKeyOrder == nil || argKeyOrder.count == 0)
     {
-        [self showAlertWithError:@"arguments order is empty."];
+        [self showAlertWithError:@"arguments key order is empty."];
         return nil;
     }
-    if (argDict == nil || argDict.count == 0) {
+    if (argInfo == nil || argInfo.count == 0) {
         [self showAlertWithError:@"arguments dictionary is empty."];
         return nil;
     }
-    if (argOrder.count != argDict.count) {
+    if (argKeyOrder.count != argInfo.count) {
         [self showAlertWithError:@"number of arguments is equale to argOrder."];
         return nil;
     }
     
     __block NSMutableArray *arguments = [NSMutableArray array];
     
-    for (NSString *aArgName in argOrder)
+    for (NSString *aArgName in argKeyOrder)
     {
-        id aArgObj = [argDict objectForKey:aArgName];
+        id aArgObj = [argInfo objectForKey:aArgName];
         if (aArgObj == nil) {
             NSString *reason
             = [NSString stringWithFormat:@"Argu '%@' is missing.", aArgName];

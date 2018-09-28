@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (WWSuperResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
-                           argDict:(NSDictionary *)argDict
-                          argOrder:(NSArray<NSString *> *)argOrder;
+                           argInfo:(NSDictionary *)argInfo
+                       argKeyOrder:(NSArray<NSString *> *)argKeyOrder;
 
 - (WWSuperResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName;

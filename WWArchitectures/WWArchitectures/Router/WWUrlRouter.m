@@ -11,17 +11,45 @@
 @implementation WWUrlRouter
 
 /******************************************************************************/
+/**** Private Utility -  Show Alert Tips                                   ****/
+/******************************************************************************/
+#pragma mark - Private Utility - Show Alert Tips
+
+- (void)showAlertWithError:(NSString *)reason
+{
+    UIAlertController *alert
+    = [UIAlertController alertControllerWithTitle:@"Routing Error"
+                                          message:reason
+                                   preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *confirm
+    = [UIAlertAction actionWithTitle:@"确定"
+                               style:(UIAlertActionStyleCancel)
+                             handler:nil];
+    [alert addAction:confirm];
+    
+    UIViewController *rootVC
+    = [UIApplication sharedApplication].delegate.window.rootViewController;
+    [rootVC presentViewController:alert animated:YES completion:nil];
+}
+
+
+/******************************************************************************/
 /**** Service - Register Url Pattern                                       ****/
 /******************************************************************************/
 #pragma mark - Service - Register Url Pattern
 
-- (void)registerUrlPattern:(NSString *)urlPattern forModule:(NSString *)moduleName service:(NSString *)serviceName
+- (void)registerUrlPattern:(NSString *)urlPattern
+                 forModule:(NSString *)moduleName
+                    action:(NSString *)actionName
 {
-    [self registerUrlPattern:urlPattern forModule:moduleName service:serviceName argsPattern:nil];
+    [self registerUrlPattern:urlPattern forModule:moduleName
+                      action:actionName argsPattern:nil];
 }
 
-- (void)registerUrlPattern:(NSString *)urlPattern forModule:(NSString *)moduleName
-                   service:(NSString *)serviceName argsPattern:(NSString *)argsPattern
+- (void)registerUrlPattern:(NSString *)urlPattern
+                 forModule:(NSString *)moduleName
+                   action:(NSString *)actionName
+               argsPattern:(NSString *)argsPattern
 {
     
 }
@@ -41,6 +69,22 @@
     return NO;
 }
 
+- (void)openUrlString:(NSString *)aUrlString
+{
+    [self openUrlString:aUrlString userInfo:nil];
+}
+
+- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
+{
+    [self openUrlString:aUrlString userInfo:userInfo completion:nil];
+}
+
+- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
+           completion:(void (^)(void))completion
+{
+    
+}
+
 - (void)openURL:(NSURL *)aURL
 {
     [self openURL:aURL userInfo:nil];
@@ -51,26 +95,17 @@
     [self openURL:aURL userInfo:userInfo completion:nil];
 }
 
-- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *)userInfo completion:(void (^)(void))completion
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *)userInfo
+     completion:(void (^)(void))completion
 {
+    if (aURL == nil) {
+        return;
+    }
+    
     
 }
 
-- (void)openUrlString:(NSString *)aUrlString
-{
-    
-}
 
-- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
-{
-    
-}
-
-- (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *)userInfo
-           completion:(void (^)(void))completion
-{
-    
-}
 
 
 /******************************************************************************/

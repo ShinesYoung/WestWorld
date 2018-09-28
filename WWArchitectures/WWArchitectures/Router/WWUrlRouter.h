@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -20,13 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)registerUrlPattern:(NSString *)urlPattern
                  forModule:(NSString *)moduleName
-                   service:(NSString *)serviceName;
+                    action:(NSString *)actionName;
 
 - (void)registerUrlPattern:(NSString *)urlPattern
                  forModule:(NSString *)moduleName
-                   service:(NSString *)serviceName
+                    action:(NSString *)actionName
                argsPattern:(NSString *_Nullable)argsPattern;
-
 
 
 /******************************************************************************/
@@ -37,16 +37,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)canOpenURL:(NSURL *)aURL;
 - (BOOL)canOpenUrlString:(NSString *)aUrlString;
 
-- (void)openURL:(NSURL *)aURL;
-- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *_Nullable)userInfo;
-- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *_Nullable)userInfo
-     completion:(nullable void(^)(void))completion;
-
 - (void)openUrlString:(NSString *)aUrlString;
 - (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *_Nullable)userInfo;
 - (void)openUrlString:(NSString *)aUrlString userInfo:(NSDictionary *_Nullable)userInfo
            completion:(nullable void(^)(void))completion;
 
+- (void)openURL:(NSURL *)aURL;
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *_Nullable)userInfo;
+- (void)openURL:(NSURL *)aURL userInfo:(NSDictionary *_Nullable)userInfo
+     completion:(nullable void(^)(void))completion;
 
 
 /******************************************************************************/
