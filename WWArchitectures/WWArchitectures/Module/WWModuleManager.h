@@ -10,6 +10,8 @@
 
 #import "WWBaseModule.h"
 #import "WWModule.h"
+#import "WWAppLifecycleListener.h"
+#import "WWAppOpenUrlListener.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)unregisterModuleByName:(NSString *)moduleName;
 
 - (id<WWModule>)moduleForName:(NSString *)moduleName;
+
+- (NSArray<id<WWAppLifecycleListener>> *)modulesForAppLifecycle;
+
+- (NSArray<id<WWAppOpenUrlListener>> *)modulesForAppOpenUrl;
 
 
 

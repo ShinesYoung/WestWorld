@@ -16,10 +16,18 @@
 		BE3AACCE214AB1320083ABC7 /* WWBaseModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACCB214AB1320083ABC7 /* WWBaseModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE3AACCF214AB1320083ABC7 /* WWBaseModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACCC214AB1320083ABC7 /* WWBaseModule.m */; };
 		BE3AACD1214AB1D90083ABC7 /* WWModule.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACD0214AB1D90083ABC7 /* WWModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE3AACDA214AB4700083ABC7 /* WWSuperRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACD8214AB4700083ABC7 /* WWSuperRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE3AACDB214AB4700083ABC7 /* WWSuperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACD9214AB4700083ABC7 /* WWSuperRouter.m */; };
+		BE3AACDA214AB4700083ABC7 /* WWStringRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE3AACD8214AB4700083ABC7 /* WWStringRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE3AACDB214AB4700083ABC7 /* WWStringRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3AACD9214AB4700083ABC7 /* WWStringRouter.m */; };
 		BE3AACE2214ABB650083ABC7 /* WWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE3AACE1214ABB650083ABC7 /* WWFoundation.framework */; };
 		BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B173214810D3000CD7AB /* WWArchitectures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEA6BA95215A6D4B00667614 /* WWAppOpenUrlListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA6BA94215A6D4B00667614 /* WWAppOpenUrlListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEA6BA98215D15AB00667614 /* WWUrlRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA6BA96215D15AB00667614 /* WWUrlRouter.h */; };
+		BEA6BA99215D15AB00667614 /* WWUrlRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6BA97215D15AB00667614 /* WWUrlRouter.m */; };
+		BEA6BAA1215E71EE00667614 /* WWUrlPatternItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6BA9F215E71EE00667614 /* WWUrlPatternItem.m */; };
+		BEA6BAA2215E71EE00667614 /* WWUrlPatternItem.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA6BAA0215E71EE00667614 /* WWUrlPatternItem.h */; };
+		BECC9B1D215008D40097BC1E /* WWBaseVC.h in Headers */ = {isa = PBXBuildFile; fileRef = BECC9B1B215008D40097BC1E /* WWBaseVC.h */; };
+		BECC9B1E215008D40097BC1E /* WWBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC9B1C215008D40097BC1E /* WWBaseVC.m */; };
+		BED05B2D2153F95F0025D214 /* WWAppLifecycleListener.h in Headers */ = {isa = PBXBuildFile; fileRef = BED05B2C2153F95F0025D214 /* WWAppLifecycleListener.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +40,20 @@
 		BE3AACCB214AB1320083ABC7 /* WWBaseModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWBaseModule.h; sourceTree = "<group>"; };
 		BE3AACCC214AB1320083ABC7 /* WWBaseModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWBaseModule.m; sourceTree = "<group>"; };
 		BE3AACD0214AB1D90083ABC7 /* WWModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWModule.h; sourceTree = "<group>"; };
-		BE3AACD8214AB4700083ABC7 /* WWSuperRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWSuperRouter.h; sourceTree = "<group>"; };
-		BE3AACD9214AB4700083ABC7 /* WWSuperRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWSuperRouter.m; sourceTree = "<group>"; };
+		BE3AACD8214AB4700083ABC7 /* WWStringRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWStringRouter.h; sourceTree = "<group>"; };
+		BE3AACD9214AB4700083ABC7 /* WWStringRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWStringRouter.m; sourceTree = "<group>"; };
 		BE3AACE1214ABB650083ABC7 /* WWFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B170214810D3000CD7AB /* WWArchitectures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WWArchitectures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE45B173214810D3000CD7AB /* WWArchitectures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWArchitectures.h; sourceTree = "<group>"; };
 		BE45B174214810D3000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA6BA94215A6D4B00667614 /* WWAppOpenUrlListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWAppOpenUrlListener.h; sourceTree = "<group>"; };
+		BEA6BA96215D15AB00667614 /* WWUrlRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWUrlRouter.h; sourceTree = "<group>"; };
+		BEA6BA97215D15AB00667614 /* WWUrlRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWUrlRouter.m; sourceTree = "<group>"; };
+		BEA6BA9F215E71EE00667614 /* WWUrlPatternItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWUrlPatternItem.m; sourceTree = "<group>"; };
+		BEA6BAA0215E71EE00667614 /* WWUrlPatternItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWUrlPatternItem.h; sourceTree = "<group>"; };
+		BECC9B1B215008D40097BC1E /* WWBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWBaseVC.h; sourceTree = "<group>"; };
+		BECC9B1C215008D40097BC1E /* WWBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWBaseVC.m; sourceTree = "<group>"; };
+		BED05B2C2153F95F0025D214 /* WWAppLifecycleListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWAppLifecycleListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +71,8 @@
 		A8C129D4214937B1006CE62F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BECC9B1B215008D40097BC1E /* WWBaseVC.h */,
+				BECC9B1C215008D40097BC1E /* WWBaseVC.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -78,6 +96,8 @@
 				BE3AACD0214AB1D90083ABC7 /* WWModule.h */,
 				BE3AACCA214AB1320083ABC7 /* WWModuleManager.h */,
 				BE3AACC8214AB1280083ABC7 /* WWModuleManager.m */,
+				BED05B2C2153F95F0025D214 /* WWAppLifecycleListener.h */,
+				BEA6BA94215A6D4B00667614 /* WWAppOpenUrlListener.h */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -85,8 +105,11 @@
 		BE3AACD7214AB4700083ABC7 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				BE3AACD8214AB4700083ABC7 /* WWSuperRouter.h */,
-				BE3AACD9214AB4700083ABC7 /* WWSuperRouter.m */,
+				BEA6BA9E215E71EE00667614 /* Models */,
+				BE3AACD8214AB4700083ABC7 /* WWStringRouter.h */,
+				BE3AACD9214AB4700083ABC7 /* WWStringRouter.m */,
+				BEA6BA96215D15AB00667614 /* WWUrlRouter.h */,
+				BEA6BA97215D15AB00667614 /* WWUrlRouter.m */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -129,6 +152,15 @@
 			path = WWArchitectures;
 			sourceTree = "<group>";
 		};
+		BEA6BA9E215E71EE00667614 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BEA6BA9F215E71EE00667614 /* WWUrlPatternItem.m */,
+				BEA6BAA0215E71EE00667614 /* WWUrlPatternItem.h */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -138,9 +170,14 @@
 			files = (
 				BE3AACCE214AB1320083ABC7 /* WWBaseModule.h in Headers */,
 				BE3AACB7214AAF950083ABC7 /* WWWindow.h in Headers */,
+				BED05B2D2153F95F0025D214 /* WWAppLifecycleListener.h in Headers */,
+				BEA6BAA2215E71EE00667614 /* WWUrlPatternItem.h in Headers */,
+				BECC9B1D215008D40097BC1E /* WWBaseVC.h in Headers */,
+				BEA6BA98215D15AB00667614 /* WWUrlRouter.h in Headers */,
+				BEA6BA95215A6D4B00667614 /* WWAppOpenUrlListener.h in Headers */,
 				BE3AACD1214AB1D90083ABC7 /* WWModule.h in Headers */,
 				BE3AACCD214AB1320083ABC7 /* WWModuleManager.h in Headers */,
-				BE3AACDA214AB4700083ABC7 /* WWSuperRouter.h in Headers */,
+				BE3AACDA214AB4700083ABC7 /* WWStringRouter.h in Headers */,
 				BE45B175214810D3000CD7AB /* WWArchitectures.h in Headers */,
 				BE3AACBB214AAFD30083ABC7 /* WWAppDelegate.h in Headers */,
 			);
@@ -214,11 +251,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA6BA99215D15AB00667614 /* WWUrlRouter.m in Sources */,
+				BEA6BAA1215E71EE00667614 /* WWUrlPatternItem.m in Sources */,
 				BE3AACCF214AB1320083ABC7 /* WWBaseModule.m in Sources */,
 				BE3AACC9214AB1280083ABC7 /* WWModuleManager.m in Sources */,
 				BE3AACBC214AAFD30083ABC7 /* WWAppDelegate.m in Sources */,
-				BE3AACDB214AB4700083ABC7 /* WWSuperRouter.m in Sources */,
+				BE3AACDB214AB4700083ABC7 /* WWStringRouter.m in Sources */,
 				BE3AACB8214AAF950083ABC7 /* WWWindow.m in Sources */,
+				BECC9B1E215008D40097BC1E /* WWBaseVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

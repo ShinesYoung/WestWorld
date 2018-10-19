@@ -20,6 +20,12 @@
 #pragma mark - Service - Dynamic Invoke Class Method
 
 // invoke class method
+
+- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+{
+    return [self callInvocationOfClass:aClass method:aAction arguments:@[]];
+}
+
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
                                arguments:(NSArray *)arguments
 {
@@ -54,6 +60,11 @@
 #pragma mark - Service - Dynamic Invoke Instance Method
 
 // invoke instance method
+
+- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+{
+    return [self callInvocationOfInstance:aTarget method:aAction arguments:@[]];
+}
 
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
                                   arguments:(NSArray *)arguments
@@ -384,7 +395,7 @@
     static WWSuperInvoker *theInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        theInstance = [[WWSuperInvoker alloc] init];
+        theInstance = [[[WWSuperInvoker class] alloc] init];
     });
     return theInstance;
 }

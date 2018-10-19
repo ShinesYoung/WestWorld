@@ -11,12 +11,16 @@
 
 #import "WWSuperResult.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface WWSuperInvoker : NSObject
 
 /******************************************************************************/
 /**** Service - Dynamic Invoke Class Method                                ****/
 /******************************************************************************/
 #pragma mark - Service - Dynamic Invoke Class Method
+
+- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction;
 
 // invoke class method
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
@@ -30,6 +34,8 @@
 #pragma mark - Service - Dynamic Invoke Instance Method
 
 // invoke instance method
+- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction;
+
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
                                   arguments:(NSArray *)arguments;
 
@@ -58,7 +64,9 @@
 #pragma mark - System - Default Lifecycle & Constructor
 
 + (instancetype)instance;
-
-- (instancetype)init;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
+
+NS_ASSUME_NONNULL_END

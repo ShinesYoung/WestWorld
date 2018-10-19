@@ -12,6 +12,9 @@
 
 @interface WWBaseModule : NSObject <WWModule>
 
+- (void)welcome;
 - (NSString *)moduleName;
+
+
 
 @end

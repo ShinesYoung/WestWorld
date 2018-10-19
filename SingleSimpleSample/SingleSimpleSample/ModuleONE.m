@@ -19,7 +19,7 @@
                      withOption:(NSStringDrawingOptions)option
                  withAttributes:(NSDictionary *)attributes
 {
-    NSLog(@"get param %@ %d %@", NSStringFromCGSize(size), option, attributes);
+    NSLog(@"get param %@ %ld %@", NSStringFromCGSize(size), option, attributes);
     
     NSString *aString = @"UILabel  ios7 与ios7之前实现自适应撑高的方法,"
     "文本的内容长度不一，我们需要根据内容的多少来自动换行处理。在IOS7下要求font，"
