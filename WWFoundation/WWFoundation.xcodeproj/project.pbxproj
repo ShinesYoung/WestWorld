@@ -23,6 +23,8 @@
 		BE45B14B21480F0A000CD7AB /* WWFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45B14921480F0A000CD7AB /* WWFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEA6BA9221592E0D00667614 /* WWSemaphoreQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA6BA9021592E0D00667614 /* WWSemaphoreQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEA6BA9321592E0D00667614 /* WWSemaphoreQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA6BA9121592E0D00667614 /* WWSemaphoreQueue.m */; };
+		BEC03291217A0DE000FDC398 /* NSDictionary+TypeSafe.h in Headers */ = {isa = PBXBuildFile; fileRef = BEC0328F217A0DE000FDC398 /* NSDictionary+TypeSafe.h */; };
+		BEC03292217A0DE000FDC398 /* NSDictionary+TypeSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC03290217A0DE000FDC398 /* NSDictionary+TypeSafe.m */; };
 		BECC9B192150067F0097BC1E /* WWMethodSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = BECC9B172150067F0097BC1E /* WWMethodSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BECC9B1A2150067F0097BC1E /* WWMethodSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = BECC9B182150067F0097BC1E /* WWMethodSwizzle.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		BE45B14A21480F0A000CD7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEA6BA9021592E0D00667614 /* WWSemaphoreQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWSemaphoreQueue.h; sourceTree = "<group>"; };
 		BEA6BA9121592E0D00667614 /* WWSemaphoreQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWSemaphoreQueue.m; sourceTree = "<group>"; };
+		BEC0328F217A0DE000FDC398 /* NSDictionary+TypeSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+TypeSafe.h"; sourceTree = "<group>"; };
+		BEC03290217A0DE000FDC398 /* NSDictionary+TypeSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+TypeSafe.m"; sourceTree = "<group>"; };
 		BECC9B172150067F0097BC1E /* WWMethodSwizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWMethodSwizzle.h; sourceTree = "<group>"; };
 		BECC9B182150067F0097BC1E /* WWMethodSwizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWMethodSwizzle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +112,8 @@
 			children = (
 				BE3AACC4214AB0FF0083ABC7 /* NSDictionary+Utils.h */,
 				BE3AACC5214AB0FF0083ABC7 /* NSDictionary+Utils.m */,
+				BEC0328F217A0DE000FDC398 /* NSDictionary+TypeSafe.h */,
+				BEC03290217A0DE000FDC398 /* NSDictionary+TypeSafe.m */,
 			);
 			path = NSDictionary;
 			sourceTree = "<group>";
@@ -167,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3AACC2214AB0EA0083ABC7 /* NSArray+Utils.h in Headers */,
+				BEC03291217A0DE000FDC398 /* NSDictionary+TypeSafe.h in Headers */,
 				BE3AACC6214AB0FF0083ABC7 /* NSDictionary+Utils.h in Headers */,
 				BE3AACB3214AACB80083ABC7 /* NSString+Utils.h in Headers */,
 				A85F39302154BA41002B35CF /* WWConcurrentManager.h in Headers */,
@@ -252,6 +259,7 @@
 				BECC9B1A2150067F0097BC1E /* WWMethodSwizzle.m in Sources */,
 				BE3AACC3214AB0EA0083ABC7 /* NSArray+Utils.m in Sources */,
 				A85F39312154BA41002B35CF /* WWConcurrentManager.m in Sources */,
+				BEC03292217A0DE000FDC398 /* NSDictionary+TypeSafe.m in Sources */,
 				BEA6BA9321592E0D00667614 /* WWSemaphoreQueue.m in Sources */,
 				BE3AACAD214AAC500083ABC7 /* WWSuperResult.m in Sources */,
 			);

@@ -10,4 +10,8 @@
 
 @interface NSString (Utils)
 
+- (BOOL)isNilOrEmpty;
+- (NSString *)trimOfWhitespace;
+- (NSString *)trimOfNewLine;
+
 @end

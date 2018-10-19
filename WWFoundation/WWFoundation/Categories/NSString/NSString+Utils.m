@@ -10,4 +10,24 @@
 
 @implementation NSString (Utils)
 
+- (BOOL)isNilOrEmpty
+{
+    if (self == nil || [self isKindOfClass:[NSNull class]] || self.length == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSString *)trimOfWhitespace
+{
+    NSCharacterSet *charsetOfWhitespace = [NSCharacterSet whitespaceCharacterSet];
+    return [self stringByTrimmingCharactersInSet:charsetOfWhitespace];
+}
+
+- (NSString *)trimOfNewLine
+{
+    NSCharacterSet *charsetOfNewLine = [NSCharacterSet newlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:charsetOfNewLine];
+}
+
 @end
