@@ -140,7 +140,7 @@
     }
     
     NSString *absoluteURLStirng = aURL.absoluteString;
-    [self matchURLPattern];
+    [self matchPatternWithURLString:absoluteURLStirng];
     
 }
 
