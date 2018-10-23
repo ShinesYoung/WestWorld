@@ -6,9 +6,17 @@
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "WWUrlURLRouter.h"
+#import "WWURLRouter.h"
 
-@implementation WWUrlURLRouter
+@interface WWURLRouter ()
+
+@property (nonatomic, strong) NSMutableDictionary *urlPatternTable;
+
+
+@end
+
+
+@implementation WWURLRouter
 
 /******************************************************************************/
 /**** Private Utility -  Show Alert Tips                                   ****/
@@ -43,17 +51,42 @@
                     action:(NSString *)actionName
 {
     [self registerUrlPattern:urlPattern forModule:moduleName
-                      action:actionName argsPattern:nil];
+                      action:actionName argPattern:nil];
 }
 
 - (void)registerUrlPattern:(NSString *)urlPattern
                  forModule:(NSString *)moduleName
-                   action:(NSString *)actionName
-               argsPattern:(NSString *)argsPattern
+                    action:(NSString *)actionName
+                argPattern:(NSString *)argPattern
 {
+    WWUrlPatternItem *aUrlPatternItem = [[WWUrlPatternItem alloc] init];
+    aUrlPatternItem.urlPattern = urlPattern;
+    aUrlPatternItem.moduleName = moduleName;
+    aUrlPatternItem.actionName = actionName;
+    aUrlPatternItem.argPattern = argPattern;
     
+    [self registerURLPattern:aUrlPatternItem];
 }
 
+- (void)registerURLPattern:(WWUrlPatternItem *)urlPatternItem
+{
+    if (self.urlPatternTable) {
+        [self.urlPatternTable setObject:urlPatternItem
+                                 forKey:urlPatternItem.urlPattern];
+    }
+}
+
+
+
+/******************************************************************************/
+/**** Private - Match URL Pattern                                          ****/
+/******************************************************************************/
+#pragma mark - Service - Match URL Pattern
+
+- (WWUrlPatternItem *)matchPatternWithURLString:(NSString *)aURLString
+{
+    return nil;
+}
 
 
 /******************************************************************************/
@@ -84,7 +117,9 @@
 - (void)openURLString:(NSString *)aURLString userInfo:(NSDictionary *)userInfo
            completion:(void (^)(void))completion
 {
-    
+    if ([self canOpenURLString:aURLString]) {
+        [self matchPatternWithURLString:aURLString];
+    }
 }
 
 - (void)openURL:(NSURL *)aURL
@@ -104,6 +139,8 @@
         return;
     }
     
+    NSString *absoluteURLStirng = aURL.absoluteString;
+    [self matchURLPattern];
     
 }
 
@@ -117,10 +154,10 @@
 
 + (instancetype)sharedInstance
 {
-    static WWUrlURLRouter *instance = nil;
+    static WWURLRouter *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[[WWUrlURLRouter class] alloc] init];
+        instance = [[[WWURLRouter class] alloc] init];
     });
     return instance;
 }
@@ -129,7 +166,7 @@
 {
     self = [super init];
     if (self) {
-        
+        self.urlPatternTable = [NSMutableDictionary dictionary];
     }
     return self;
 }

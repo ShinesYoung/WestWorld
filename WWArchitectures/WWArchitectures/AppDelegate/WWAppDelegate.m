@@ -8,7 +8,7 @@
 
 #import "WWAppDelegate.h"
 #import "WWModuleManager.h"
-#import "WWUrlURLRouter.h"
+#import "WWURLRouter.h"
 
 
 @implementation WWAppDelegate

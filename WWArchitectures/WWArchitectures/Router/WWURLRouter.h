@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "WWUrlPatternItem.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WWUrlURLRouter : NSObject
+@interface WWURLRouter : NSObject
 
 /******************************************************************************/
 /**** Service - Register Url Pattern                                       ****/
@@ -26,7 +28,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)registerUrlPattern:(NSString *)urlPattern
                  forModule:(NSString *)moduleName
                     action:(NSString *)actionName
-               argsPattern:(NSString *_Nullable)argsPattern;
+                argPattern:(NSString *_Nullable)argPattern;
+
+- (void)registerURLPattern:(WWUrlPatternItem *)urlPatternItem;
+
+
+
+/******************************************************************************/
+/**** Private - Match URL Pattern                                          ****/
+/******************************************************************************/
+#pragma mark - Service - Match URL Pattern
+
+- (WWUrlPatternItem *)matchPatternWithURLString:(NSString *)aURLString;
+
 
 
 /******************************************************************************/
