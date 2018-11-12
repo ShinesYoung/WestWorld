@@ -283,101 +283,52 @@
     if (aInvocation.methodSignature.methodReturnLength == 0) {
         return nil;
     }
-    
-    WWSuperResult *aResult = [[WWSuperResult alloc] init];
 
     NSUInteger resultLength = aInvocation.methodSignature.methodReturnLength;
     const char *retTypeChar = aInvocation.methodSignature.methodReturnType;
     
-    if (strcmp(retTypeChar, @encode(id)) == 0 ||
-        strcmp(retTypeChar, "@?") == 0)
-    {
-        void *result = (void *)malloc(resultLength);
-        [aInvocation getReturnValue:&result];
-        aResult.objectValue = (__bridge id)result;
-        return aResult;
-    }
-    
-    if (strcmp(retTypeChar, @encode(BOOL)) == 0) {
-        BOOL boolResult = NO;
-        [aInvocation getReturnValue:&boolResult];
-        aResult.boolValue = boolResult;
-    }
-    if (strcmp(retTypeChar, @encode(char)) == 0) {
-        char charResult = 0;
-        [aInvocation getReturnValue:&charResult];
-        aResult.charValue = charResult;
-    }
-    if (strcmp(retTypeChar, @encode(unsigned char)) ==0 ) {
-        unsigned char unsignedCharResult = 0;
-        [aInvocation getReturnValue:&unsignedCharResult];
-        aResult.unsignedCharValue = unsignedCharResult;
-    }
-    if (strcmp(retTypeChar, @encode(short)) == 0 ||
-        strcmp(retTypeChar, @encode(int)  ) == 0 ||
-        strcmp(retTypeChar, @encode(long) ) == 0 ||
-        strcmp(retTypeChar, @encode(long long)) == 0)
-    {
-        long long longLongResult = 0;
-        [aInvocation getReturnValue:&longLongResult];
-        aResult.integerValue = longLongResult;
-        return aResult;
-    }
-    else if (strcmp(retTypeChar, @encode(unsigned short)) == 0 ||
-             strcmp(retTypeChar, @encode(unsigned int)) == 0  ||
-             strcmp(retTypeChar, @encode(unsigned long)) == 0 ||
-             strcmp(retTypeChar, @encode(unsigned long long)) == 0)
-    {
-        unsigned long long unsignedLongLongResult = 0;
-        [aInvocation getReturnValue:&unsignedLongLongResult];
-        aResult.unsignedIntegerValue = unsignedLongLongResult;
-        return aResult;
-    }
-    
-    if (strcmp(retTypeChar, @encode(float)) == 0) {
-        float floatResult = 0.0f;
-        [aInvocation getReturnValue:&floatResult];
-        aResult.floatValue = floatResult;
-        return aResult;
-    }
-    else if (strcmp(retTypeChar, @encode(double)) == 0) {
-        double doubleResult = 0.0f;
-        [aInvocation getReturnValue:&doubleResult];
-        aResult.doubleValue = doubleResult;
-        return aResult;
-    }
-    
+    NSLog(@"retTypeChar = %s", retTypeChar);
+    NSValue *aValue = nil;
     if (strcmp(retTypeChar, @encode(CGPoint)) == 0) {
-        CGPoint pointResult = CGPointZero;
-        [aInvocation getReturnValue:&pointResult];
-        aResult.cgPointValue = pointResult;
+        CGPoint aPoint = CGPointZero;
+        [aInvocation getReturnValue:&aPoint];
+        aValue = [NSValue valueWithCGPoint:aPoint];
     }
     else if (strcmp(retTypeChar, @encode(CGSize)) == 0) {
-        CGSize sizeResult = CGSizeZero;
-        [aInvocation getReturnValue:&sizeResult];
-        aResult.cgSizeValue = sizeResult;
+        CGSize aSize = CGSizeZero;
+        [aInvocation getReturnValue:&aSize];
+        aValue = [NSValue valueWithCGSize:aSize];
     }
     else if (strcmp(retTypeChar, @encode(CGVector)) == 0) {
-        CGVector vectorResult = CGVectorMake(0, 0);
-        [aInvocation getReturnValue:&vectorResult];
-        aResult.cgVectorValue = vectorResult;
+        CGVector aVector = CGVectorMake(0, 0);;
+        [aInvocation getReturnValue:&aVector];
+        aValue = [NSValue valueWithCGVector:aVector];
     }
     else if (strcmp(retTypeChar, @encode(CGRect)) == 0) {
-        CGRect rectResult = CGRectZero;
-        [aInvocation getReturnValue:&rectResult];
-        aResult.cgRectValue = rectResult;
+        CGRect aRect = CGRectZero;
+        [aInvocation getReturnValue:&aRect];
+        aValue = [NSValue valueWithCGRect:aRect];
     }
     else if (strcmp(retTypeChar, @encode(NSRange)) == 0) {
-        NSRange rangeResult = NSMakeRange(NSNotFound, 0);
-        [aInvocation getReturnValue:&rangeResult];
-        aResult.rangeValue = rangeResult;
+        NSRange aRange = NSMakeRange(0, 0);
+        [aInvocation getReturnValue:&aRange];
+        aValue = [NSValue valueWithRange:aRange];
     }
     else if (strcmp(retTypeChar, @encode(UIOffset)) == 0) {
-        UIOffset offsetResult = UIOffsetZero;
-        [aInvocation getReturnValue:&offsetResult];
-        aResult.offsetValue = offsetResult;
+        UIOffset aOffset = UIOffsetZero;
+        [aInvocation getReturnValue:&aOffset];
+        aValue = [NSValue valueWithUIOffset:aOffset];
+    }
+    else {
+        const void *resultBuff = (void *)malloc(resultLength);
+        [aInvocation getReturnValue:&resultBuff];
+        aValue = [NSValue valueWithBytes:&resultBuff objCType:retTypeChar];
     }
     
+    WWSuperResult *aResult = [[WWSuperResult alloc] initWithValue:aValue
+                                                         objcType:retTypeChar
+                                                           length:resultLength];
+
     return aResult;
 }
 

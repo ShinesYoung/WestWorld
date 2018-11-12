@@ -21,25 +21,39 @@
 
 @interface WWSuperResult : NSObject
 
-@property (nonatomic, strong) id                 objectValue;
+@property (nonatomic, strong, readonly) NSValue    *value;
+@property (nonatomic, assign, readonly) const char *objcType;
+@property (nonatomic, assign, readonly) NSUInteger length;
 
-@property (nonatomic, assign) BOOL               boolValue;
-@property (nonatomic, assign) char               charValue;
-@property (nonatomic, assign) unsigned char      unsignedCharValue;
+- (id)                objectValue;
+- (BOOL)              boolValue;
+- (char)              charValue;
+- (unsigned char)     unsignedCharValue;
+- (short)             shortValue;
+- (unsigned short)    unsignedShortValue;
+- (int)               intValue;
+- (unsigned int)      unsignedIntValue;
+- (long)              longValue;
+- (unsigned long)     unsignedLongValue;
+- (long long)         longLongValue;
+- (unsigned long long)unsignedLongLongValue;
+- (long long)         integerValue;
+- (unsigned long long)unsignedIntegerValue;
+- (float)             floatValue;
+- (double)            doubleValue;
 
-@property (nonatomic, assign) long long          integerValue;
-@property (nonatomic, assign) unsigned long long unsignedIntegerValue;
+- (CGPoint)           CGPointValue;
+- (CGSize)            CGSizeValue;
+- (CGVector)          CGVectorValue;
+- (CGRect)            CGRectValue;
+- (NSRange)           rangeValue;
+- (UIOffset)          UIOffsetValue;
 
-@property (nonatomic, assign) float              floatValue;
-@property (nonatomic, assign) double             doubleValue;
-
-@property (nonatomic, assign) CGPoint            cgPointValue;
-@property (nonatomic, assign) CGSize             cgSizeValue;
-@property (nonatomic, assign) CGVector           cgVectorValue;
-@property (nonatomic, assign) CGRect             cgRectValue;
-@property (nonatomic, assign) NSRange            rangeValue;
-@property (nonatomic, assign) UIOffset           offsetValue;
-
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)new NS_UNAVAILABLE;
+- (instancetype)initWithValue:(NSValue *)aValue
+                     objcType:(const char*)objcType
+                       length:(NSUInteger)length;
 - (void)print;
 
 @end

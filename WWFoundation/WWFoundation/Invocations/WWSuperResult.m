@@ -10,6 +10,174 @@
 
 @implementation WWSuperResult
 
+- (id)objectValue
+{
+    id aObject = nil;
+    if (strcmp(self.objcType, @encode(id)) == 0 ||
+        strcmp(self.objcType, "@?") == 0)
+    {
+        [self.value getValue:&aObject];
+    }
+    return aObject;
+}
+
+- (BOOL)boolValue
+{
+    BOOL aBool = NO;
+    if (strcmp(self.objcType, @encode(BOOL)) == 0) {
+        [self.value getValue:&aBool];
+    }
+    return aBool;
+}
+
+- (char)charValue
+{
+    char aChar = 0;
+    [self.value getValue:&aChar];
+    return aChar;
+}
+
+- (unsigned char)unsignedCharValue
+{
+    unsigned char aUChar = 0;
+    [self.value getValue:&aUChar];
+    return aUChar;
+}
+
+- (short)shortValue
+{
+    unsigned int aShort = 0;
+    [self.value getValue:&aShort];
+    return aShort;
+}
+
+- (unsigned short)unsignedShortValue
+{
+    unsigned int aUShort = 0;
+    [self.value getValue:&aUShort];
+    return aUShort;
+}
+
+- (int)intValue
+{
+    unsigned int aInt = 0;
+    [self.value getValue:&aInt];
+    return aInt;
+}
+
+- (unsigned int)unsignedIntValue
+{
+    unsigned int aUInt = 0;
+    [self.value getValue:&aUInt];
+    return aUInt;
+}
+
+- (long)longValue
+{
+    long aLong = 0;
+    [self.value getValue:&aLong];
+    return aLong;
+}
+
+- (unsigned long)unsignedLongValue
+{
+    unsigned long aULong = 0;
+    [self.value getValue:&aULong];
+    return aULong;
+}
+
+- (long long)longLongValue
+{
+    long long aLongLong = 0;
+    [self.value getValue:&aLongLong];
+    return aLongLong;
+}
+
+- (unsigned long long)unsignedLongLongValue
+{
+    unsigned long long aULongLong = 0;
+    [self.value getValue:&aULongLong];
+    return aULongLong;
+}
+
+- (long long)integerValue
+{
+    long long aLongLong = 0;
+    [self.value getValue:&aLongLong];
+    return aLongLong;
+}
+
+- (unsigned long long)unsignedIntegerValue
+{
+    unsigned long long aULongLong = 0;
+    [self.value getValue:&aULongLong];
+    return aULongLong;
+}
+
+- (float)floatValue
+{
+    float aFloat = 0.0f;
+    [self.value getValue:&aFloat];
+    return aFloat;
+}
+
+- (double)doubleValue
+{
+    double aDouble = 0.0;
+    [self.value getValue:&aDouble];
+    return aDouble;
+}
+
+- (CGPoint)CGPointValue
+{
+    return [self.value CGPointValue];
+}
+
+- (CGSize)CGSizeValue
+{
+    return [self.value CGSizeValue];
+}
+
+- (CGRect)CGRectValue
+{
+    return [self.value CGRectValue];
+}
+
+- (CGVector)CGVectorValue
+{
+    return [self.value CGVectorValue];
+}
+
+- (NSRange)rangeValue
+{
+    return [self.value rangeValue];
+}
+
+- (UIOffset)UIOffsetValue
+{
+    return [self.value UIOffsetValue];
+}
+
+
+
+/******************************************************************************/
+/**** System - Default Lifecycle & Constructor                             ****/
+/******************************************************************************/
+#pragma mark - System - Default Lifecycle & Constructor
+
+- (instancetype)initWithValue:(NSValue *)aValue objcType:(const char *)objcType
+                       length:(NSUInteger)length
+{
+    self = [super init];
+    if (self) {
+        self->_value = aValue;
+        self->_objcType = objcType;
+        self->_length = length;
+    }
+    return self;
+}
+
+
 - (void)print
 {
     NSLog(@"LFXSuperResult = %@ \n"

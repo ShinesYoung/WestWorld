@@ -11,6 +11,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "SomeObject.h"
 #import "WWSuperInvoker.h"
+#import "WWSuperResult.h"
 
 #import "WWBaseModule.h"
 #import "WWStringRouter.h"
@@ -24,160 +25,136 @@
 
 - (IBAction)onBtnClicked:(id)sender
 {
-    
+    WWSuperInvoker *invoke = [WWSuperInvoker instance];
     WWSuperResult *result = nil;
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodBool" arguments:nil];
-//    NSLog(@"methodBool return : %d", result.boolValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodChar"
-//                                arguments:nil];
-//    NSLog(@"methodChar return : %c", result.charValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedChar"
-//                              arguments:nil];
-//    NSLog(@"methodUnsignedChar return : %c", result.unsignedCharValue);
-//
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodShort"
-//                                     arguments:nil];
-//    NSLog(@"methodShort return : %d", result.integerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedShort"
-//                                     arguments:nil];
-//    NSLog(@"methodUnsignedShort return : %d", result.unsignedIntegerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodInt"
-//                                     arguments:nil];
-//    NSLog(@"methodInt return : %d", result.integerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInt"
-//                                     arguments:nil];
-//    NSLog(@"methodUnsignedInt return : %u", result.unsignedIntegerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodLong"
-//                                     arguments:nil];
-//    NSLog(@"methodLong return : %ld", result.integerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLong"
-//                                     arguments:nil];
-//    NSLog(@"methodUnsignedLong return : %lu", result.unsignedIntegerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodLongLong"
-//                                     arguments:nil];
-//    NSLog(@"methodLongLong return : %lld", result.integerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedLongLong"
-//                                     arguments:nil];
-//    NSLog(@"methodUnsignedLongLong return : %llu", result.unsignedIntegerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodFloat"
-//                                     arguments:nil];
-//    NSLog(@"methodFloat return : %f", result.floatValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodDouble"
-//                                     arguments:nil];
-//    NSLog(@"methodDouble return : %e", result.doubleValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodInteger"
-//                                     arguments:nil];
-//    NSLog(@"methodInteger return : %lld", result.integerValue);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodUnsignedInteger"
-//                                     arguments:nil];
-//    NSLog(@"methodUnsignedInteger return : %llu", result.unsignedIntegerValue);
-//
-//    NSArray *arguments
-//    = @[@"This is a String", @(999999.999999), @[@"str1", @"str2", @"str3"],
-//        @{@"k1":@"v1", @"k2":@"v2"}, @(YES), @('X'), @('W'), @(-555), @555,
-//        @(-1234567890), @(1234567890), @(-1234567890), @(1234567890),
-//        @(12345.6789f), @(123456789.0), [NSNull null] ];
-//
-//    SEL method = @selector(methodVoidWithString:number:array:dictionary:withBool:withChar:withUChar:withInt:withUInt:withLong:withULong:withInteger:withUInteger:withFloat:withDouble:withObject:);
-//    NSString *serviceName = NSStringFromSelector(method);
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:serviceName
-//                                     arguments:arguments];
-//    NSLog(@"multiple argument method return : %@", result);
-//    [result print];
-//
-//
-//    NSLog(@"method1 return : %@", result.objectValue);
-//    [result print];
-//
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject"
-//                                  service:@"methodPoint"
-//                                arguments:nil];
-//    CGPoint aPoint = result.cgPointValue;
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject"
-//                                  service:@"methodSize"
-//                                arguments:nil];
-//    CGSize aSize = result.cgSizeValue;
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject"
-//                                  service:@"methodVector"
-//                                arguments:nil];
-//    CGVector aVector = result.cgVectorValue;
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject"
-//                                  service:@"methodRect"
-//                                arguments:nil];
-//    CGRect aRect = result.cgRectValue;
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject"
-//                                  service:@"methodRange"
-//                                arguments:nil];
-//    NSRange aRange = result.rangeValue;
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject"
-//                                  service:@"methodOffset"
-//                                arguments:nil];
-//    UIOffset aOffset = result.offsetValue;
-//
-//
-//    NSArray *argus = @[[NSValue valueWithCGSize:aSize],
-//                       [NSValue valueWithCGPoint:aPoint],
-//                       [NSValue valueWithCGVector:aVector],
-//                       [NSValue valueWithCGRect:aRect],
-//                       [NSValue valueWithRange:aRange],
-//                       [NSValue valueWithUIOffset:aOffset]];
-//    [WWSuperRouter invokeModule:@"SomeObject"
-//                         service:@"methodWithSize:point:vector:rect:range:offset:"
-//                       arguments:argus];
-//
-//    handleBlock2 blockArg = ^BOOL(BOOL result,
-//                                      NSInteger returnCode,
-//                                      NSString *message)
-//    {
-//        NSLog(@"handleBlock2 called %d-%ld-%@", result, returnCode, message);
-//        return YES;
-//    };
-//
-//    NSArray *arguments2 = @[blockArg];
-//
-//    result = [WWSuperRouter invokeModule:@"SomeObject" service:@"methodBlock:"
-//                               arguments:arguments2];
-//
-//    handleBlock aBlock = (handleBlock) result.objectValue;
-//    if (aBlock) {
-//        aBlock (YES,0,@"OK");
-//    }
     
-    
-    id<WWDispatchQueue> aQueue = WWConcurrentManager.defaultGlobalQueue;
-    
-    for (NSUInteger index = 0; index<100; index++)
+    SomeObject *aObj = [[SomeObject alloc] init];
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodObject)];
+    NSLog(@"methodObject return : %@", result.objectValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodBool)];
+    NSLog(@"methodBool return : %d", result.boolValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodChar)];
+    NSLog(@"methodChar return : %c", result.charValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedChar)];
+    NSLog(@"methodUnsignedChar return : %c", result.unsignedCharValue);
+
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodShort)];
+    NSLog(@"methodShort return : %d", result.shortValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedShort)];
+    NSLog(@"methodUnsignedShort return : %u", result.unsignedShortValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodInt)];
+    NSLog(@"methodInt return : %d", result.intValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedInt)];
+    NSLog(@"methodUnsignedInt return : %u", result.unsignedIntValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodLong)];
+    NSLog(@"methodLong return : %ld", result.longValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedLong)];
+    NSLog(@"methodUnsignedLong return : %lu", result.unsignedLongValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodLongLong)];
+    NSLog(@"methodLongLong return : %lld", result.longLongValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedLongLong)];
+    NSLog(@"methodUnsignedLongLong return : %llu", result.unsignedLongLongValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodFloat)];
+    NSLog(@"methodFloat return : %f", result.floatValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodDouble)];
+    NSLog(@"methodDouble return : %e", result.doubleValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodInteger)];
+    NSLog(@"methodInteger return : %lld", result.integerValue);
+
+    result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedInteger)];
+    NSLog(@"methodUnsignedInteger return : %llu", result.unsignedIntegerValue);
+
+    NSArray *arguments
+    = @[@"This is a String", @(999999.999999), @[@"str1", @"str2", @"str3"],
+        @{@"k1":@"v1", @"k2":@"v2"}, @(YES), @('X'), @('W'), @(-555), @555,
+        @(-1234567890), @(1234567890), @(-1234567890), @(1234567890),
+        @(12345.6789f), @(123456789.0), [NSNull null] ];
+
+    SEL method = @selector(methodVoidWithString:number:array:dictionary:withBool:withChar:withUChar:withInt:withUInt:withLong:withULong:withInteger:withUInteger:withFloat:withDouble:withObject:);
+
+    result = [invoke callInvocationOfInstance:aObj method:method
+                                     arguments:arguments];
+    NSLog(@"multiple argument method return : %@", result);
+    [result print];
+
+
+    result = [invoke callInvocationOfInstance:aObj
+                                       method:NSSelectorFromString(@"methodPoint")];
+    CGPoint aPoint = result.CGPointValue;
+    NSLog(@"methodPoint return :%@", NSStringFromCGPoint(aPoint));
+
+    result = [invoke callInvocationOfInstance:aObj
+                                  method:NSSelectorFromString(@"methodSize")];
+    CGSize aSize = result.CGSizeValue;
+    NSLog(@"methodSize return :%@", NSStringFromCGSize(aSize));
+
+    result = [invoke callInvocationOfInstance:aObj
+                                  method:NSSelectorFromString(@"methodVector")];
+    CGVector aVector = result.CGVectorValue;
+    NSLog(@"methodVector return :%@", NSStringFromCGVector(aVector));
+
+    result = [invoke callInvocationOfInstance:aObj
+                                  method:NSSelectorFromString(@"methodRect")];
+    CGRect aRect = result.CGRectValue;
+    NSLog(@"methodRect return :%@", NSStringFromCGRect(aRect));
+
+    result = [invoke callInvocationOfInstance:aObj
+                                  method:NSSelectorFromString(@"methodRange")];
+    NSRange aRange = result.rangeValue;
+    NSLog(@"methodRange return :%@", NSStringFromRange(aRange));
+
+    result = [invoke callInvocationOfInstance:aObj
+                                  method:NSSelectorFromString(@"methodOffset")];
+    UIOffset aOffset = result.UIOffsetValue;
+    NSLog(@"methodOffset return :%@", NSStringFromUIOffset(aOffset));
+
+
+    NSArray *argus = @[[NSValue valueWithCGSize:CGSizeMake(320, 480)],
+                       [NSValue valueWithCGPoint:CGPointMake(160, 240)],
+                       [NSValue valueWithCGVector:CGVectorMake(1.0, 1.0)],
+                       [NSValue valueWithCGRect:CGRectMake(0, 0, 375, 667)],
+                       [NSValue valueWithRange:NSMakeRange(1, 10)],
+                       [NSValue valueWithUIOffset:UIOffsetMake(1.5, 1.5)]];
+    [invoke callInvocationOfInstance:aObj
+                         method:NSSelectorFromString(@"methodWithSize:point:vector:rect:range:offset:")
+                       arguments:argus];
+
+    handleBlock2 blockArg = ^BOOL(BOOL result,
+                                      NSInteger returnCode,
+                                      NSString *message)
     {
-        [aQueue async:^{
-            
-            NSLog(@"Current Thread %@ IN", aQueue.queueName);
-            for (NSUInteger i=0 ; i<99999999; i++) {}
-            NSLog(@"Current thread %@ OUT",  aQueue.queueName);
+        NSLog(@"handleBlock2 called %d-%ld-%@", result, returnCode, message);
+        return YES;
+    };
 
-        }];
+    NSArray *arguments2 = @[blockArg];
 
+    result = [invoke callInvocationOfInstance:aObj
+                                       method:NSSelectorFromString(@"methodBlock:")
+                               arguments:arguments2];
+
+    handleBlock aBlock = (handleBlock) result.objectValue;
+    if (aBlock) {
+        aBlock (YES,0,@"OK");
     }
+    
+    
+ 
 }
 
 
@@ -207,7 +184,10 @@
 //    NSLog(@"router return = %@", result);
     
     const char *objcType = @encode(handleBlock3);
-    NSLog(@"objcType = %s", objcType);
+    NSLog(@"@encode(block) = %s", objcType);
+    
+    const char *objcType2 = @encode(CGPoint);
+    NSLog(@"@encode(CGPoint) = %s", objcType2);
 }
 
 - (void)didReceiveMemoryWarning {
