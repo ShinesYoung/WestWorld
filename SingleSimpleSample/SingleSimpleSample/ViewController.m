@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "WWArguments.h"
+
 @interface ViewController ()
 
 @end
@@ -23,15 +25,32 @@
 }
 
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    SEL sel = @selector(myBoolMethod:);
-    IMP imp = [self methodForSelector:sel];
+    WWArguments *theArgus = [[WWArguments alloc] init];
+    [theArgus addObject:@(0)];
+    [theArgus addObject:@(1)];
+    [theArgus addObject:nil];
+    [theArgus addObject:@"3"];
+    [theArgus addObject:@"unknown"];
     
-    NSLog(@"IMP = %@", imp);
-        
+    NSLog(@"after add : %@", theArgus);
+    
+    WWArguments *arg2 = [theArgus copy];
+//    [arg2 addObject:@"4"];
+    NSLog(@"after copy : %@", arg2);
+    
+    id aObj = [arg2 objectAtIndex:2];
+    NSLog(@"2nd object of copy : %@", aObj);
+
+
+    WWArguments *arg3 = [theArgus mutableCopy];
+    [arg3 addObject:@"5"];
+    NSLog(@"after copy : %@", arg3);
+    NSLog(@"arg3 count : %ld", arg3.count);
 }
 
 

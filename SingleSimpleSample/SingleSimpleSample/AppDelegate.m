@@ -10,6 +10,7 @@
 
 #import "WWModuleManager.h"
 #import "RootVC.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +26,8 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.rootVC = [[RootVC alloc] init];
+//    self.rootVC = [[RootVC alloc] init];
+    self.rootVC = [[ViewController alloc] init];
     self.window.rootViewController = self.rootVC;
     [self.window addSubview:self.rootVC.view];
     [self.window makeKeyAndVisible];
