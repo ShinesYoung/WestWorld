@@ -29,6 +29,9 @@
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
                                arguments:(NSArray *)arguments
 {
+    // 0.保持nil指针特性
+    if (aClass == nil) { return nil;}
+    
     // 1.获取methodSignature
     NSMethodSignature *signature = [aClass methodSignatureForSelector:aAction];
     
@@ -69,6 +72,9 @@
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
                                   arguments:(NSArray *)arguments
 {
+    // 0.保持nil指针特性
+    if (aTarget == nil) { return nil;}
+    
     // 1.获取methodSignature
     Class classOfTarget = [aTarget class];
     NSMethodSignature *signature

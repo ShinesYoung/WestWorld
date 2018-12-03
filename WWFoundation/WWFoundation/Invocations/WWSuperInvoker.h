@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "WWArguments.h"
 #import "WWSuperResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -20,9 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 /******************************************************************************/
 #pragma mark - Service - Dynamic Invoke Class Method
 
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction;
-
 // invoke class method
+- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction;
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
                                arguments:(NSArray *)arguments;
 
@@ -35,7 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 // invoke instance method
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction;
-
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
                                   arguments:(NSArray *)arguments;
 
