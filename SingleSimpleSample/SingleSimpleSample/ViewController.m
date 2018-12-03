@@ -9,8 +9,12 @@
 #import "ViewController.h"
 
 #import "WWArguments.h"
+#import "WWRunLoopQueue.h"
+
 
 @interface ViewController ()
+
+@property (nonatomic, strong) WWRunLoopQueue *theQueue;
 
 @end
 
@@ -51,6 +55,9 @@
     [arg3 addObject:@"5"];
     NSLog(@"after copy : %@", arg3);
     NSLog(@"arg3 count : %ld", arg3.count);
+    
+    self.theQueue = [[WWRunLoopQueue alloc] init];
+    [self.theQueue start];
 }
 
 

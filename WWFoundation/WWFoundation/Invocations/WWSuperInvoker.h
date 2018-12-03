@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 // invoke class method
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction;
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+                                safeArgs:(WWArguments *)safeArgs;
+- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
                                arguments:(NSArray *)arguments;
 
 
@@ -35,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 // invoke instance method
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction;
+- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+                                  safeArgs:(WWArguments *)safeArgs;
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
                                   arguments:(NSArray *)arguments;
 

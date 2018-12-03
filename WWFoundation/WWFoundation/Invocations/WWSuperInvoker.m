@@ -27,6 +27,14 @@
 }
 
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+                                safeArgs:(WWArguments *)safeArgs
+{
+    return [self callInvocationOfClass:aClass method:aAction
+                             arguments:[safeArgs.arguments copy]];
+}
+
+// primitive method
+- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
                                arguments:(NSArray *)arguments
 {
     // 0.保持nil指针特性
@@ -69,6 +77,14 @@
     return [self callInvocationOfInstance:aTarget method:aAction arguments:@[]];
 }
 
+- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+                                   safeArgs:(WWArguments *)safeArgs
+{
+    return [self callInvocationOfClass:aTarget method:aAction
+                             arguments:[safeArgs.arguments copy]];
+}
+
+// primitive method
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
                                   arguments:(NSArray *)arguments
 {
