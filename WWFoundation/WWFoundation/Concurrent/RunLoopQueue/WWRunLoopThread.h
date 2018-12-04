@@ -10,6 +10,6 @@
 
 @interface WWRunLoopThread : NSThread
 
-@property (nonatomic, strong) NSRunLoop *runLoop;
+- (void)stop;
 
 @end

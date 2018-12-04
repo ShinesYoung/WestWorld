@@ -58,10 +58,7 @@
 - (void)stop
 {
     for (WWRunLoopThread *aThread in self.threadPool) {
-        if ([aThread isExecuting] == YES) {
-            CFRunLoopStop(aThread.runLoop.getCFRunLoop);
-            [NSThread exit];
-        }
+        [aThread stop];
     }
 }
 
