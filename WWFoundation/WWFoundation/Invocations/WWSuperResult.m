@@ -13,8 +13,8 @@
 - (id)objectValue
 {
     id aObject = nil;
-    if (strcmp(self.objcType, @encode(id)) == 0 ||
-        strcmp(self.objcType, "@?") == 0)
+    if (strcmp(self.objCType, @encode(id)) == 0 ||
+        strcmp(self.objCType, "@?") == 0)
     {
         [self.value getValue:&aObject];
     }
@@ -24,7 +24,7 @@
 - (BOOL)boolValue
 {
     BOOL aBool = NO;
-    if (strcmp(self.objcType, @encode(BOOL)) == 0) {
+    if (strcmp(self.objCType, @encode(BOOL)) == 0) {
         [self.value getValue:&aBool];
     }
     return aBool;
@@ -100,18 +100,18 @@
     return aULongLong;
 }
 
-- (long long)integerValue
+- (NSInteger)integerValue
 {
-    long long aLongLong = 0;
-    [self.value getValue:&aLongLong];
-    return aLongLong;
+    NSInteger aInteger = 0;
+    [self.value getValue:&aInteger];
+    return aInteger;
 }
 
-- (unsigned long long)unsignedIntegerValue
+- (NSUInteger)unsignedIntegerValue
 {
-    unsigned long long aULongLong = 0;
-    [self.value getValue:&aULongLong];
-    return aULongLong;
+    NSUInteger aUInteger = 0;
+    [self.value getValue:&aUInteger];
+    return aUInteger;
 }
 
 - (float)floatValue
@@ -165,13 +165,13 @@
 /******************************************************************************/
 #pragma mark - System - Default Lifecycle & Constructor
 
-- (instancetype)initWithValue:(NSValue *)aValue objcType:(const char *)objcType
+- (instancetype)initWithValue:(NSValue *)aValue objCType:(const char *)objCType
                        length:(NSUInteger)length
 {
     self = [super init];
     if (self) {
         self->_value = aValue;
-        self->_objcType = objcType;
+        self->_objCType = objCType;
         self->_length = length;
     }
     return self;
@@ -183,7 +183,7 @@
     NSLog(@"LFXSuperResult = %@ \n"
           "boolValue = %d \n"
           "charValue = %c \nunsignedCharValue = %c \n"
-          "integerValue = %lld \nunsignedIntegerValue = %llu \n"
+          "integerValue = %ld \nunsignedIntegerValue = %lu \n"
           "floatValue = %f \ndoubleValue = %e \n"
           "objectValue = %@ \n",
           self, self.boolValue,

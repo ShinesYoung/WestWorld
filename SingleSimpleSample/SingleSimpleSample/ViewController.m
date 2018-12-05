@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "WWArguments.h"
+#import "WWInvokeArgus.h"
 #import "WWRunLoopQueue.h"
 
 
@@ -34,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    WWArguments *theArgus = [[WWArguments alloc] init];
+    WWInvokeArgus *theArgus = [[WWInvokeArgus alloc] init];
     [theArgus addObject:@(0)];
     [theArgus addObject:@(1)];
     [theArgus addObject:nil];
@@ -43,7 +43,7 @@
     
     NSLog(@"after add : %@", theArgus);
     
-    WWArguments *arg2 = [theArgus copy];
+    WWInvokeArgus *arg2 = [theArgus copy];
 //    [arg2 addObject:@"4"];
     NSLog(@"after copy : %@", arg2);
     
@@ -51,7 +51,7 @@
     NSLog(@"2nd object of copy : %@", aObj);
 
 
-    WWArguments *arg3 = [theArgus mutableCopy];
+    WWInvokeArgus *arg3 = [theArgus mutableCopy];
     [arg3 addObject:@"5"];
     NSLog(@"after copy : %@", arg3);
     NSLog(@"arg3 count : %ld", arg3.count);

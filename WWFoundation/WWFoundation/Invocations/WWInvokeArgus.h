@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WWArguments : NSMutableArray
+@interface WWInvokeArgus : NSMutableArray
 
 @property (nonatomic, strong) NSMutableArray *arguments;
 

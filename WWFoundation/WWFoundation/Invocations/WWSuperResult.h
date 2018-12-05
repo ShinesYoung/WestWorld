@@ -22,7 +22,7 @@
 @interface WWSuperResult : NSObject
 
 @property (nonatomic, strong, readonly) NSValue    *value;
-@property (nonatomic, assign, readonly) const char *objcType;
+@property (nonatomic, assign, readonly) const char *objCType;
 @property (nonatomic, assign, readonly) NSUInteger length;
 
 - (id)                objectValue;
@@ -37,8 +37,8 @@
 - (unsigned long)     unsignedLongValue;
 - (long long)         longLongValue;
 - (unsigned long long)unsignedLongLongValue;
-- (long long)         integerValue;
-- (unsigned long long)unsignedIntegerValue;
+- (NSInteger)         integerValue;
+- (NSUInteger)        unsignedIntegerValue;
 - (float)             floatValue;
 - (double)            doubleValue;
 
@@ -52,7 +52,7 @@
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)new NS_UNAVAILABLE;
 - (instancetype)initWithValue:(NSValue *)aValue
-                     objcType:(const char*)objcType
+                     objCType:(const char*)objCType
                        length:(NSUInteger)length;
 - (void)print;
 

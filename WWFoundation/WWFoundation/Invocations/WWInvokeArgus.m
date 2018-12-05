@@ -6,9 +6,9 @@
 //  Copyright © 2018年 net.shines. All rights reserved.
 //
 
-#import "WWArguments.h"
+#import "WWInvokeArgus.h"
 
-@implementation WWArguments
+@implementation WWInvokeArgus
 
 - (instancetype)init
 {

@@ -8,7 +8,7 @@
 
 #import "WWSuperInvoker.h"
 
-
+#import "WWInvokeArgusProcessor.h"
 
 
 @implementation WWSuperInvoker
@@ -27,7 +27,7 @@
 }
 
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                                safeArgs:(WWArguments *)safeArgs
+                                safeArgs:(WWInvokeArgus *)safeArgs
 {
     return [self callInvocationOfClass:aClass method:aAction
                              arguments:[safeArgs.arguments copy]];
@@ -78,7 +78,7 @@
 }
 
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                   safeArgs:(WWArguments *)safeArgs
+                                   safeArgs:(WWInvokeArgus *)safeArgs
 {
     return [self callInvocationOfClass:aTarget method:aAction
                              arguments:[safeArgs.arguments copy]];
@@ -172,128 +172,10 @@
         const char *aArgTypeOfSignature
         = [aInvocation.methodSignature getArgumentTypeAtIndex:index+2];
         
-        if ([aArgument isKindOfClass:[NSNull class]]) {
-            aArgument = nil;
-            [aInvocation setArgument:&aArgument atIndex:index+2];
-        }
-        else if ([aArgument isKindOfClass:[NSNumber class]])
-        {
-            NSNumber *numberArg = (NSNumber *)aArgument;
-            
-            if      (strcmp(aArgTypeOfSignature, @encode(id) ) == 0)
-            {
-                [aInvocation setArgument:&aArgument atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(BOOL) ) == 0) // bool
-            {
-                BOOL boolArg = [numberArg boolValue];
-                [aInvocation setArgument:&boolArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(float) ) == 0)
-            {
-                float floatArg = [numberArg floatValue];
-                [aInvocation setArgument:&floatArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(double) ) == 0)
-            {
-                double doubleArg = [numberArg doubleValue];
-                [aInvocation setArgument:&doubleArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(int) ) == 0)
-            {
-                int intArg = [numberArg intValue];
-                [aInvocation setArgument:&intArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(unsigned int) ) == 0)
-            {
-                unsigned int unsignedIntArg = [numberArg unsignedIntValue];
-                [aInvocation setArgument:&unsignedIntArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(long) ) == 0)
-            {
-                long longArg = [numberArg longValue];
-                [aInvocation setArgument:&longArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(unsigned long) ) == 0)
-            {
-                unsigned long unsignedLongArg = [numberArg unsignedLongValue];
-                [aInvocation setArgument:&unsignedLongArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(long long) ) == 0)
-            {
-                long long longLongArg = [numberArg longLongValue];
-                [aInvocation setArgument:&longLongArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(unsigned long long) ) == 0)
-            {
-                unsigned long long unsignedLongLongArg = [numberArg unsignedLongLongValue];
-                [aInvocation setArgument:&unsignedLongLongArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(char) ) == 0)
-            {
-                char charArg = [numberArg charValue];
-                [aInvocation setArgument:&charArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(unsigned char) ) == 0)
-            {
-                unsigned char unsignedCharArg = [numberArg unsignedCharValue];
-                [aInvocation setArgument:&unsignedCharArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(short) ) == 0)
-            {
-                short shortArg = [numberArg shortValue];
-                [aInvocation setArgument:&shortArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(unsigned short) ) == 0)
-            {
-                unsigned short unsignedShortArg = [numberArg unsignedShortValue];
-                [aInvocation setArgument:&unsignedShortArg atIndex:index+2];
-            }
-            else
-            {
-                [aInvocation setArgument:&aArgument atIndex:index+2];
-            }
-            
-        }
-        else if ([aArgument isKindOfClass:[NSValue class]])
-        {
-            NSValue *aValueArg = (NSValue *)aArgument;
-            if      (strcmp(aArgTypeOfSignature, @encode(CGPoint)) == 0)
-            {
-                CGPoint cgPointArg = [aValueArg CGPointValue];
-                [aInvocation setArgument:&cgPointArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(CGSize)) == 0)
-            {
-                CGSize cgSizeArg = [aValueArg CGSizeValue];
-                [aInvocation setArgument:&cgSizeArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(CGVector)) == 0)
-            {
-                CGVector cgVectorArg = [aValueArg CGVectorValue];
-                [aInvocation setArgument:&cgVectorArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(CGRect)) == 0)
-            {
-                CGRect cgRectArg = [aValueArg CGRectValue];
-                [aInvocation setArgument:&cgRectArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(NSRange)) == 0)
-            {
-                NSRange rangeArg = [aValueArg rangeValue];
-                [aInvocation setArgument:&rangeArg atIndex:index+2];
-            }
-            else if (strcmp(aArgTypeOfSignature, @encode(UIOffset)) == 0)
-            {
-                UIOffset offsetArg = [aValueArg UIOffsetValue];
-                [aInvocation setArgument:&offsetArg atIndex:index+2];
-            }
-        }
-        else
-        {
-            [aInvocation setArgument:&aArgument atIndex:index+2];
-        }
-        
+        [WWInvokeArgusProcessor
+         handleInvocation:aInvocation
+         arguCType:aArgTypeOfSignature
+         argument:aArgument atIndex:index+2];
     }
     [aInvocation retainArguments];
 }
@@ -322,7 +204,7 @@
         aValue = [NSValue valueWithCGSize:aSize];
     }
     else if (strcmp(retTypeChar, @encode(CGVector)) == 0) {
-        CGVector aVector = CGVectorMake(0, 0);;
+        CGVector aVector = CGVectorMake(0, 0);
         [aInvocation getReturnValue:&aVector];
         aValue = [NSValue valueWithCGVector:aVector];
     }
@@ -348,7 +230,7 @@
     }
     
     WWSuperResult *aResult = [[WWSuperResult alloc] initWithValue:aValue
-                                                         objcType:retTypeChar
+                                                         objCType:retTypeChar
                                                            length:resultLength];
 
     return aResult;
