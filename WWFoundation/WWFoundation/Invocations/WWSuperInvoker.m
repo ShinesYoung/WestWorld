@@ -21,21 +21,21 @@
 
 // invoke class method
 
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+- (WWInvokeResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
 {
     return [self callInvocationOfClass:aClass method:aAction arguments:@[]];
 }
 
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                             invokeArgus:(WWInvokeArgus *)invokeArgus
+- (WWInvokeResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+                              invokeArgus:(WWInvokeArgus *)invokeArgus
 {
     return [self callInvocationOfClass:aClass method:aAction
                              arguments:[invokeArgus.arguments copy]];
 }
 
 // primitive method
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                               arguments:(NSArray *)arguments
+- (WWInvokeResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+                                arguments:(NSArray *)arguments
 {
     // 0.保持nil指针特性
     if (aClass == nil) { return nil;}
@@ -72,21 +72,21 @@
 
 // invoke instance method
 
-- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+- (WWInvokeResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
 {
     return [self callInvocationOfInstance:aTarget method:aAction arguments:@[]];
 }
 
-- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                invokeArgus:(WWInvokeArgus *)invokeArgus
+- (WWInvokeResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+                                 invokeArgus:(WWInvokeArgus *)invokeArgus
 {
     return [self callInvocationOfClass:aTarget method:aAction
                              arguments:[invokeArgus.arguments copy]];
 }
 
 // primitive method
-- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                  arguments:(NSArray *)arguments
+- (WWInvokeResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+                                   arguments:(NSArray *)arguments
 {
     // 0.保持nil指针特性
     if (aTarget == nil) { return nil;}
@@ -182,7 +182,7 @@
 }
 
 
-- (WWSuperResult *)checkAndReturnInvocationResult:(NSInvocation *)aInvocation
+- (WWInvokeResult *)checkAndReturnInvocationResult:(NSInvocation *)aInvocation
 {
     // method's return type is void
     if (aInvocation.methodSignature.methodReturnLength == 0) {
@@ -230,9 +230,9 @@
         aValue = [NSValue valueWithBytes:&resultBuff objCType:retTypeChar];
     }
     
-    WWSuperResult *aResult = [[WWSuperResult alloc] initWithValue:aValue
-                                                         objCType:retTypeChar
-                                                           length:resultLength];
+    WWInvokeResult *aResult =
+    [[WWInvokeResult alloc] initWithValue:aValue objCType:retTypeChar
+                                   length:resultLength];
 
     return aResult;
 }

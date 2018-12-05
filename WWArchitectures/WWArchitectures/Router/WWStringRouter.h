@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "WWSuperResult.h"
+#import "WWInvokeResult.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -20,15 +20,15 @@ NS_ASSUME_NONNULL_BEGIN
 /******************************************************************************/
 #pragma mark - Service - Routing Service Method
 
-- (WWSuperResult *)routingToModule:(NSString *)moduleName
+- (WWInvokeResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
                            argInfo:(NSDictionary *)argInfo
                        argKeyOrder:(NSArray<NSString *> *)argKeyOrder;
 
-- (WWSuperResult *)routingToModule:(NSString *)moduleName
+- (WWInvokeResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName;
 
-- (WWSuperResult *)routingToModule:(NSString *)moduleName
+- (WWInvokeResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
                          arguments:(NSArray *_Nullable)arguments;
 

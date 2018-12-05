@@ -1,5 +1,5 @@
 //
-//  WWSuperResult.h
+//  WWInvokeResult.h
 //  WWFoundation
 //
 //  Created by Shines Young on 2018/9/13.
@@ -11,15 +11,15 @@
 
 
 /**
- * WWSuperResult - a wrapper of method's return type.
+ * WWInvokeResult - a wrapper of method's return type.
  *  if a method‘s returnType is 'void', then return is nil.
  *  if a method‘s returnType is not 'void', the return is WWSuperResult instance,
  *  and the particular return value will save in the WWSuperResult instance.
- *  You can use WWSuperResult's xxxValue properties method
+ *  You can use WWInvokeResult's xxxValue properties method
  *  to access the particular return value.
  */
 
-@interface WWSuperResult : NSObject
+@interface WWInvokeResult : NSObject
 
 @property (nonatomic, strong, readonly) NSValue    *value;
 @property (nonatomic, assign, readonly) const char *objCType;

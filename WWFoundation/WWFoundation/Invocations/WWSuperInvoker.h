@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #import "WWInvokeArgus.h"
-#import "WWSuperResult.h"
+#import "WWInvokeResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,11 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Service - Dynamic Invoke Class Method
 
 // invoke class method
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction;
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                             invokeArgus:(WWInvokeArgus *)invokeArgus;
-- (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                               arguments:(NSArray *)arguments;
+- (WWInvokeResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction;
+- (WWInvokeResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+                              invokeArgus:(WWInvokeArgus *)invokeArgus;
+- (WWInvokeResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
+                                arguments:(NSArray *)arguments;
 
 
 
@@ -36,11 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Service - Dynamic Invoke Instance Method
 
 // invoke instance method
-- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction;
-- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                invokeArgus:(WWInvokeArgus *)invokeArgus;
-- (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                  arguments:(NSArray *)arguments;
+- (WWInvokeResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction;
+- (WWInvokeResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+                                 invokeArgus:(WWInvokeArgus *)invokeArgus;
+- (WWInvokeResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
+                                   arguments:(NSArray *)arguments;
 
 
 
@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)handleArguments:(NSArray *)arguments ofInvocation:(NSInvocation *)aInvocation;
 
-- (WWSuperResult *)checkAndReturnInvocationResult:(NSInvocation *)aInvocation;
+- (WWInvokeResult *)checkAndReturnInvocationResult:(NSInvocation *)aInvocation;
 
 
 

@@ -43,7 +43,7 @@
 /******************************************************************************/
 #pragma mark - Service - Routing Service Method
 
-- (WWSuperResult *)routingToModule:(NSString *)moduleName
+- (WWInvokeResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
                            argInfo:(NSDictionary *)argInfo
                        argKeyOrder:(NSArray<NSString *> *)argKeyOrder
@@ -79,13 +79,13 @@
     return [self routingToModule:moduleName action:actionName arguments:arguments];
 }
 
-- (WWSuperResult *)routingToModule:(NSString *)moduleName
+- (WWInvokeResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
 {
     return [self routingToModule:moduleName action:actionName arguments:@[]];
 }
 
-- (WWSuperResult *)routingToModule:(NSString *)moduleName
+- (WWInvokeResult *)routingToModule:(NSString *)moduleName
                             action:(NSString *)actionName
                          arguments:(NSArray *)arguments
 {
@@ -111,7 +111,7 @@
     }
     
     WWSuperInvoker *invoker = [WWSuperInvoker instance];
-    WWSuperResult *result = [invoker callInvocationOfInstance:aModule
+    WWInvokeResult *result = [invoker callInvocationOfInstance:aModule
                                                         method:aAction
                                                      arguments:arguments];
     

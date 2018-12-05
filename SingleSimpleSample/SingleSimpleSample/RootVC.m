@@ -11,7 +11,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "SomeObject.h"
 #import "WWSuperInvoker.h"
-#import "WWSuperResult.h"
+#import "WWInvokeResult.h"
 
 #import "WWBaseModule.h"
 #import "WWStringRouter.h"
@@ -26,7 +26,7 @@
 - (IBAction)onBtnClicked:(id)sender
 {
     WWSuperInvoker *invoke = [WWSuperInvoker instance];
-    WWSuperResult *result = nil;
+    WWInvokeResult *result = nil;
     
     SomeObject *aObj = [[SomeObject alloc] init];
 
