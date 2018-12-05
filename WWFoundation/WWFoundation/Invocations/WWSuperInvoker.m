@@ -27,10 +27,10 @@
 }
 
 - (WWSuperResult *)callInvocationOfClass:(Class)aClass method:(SEL)aAction
-                                safeArgs:(WWInvokeArgus *)safeArgs
+                             invokeArgus:(WWInvokeArgus *)invokeArgus
 {
     return [self callInvocationOfClass:aClass method:aAction
-                             arguments:[safeArgs.arguments copy]];
+                             arguments:[invokeArgus.arguments copy]];
 }
 
 // primitive method
@@ -78,10 +78,10 @@
 }
 
 - (WWSuperResult *)callInvocationOfInstance:(id)aTarget method:(SEL)aAction
-                                   safeArgs:(WWInvokeArgus *)safeArgs
+                                invokeArgus:(WWInvokeArgus *)invokeArgus
 {
     return [self callInvocationOfClass:aTarget method:aAction
-                             arguments:[safeArgs.arguments copy]];
+                             arguments:[invokeArgus.arguments copy]];
 }
 
 // primitive method
@@ -172,6 +172,7 @@
         const char *aArgTypeOfSignature
         = [aInvocation.methodSignature getArgumentTypeAtIndex:index+2];
         
+        // 针对每个参数进行处理
         [WWInvokeArgusProcessor
          handleInvocation:aInvocation
          arguCType:aArgTypeOfSignature

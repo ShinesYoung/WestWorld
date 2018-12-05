@@ -126,14 +126,14 @@
 		BE3AACA7214AAC500083ABC7 /* Invocations */ = {
 			isa = PBXGroup;
 			children = (
-				BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */,
-				BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */,
-				BE3AACAB214AAC500083ABC7 /* WWSuperResult.h */,
-				BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */,
 				BEBE023821B4429200DD8E0A /* WWInvokeArgus.h */,
 				BEBE023921B4429200DD8E0A /* WWInvokeArgus.m */,
 				BE1B972121B82219002297F0 /* WWInvokeArgusProcessor.h */,
 				BE1B972221B82219002297F0 /* WWInvokeArgusProcessor.m */,
+				BE3AACA8214AAC500083ABC7 /* WWSuperInvoker.h */,
+				BE3AACAA214AAC500083ABC7 /* WWSuperInvoker.m */,
+				BE3AACAB214AAC500083ABC7 /* WWSuperResult.h */,
+				BE3AACA9214AAC500083ABC7 /* WWSuperResult.m */,
 			);
 			path = Invocations;
 			sourceTree = "<group>";

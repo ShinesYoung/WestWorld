@@ -74,10 +74,10 @@
     NSLog(@"methodDouble return : %e", result.doubleValue);
 
     result = [invoke callInvocationOfInstance:aObj method:@selector(methodInteger)];
-    NSLog(@"methodInteger return : %lld", result.integerValue);
+    NSLog(@"methodInteger return : %ld", result.integerValue);
 
     result = [invoke callInvocationOfInstance:aObj method:@selector(methodUnsignedInteger)];
-    NSLog(@"methodUnsignedInteger return : %llu", result.unsignedIntegerValue);
+    NSLog(@"methodUnsignedInteger return : %lu", result.unsignedIntegerValue);
 
     NSArray *arguments
     = @[@"This is a String", @(999999.999999), @[@"str1", @"str2", @"str3"],
